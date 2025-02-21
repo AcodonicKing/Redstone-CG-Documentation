@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Gates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="analog-gates">
+    <header>
+        <h1>Analog Gates</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Analog Gates</h2>
+            <p>
+                Analog gates differ from <a href="Digital_Gates.html">Digital gates</a> by producing variable outputs based on variable inputs. 
+                Instead of interpreting Redstone signals as strictly <strong>on</strong> or <strong>off</strong>, analog gates use the full range of Redstone signal levels, from <strong>0</strong> to <strong>15</strong>.
+            </p>
+            <p>
+                An example of an analog device is the <a href="https://minecraft.wiki/w/Redstone_Comparator">Minecraft Redstone Comparator</a>, 
+                which changes its output signal strength based on its mode and the strength of Redstone signals at its inputs.
+                Unlike digital gates, analog devices operate using mathematical equations instead of strict <a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean states</a>.
+            </p>
+            <p>
+                Analog gates make Redstone calculations simple, as they typically involve basic arithmetic, such as addition or subtraction.
+            </p>
+            <div class="image400">
+                <img alt="Example of an Analog Gate" src="media/getting_started/Analog Circuit.png"/>
+            </div>
+        </section>
+
+        <section id="analog-bias">
+            <h2>Analog Bias</h2>
+            <p>
+                The <a href="Analog_Bias.html">Analog Bias</a> gate simply adds its input signals together. The equation governing its output (<strong>O</strong>) based on its inputs (<strong>IA</strong> and <strong>IB</strong>) is:
+            </p>
+            <p class="equation"><strong>O = IA + IB</strong></p>
+            <p>
+                However, since Redstone signals are limited to a range of <strong>0 to 15</strong>, any output greater than <strong>15</strong> is capped at <strong>15</strong>. For example:
+            </p>
+            <ul>
+                <li>If <strong>IA = 10</strong> and <strong>IB = 8</strong>, the output <strong>O = 15</strong>.</li>
+                <li>If <strong>IA = 8</strong> and <strong>IB = 6</strong>, the output <strong>O = 14</strong>.</li>
+            </ul>
+            <div class="image400">
+                <img alt="Example of an Analog Bias" src="media/getting_started/Analog Bias Example.png"/>
+            </div>
+        </section>
+
+        <section id="analog-subtractor">
+            <h2>Analog Subtractor</h2>
+            <p>
+                The <a href="Analog_Subtractor.html">Analog Subtractor</a> gate performs subtraction on its input signals. Its equation is:
+            </p>
+            <p class="equation"><strong>O = IA - IB</strong></p>
+            <p>
+                Similar to the <a href="Analog_Bias.html">Analog Bias</a> gate, the output is capped within the range of <strong>0 to 15</strong>. If the result of the subtraction is less than <strong>0</strong>, the output is set to <strong>0</strong>. For example:
+            </p>
+            <ul>
+                <li>If <strong>IA = 10</strong> and <strong>IB = 3</strong>, the output <strong>O = 7</strong>.</li>
+                <li>If <strong>IA = 5</strong> and <strong>IB = 6</strong>, the output <strong>O = 0</strong>.</li>
+            </ul>
+            <div class="image400">
+                <img alt="Example of an Analog Subtractor" src="media/getting_started/Analog Subtractor Example.png"/>
+            </div>
+        </section>
+
+        <section id="redstone-comparator">
+            <h2>Redstone Comparator</h2>
+            <p>
+                This is a quick explanation for those who dont know how <a href="https://minecraft.wiki/w/Redstone_Comparator">Minecraft Redstone Comparator</a> works and do not want to read <a href="https://minecraft.wiki/w/Redstone_Comparator#Usage">Usage of Redstone Comparator</a>(I do not know why, but here we are).
+            </p>
+            <p>
+                The <a href="https://minecraft.wiki/w/Redstone_Comparator">Minecraft Redstone Comparator</a> is a built-in analog device that operates in two modes: <strong>comparator mode</strong> and <strong>subtractor mode</strong>.
+            </p>
+            <h3>Comparator Mode</h3>
+            <p>
+                In comparator mode, the output signal depends on the strength of the side and back signals:
+            </p>
+            <ul>
+                <li>If the side signal is greater than the back signal, the output is <strong>0</strong>.</li>
+                <li>Otherwise, the output equals the back signal.</li>
+            </ul>
+            <h3>Subtractor Mode</h3>
+            <p>
+                In subtractor mode, the Redstone Comparator functions like a <a href="Analog_Subtractor.html">Parallel Analog Subtractor</a>, with the side inputs as <strong>IB</strong> and the back input as <strong>IA</strong>. The output follows the equation:
+            </p>
+            <p class="equation"><strong>O = IA - IB</strong></p>
+            <p>
+                Output values are capped at <strong>0</strong> if the result is negative.
+            </p>
+            <div class="image400">
+                <img alt="Comparator in comparator and subtractor modes" src="media/getting_started/Comparator and Subtractor.png"/>
+                <p>On the left is <a href="https://minecraft.wiki/w/Redstone_Comparator">Minecraft Redstone Comparator</a> in comparator mode, on the right it is in subtractor mode.</p>
+            </div>
+        </section>
+
+        <section id="usage-notes">
+            <h2>Usage Notes</h2>
+            <p>
+                Analog gates, while seemingly more complex than <a href="Digital_Gates.html">Digital gates</a>, operate on straightforward mathematical principles. 
+                They are useful for creating circuits where variable signal strengths are needed, such as proportional controls or dynamic systems.
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+</body>
+</html>

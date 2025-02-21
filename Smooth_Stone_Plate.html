@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Stone Plate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Smooth Stone Plate</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Smooth Stone Plate</th>
+            <tr><td class="block_table-img"><img id="smooth-stone-plate-showcase" alt="RedCu Ingot Item" src="media/renders/smooth_stone_plate.png"/></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Smooth Stone Plate</strong> is the base material for every gate in Redstone CG.
+                Smooth Stone Plates can also be placed as decorative blocks, allowing players to use them for aesthetic builds.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Cutting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="https://minecraft.wiki/w/Stonecutter#Cutting">Cutting</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Blocks</a></td>
+                        <td width="400px"><div class="table-place" id="Smooth-Stone-Plate-Cutting"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="usage">
+            <h2>Usage</h2>
+            <h3><a href="RedCu_Meter.html">RedCu Meter</a></h3>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 Smooth Stone Plate</td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="RedCu-Meter-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="RedCu_Ingot.html">RedCu Ingot</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+            <h3><a href="Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a></h3>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 Smooth Stone Plate</td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Redstone-RedCu-Converter-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="RedCu_Wire.html">RedCu Wire</a></td></tr>
+                </table>
+            </div>
+            <h3><a href="List_of_Elements.html">Gates</a></h3>
+            <p><a href="Digital_Gates.html">Digital Gates</a> and <a href="Analog_Gates.html">Analog Gates</a> as well as their <a href="Parallel_Gates.html">Parallel variants</a>. Indicators too.</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 Smooth Stone Plate</td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Gate-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>Often <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            toggleImageHover("smooth-stone-plate-showcase", "media/renders/smooth_stone_plate.png", "media/items/smooth_stone_plate.png");
+        });
+        const cutt1array = [
+            {slot: 0, img: "https://minecraft.wiki/images/Smooth_Stone_JE2_BE2.png?52fd2"},
+            {slot: 1, img: "media/items/smooth_stone_plate.png"},
+            {slot: 2, img: "media/items/smooth_stone_plate.png", amount: "4"},
+        ];
+        const rccr1array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "media/items/red_cu_ingot.png" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: "media/items/red_cu_meter.png" },
+            { slot: 4, img: "media/items/red_cu_meter.png" },
+        ];
+        const rccr2array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "media/items/red_cu_wire.png" },
+            { slot: 3, img: "media/items/redstone_to_red_cu_converter.png" },
+            { slot: 4, img: "media/items/redstone_to_red_cu_converter.png" },
+        ];
+        const rccr3array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: "media/items/smooth_stone_plate.png", amount: "Gate" },
+            { slot: 4, img: "media/items/smooth_stone_plate.png", amount: "Gate" },
+        ];
+        populateTable("Smooth-Stone-Plate-Cutting", "cutting", cutt1array);
+        populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 64}, rccr1array);
+        populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 64}, rccr2array);
+        populateRedCuCrafter("Gate-Making", {category: 64, tipe: 64}, rccr3array);
+        window.addEventListener("resize", () => {
+            populateTable("Smooth-Stone-Plate-Cutting", "cutting", cutt1array);
+            populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 64}, rccr1array);
+            populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 64}, rccr2array);
+            populateRedCuCrafter("Gate-Making", {category: 64, tipe: 64}, rccr3array);
+        });
+    </script>
+</body>

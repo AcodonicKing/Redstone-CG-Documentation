@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Known Bugs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Known Bugs</h1>
+    </header>
+    <main>
+        <section id="description">
+            <h2>Description</h2>
+            <p>
+                This page lists bugs discovered during testing of the mod. Bugs are categorized by severity and activity status:
+            </p>
+            <ul>
+                <li><strong>High:</strong> Dangerous bugs that may severely impact gameplay.</li>
+                <li><strong>Medium:</strong> Bugs that cause noticeable issues but are less critical.</li>
+                <li><strong>Low:</strong> Harmless or cosmetic bugs.</li>
+                <li><strong>Active:</strong> Bugs that are still active.</li>
+                <li><strong>Inactive:</strong> Bugs that are confirmed to no longer be active.</li>
+                <li><strong>Assumed Inactive:</strong> Bugs that might still be active but lack concrete causes or confirmation.</li>
+            </ul>
+        </section>
+        <section id="list">
+            <h2>List</h2>
+            <ul id="bug-list">
+            </ul>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById("bug-list");
+            data.forEach(page => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="rcgb/${page.code}/page.html">${page.title}</a><ul style="list-style-type: none;"><li>Code: ${page.code}</li><li>Severity: ${page.severity}</li><li>Status: ${page.status}</li></ul>`;
+                list.appendChild(li);
+            });
+        })
+        .catch(error => console.error("Error loading pages:", error));
+    </script>
+</body>
+</html>

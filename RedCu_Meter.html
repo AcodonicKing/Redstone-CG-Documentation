@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedCu Meter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>RedCu Meter</h1>
+    </header>
+    <div class="block_table" align="right">
+        <table>
+            <th>RedCu Meter</th>
+            <tr><td class="block_table-img"><img id="redcu-meter-showcase" class="pixelated" alt="RedCu Meter Item" src="media/items/redcu_meter/red_cu_meter_off.png"/></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Rarity">Rarity tier</a></div><div>Common</div></div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>RedCu Meter</strong> is a device designed for measuring Redstone signal strength, primarily for debugging purposes. 
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <p>
+                You can craft it using the <a href="RedCu_Crafter.html">RedCu Crafter</a>, found in the <em>Indicator</em> block section. 
+            </p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></th>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="RedCu-Meter-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="RedCu_Ingot.html">RedCu Ingot</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="functionality">
+            <h2>Functionality</h2>
+            <p>
+                The RedCu Meter is particularly useful when working with <strong>Redstone CG gates</strong>, as it measures their direct outputs. 
+                For other blocks, it measures the <em>indirect Redstone Signal</em>, which is the signal from the block itself 
+                combined with signals from neighboring blocks. The displayed value represents the <strong>highest</strong> Redstone Signal available.
+            </p>
+            <p>
+                However, there are limitations:
+            </p>
+            <ul>
+                <li>It does not display correct values when pointed at a <a href="https://minecraft.wiki/w/Redstone_Torch">Redstone Torch</a> (this may be fixed in future updates).</li>
+                <li>It cannot detect if a block is powered by quasi-connectivity unless the block itself determines it.</li>
+            </ul>
+            <div class="image800">
+                <img alt="RedCu Meter in use" src="media/getting_started/RedCuMeter_Held.png">
+            </div>
+        </section>
+
+        <section id="redcu-wires">
+            <h2>Extended Range for RedCu Wires</h2>
+            <p>
+                <a onclick="showPage('redcu-wire')">RedCu Wires</a> operate on an extended Redstone signal range of <strong>0-255</strong>, compared to the standard range of <strong>0-15</strong>.
+                When used to measure <a onclick="showPage('redcu-wire')">RedCu Wires</a>, the RedCu Meter will display a decimal point value. 
+                The <em>whole part</em> of the displayed value represents the Redstone signal output to standard Redstone components. 
+            </p>
+            <p>
+                For example:
+            </p>
+            <blockquote>
+                If the RedCu Meter shows a value of <strong>10.625</strong> while pointing at a <a onclick="showPage('redcu-wire')">RedCu Wire</a>, the connected <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> 
+                will show an output of <strong>10.0</strong>.
+            </blockquote>
+            <div class="image800">
+                <img alt="RedCu Meter in use" src="media/getting_started/RedCuMeter_Measuring.png">
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a onclick="showPage('known-bugs')">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            toggleImageHover("redcu-meter-showcase", "media/items/redcu_meter/red_cu_meter_off.png", "media/items/redcu_meter/red_cu_meter_on.png");
+        });
+
+        const rccr1array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "media/items/red_cu_ingot.png" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: "media/items/red_cu_meter.png" },
+            { slot: 4, img: "media/items/red_cu_meter.png" },
+        ];
+
+        populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 64}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 64}, rccr1array);
+        });
+    </script>
+</body>
+</html>
+            

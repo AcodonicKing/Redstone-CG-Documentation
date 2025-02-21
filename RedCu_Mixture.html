@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedCu Mixture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>RedCu Mixture</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>RedCu Mixture</th>
+            <tr><td class="block_table-img"><img class="pixelated" alt="RedCu Mixture Item" src="media/items/red_cu_mixture.png"/></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Rarity">Rarity tier</a></div><div>Common</div></div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>RedCu Mixture</strong> is a material used to create the <strong>RedCu Ingot</strong>.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="https://minecraft.wiki/w/Crafting">Crafting</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="https://minecraft.wiki/w/Copper_Ingot">Copper Ingot</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="RedCu-Mixture-Crafting"></div></td>
+                    </tr>
+                    <tr><td>2 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="usage">
+            <h2>Usage</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="https://minecraft.wiki/w/Smelting">Blasting</a> Recipe</b></td></th>
+                    <tr>
+                        <td>1 RedCu Mixture</td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="RedCu-Ingot-Blasting"></div></td>
+                    </tr>
+                    <tr><td><a href="https://minecraft.wiki/w/Smelting#Fuel">Fuel</a></td></tr>
+                    <tr><td>Result</td><td><a href="RedCu_Ingot.html">RedCu Ingot</a></td></th>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a onclick="showPage('known-bugs')">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const crft2array = [
+            { slot: 0, img: "https://minecraft.wiki/images/Copper_Ingot_JE2_BE1.png?0d410&format=original" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 3, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 9, img: "media/items/red_cu_mixture.png", amount: "2" },
+        ];
+        const blst1array = [
+            {slot: 0, img: "media/items/red_cu_mixture.png"},
+            {slot: 1, img: "media/items/red_cu_ingot.png"},
+            {slot: 2, img: "https://minecraft.wiki/images/Coal_JE4_BE3.png?165e9&format=original"},
+        ];
+
+        populateTable("RedCu-Mixture-Crafting", "crafting", crft2array);
+        populateTable("RedCu-Ingot-Blasting", "blasting", blst1array);
+        window.addEventListener("resize", () => {
+            populateTable("RedCu-Mixture-Crafting", "crafting", crft2array);
+            populateTable("RedCu-Ingot-Blasting", "blasting", blst1array);
+        });
+    </script>
+</body>

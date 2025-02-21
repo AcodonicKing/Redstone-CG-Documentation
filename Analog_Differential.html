@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Differential</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Analog Differential</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Analog Differential</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-lr" class="bt-button active">LR</button>
+                <button id="bt-btn-bl" class="bt-button">BL</button>
+                <button id="bt-btn-br" class="bt-button">BR</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table> 
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Analog Differential</strong> is an <a href="Analog_Gates.html">Analog Gate</a> that calculates the absolute difference between two input Redstone signals and outputs the result. 
+                The equation for the Redstone signal at the Output (<strong>O</strong>) based on the two input Redstone signals (<strong>IA</strong> and <strong>IB</strong>) is:
+            </p>
+            <div class="equation"><strong>O = |IA - IB|</strong></div>
+            <p>
+                The modulus operator (<strong>| |</strong>) ensures the result is always positive by removing any negative sign from the difference.
+            </p>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                The inputs are marked with <a href="Pin_Marks.html">Pin Mark A</a> and can be configured to face any direction for normal Analog Differential by right-clicking the block.
+            </p>
+        </section>
+        <section id="parallel-gate">
+            <h2>Parallel Analog Differential</h2>
+            <p>
+                The <a href="Parallel_Gates.html">Parallel Gate</a> version of Analog Differential works slightly differently. It calculates the output based on the following steps:
+            </p>
+            <ol>
+                <li>Determines the greatest Redstone signal value between the Left (<strong>L</strong>) and Right (<strong>R</strong>) inputs.</li>
+                <li>Calculates the absolute difference between this value and the Redstone signal at the Back (<strong>B</strong>) input.</li>
+            </ol>
+            <p>The equation for the Output (<strong>O</strong>) is:</p>
+            <div class="equation">
+                <strong>O = |B - max(L, R)|</strong>
+            </div>
+        </section>
+    </main>
+    <div class="block_table">
+        <table>
+            <th>Parallel Analog Differential</th>
+            <tr><td><div id="bt-prl-dsp" class="block_table-dsp">
+                <div id="bt-prl-rnd"><div id="prl-rnd"></div></div>
+                <div id="bt-prl-btz" style="display: none;"><div id="prl-btz"></div></div>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <p>Normal Analog Differential</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+            <p>Parallel Analog Differential</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Parallel-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const gate = "components/analog/differential.png";
+        const rccr1array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: `media/textures/${gate}` },
+            { slot: 4, img: `media/textures/${gate}` },
+        ];
+        const rccr2array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: `media/textures/${gate}`, addon: ["media/textures/components/parallel.png"] },
+            { slot: 4, img: `media/textures/${gate}`, addon: ["media/textures/components/parallel.png"] },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Parallel-Making", {category: 2, tipe: 1}, rccr2array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Parallel-Making", {category: 2, tipe: 1}, rccr2array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const ptrn1 = [
+                ["lr", ["l","r"]],
+                ["bl", ["b","l"]],
+                ["br", ["b","r"]],
+            ];
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        renderComponent("rnd", gate, entry[1], []);
+                        blitzComponent("btz", gate, entry[1], []);
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            renderComponent("prl-rnd", gate, ["l","b","r"], ["components/parallel.png"]);
+            blitzComponent("prl-btz", gate, ["l","b","r"], ["components/parallel.png"]);
+            toggleDivHover("bt-prl-dsp", function() {
+                document.getElementById("bt-prl-btz").style.display = "none";
+                document.getElementById("bt-prl-rnd").style.display = "block";
+            }, function() {
+                document.getElementById("bt-prl-rnd").style.display = "none";
+                document.getElementById("bt-prl-btz").style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>

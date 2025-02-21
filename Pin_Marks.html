@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Marks</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pinmark-bg {
+            background-color: #ffffff;
+        }
+        .const_width{
+            margin: 20px;
+            line-height: 1.6;
+            margin: 0 auto;
+            box-sizing: border-box;
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body id="pin-marks">
+    <header><h1>Pin Marks</h1></header>
+    <section id="introduction" class="const_width">
+        <h2>What are Pin Marks?</h2>
+        <p>
+            Pin Marks are visual indicators on gates that let the player know which neighboring blocks the gate connects to.
+            They can be seen by the sides of the gate when it is placed. Each gate can have up to 4 Pin Marks. Typically,
+            these marks indicate input connections, while the output is distinguishable by the gate's texture.
+        </p>
+        <div class="image800-with-pinmarks"><div id="render-gate-with-pinmarks"></div><div id="blitz-gate-with-pinmarks"></div></div>
+    </section>
+
+    <section id="types">
+        <h2 class="const_width">Types of Pin Marks</h2>
+        <div class="image-side pixelated"><img alt="A Mark" src="media/getting_started/pinmark.png"/></div>
+        <section id="a-mark" class="const_width">
+            <h3>A Mark</h3>
+            <p>
+                The <strong>A Mark</strong> indicates the primary connections of the gate. When a gate only has <strong>A Marks</strong>,
+                the order of input connections does not matter, as the output remains the same regardless of the connection order.
+            </p>
+            <div class="image800-with-pinmarks"><div id="render-gate-with-a-mark"></div><div id="blitz-gate-with-a-mark"></div></div>
+        </section>
+        <div class="image-side pixelated"><img alt="A Mark" src="media/getting_started/pinmark_alt.png"/></div>
+        <section id="b-mark" class="const_width">
+            <h3>B Mark</h3>
+            <p>
+                The <strong>B Mark</strong> indicates secondary connections of the gate. These are used when the input connections
+                are directional or context-sensitive. For example, in some gates, the <strong>B Mark</strong> may represent the clock pin or enable pin.
+            </p>
+            <div class="image800-with-pinmarks"><div id="render-gate-with-b-mark"></div><div id="blitz-gate-with-b-mark"></div></div>
+        </section>
+        <div class="image-side pixelated"><img alt="A Mark" src="media/getting_started/pinmark_altalt.png"/></div>
+        <section id="c-mark" class="const_width">
+            <h3>C Mark</h3>
+            <p>
+                The <strong>C Mark</strong> indicates the third connection of the gate. Currently, this is only used in the <a onclick="showPage('jk-trigger')">JK Trigger</a>,
+                where it serves as the clock pin.
+            </p>
+            <div class="image800-with-pinmarks"><div id="render-gate-with-c-mark"></div><div id="blitz-gate-with-c-mark"></div></div>
+        </section>
+    </section>
+
+    <section id="adjusting" class="const_width">
+        <h2>Adjusting Pin Marks</h2>
+        <p>
+            The positions of Pin Marks, and therefore the corresponding connections of the gates, can be adjusted by 
+            <strong>right-clicking</strong> the gate block. This allows players to configure gates for specific input arrangements.
+        </p>
+        <div class="image800">
+            <img alt="Player Right-Clicking" src="media/getting_started/PlayerRightClicking.png"/>
+        </div>
+    </div>
+    </section>
+
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a onclick="showPage('known-bugs')">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        renderComponent("render-gate-with-pinmarks", "components/digital/or.png", ["l", "r"], []);
+        renderComponent("render-gate-with-a-mark", "components/digital/xor.png", ["b", "r"], []);
+        renderComponent("render-gate-with-b-mark", "components/analog/subtractor.png", ["b", "r_alt"], []);
+        renderComponent("render-gate-with-c-mark", "components/digital/gate.png", ["l", "r_alt", "b_altalt"], ["components/digital/jk_trigger.png"]);
+
+        blitzComponent("blitz-gate-with-pinmarks", "components/digital/or.png", ["l", "r"], []);
+        blitzComponent("blitz-gate-with-a-mark", "components/digital/xor.png", ["b", "r"], []);
+        blitzComponent("blitz-gate-with-b-mark", "components/analog/subtractor.png", ["b", "r_alt"], []);
+        blitzComponent("blitz-gate-with-c-mark", "components/digital/gate.png", ["r", "l_alt", "f_altalt"], ["components/digital/jk_trigger.png"]);
+    </script>
+</body>
+</html>

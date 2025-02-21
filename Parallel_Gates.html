@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Gates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="parallel-gates">
+    <header>
+        <h1>Parallel Gates</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Parallel Gates</h2>
+            <p>
+                Parallel Gates are a gate shape subtype designed to handle columns of parallel signals, such as a data bus. These gates can be arranged in a line, where their outputs are perpendicular to the line. Signals applied at either end of the line maintain their Redstone Signal levels throughout the entire line.
+            </p>
+            <p>
+                Each gate in the line processes the signal based on its logic. For example, a simple <strong>Register</strong> can be built by placing multiple <a href="DLatch_Gate.html">Parallel D Latches</a> in a line. If two signals are applied at both ends of the line, the line uses the signal with the greatest Redstone signal value.
+            </p>
+            <div class="image800">
+                <img alt="D Latch Register" src="media/getting_started/Register.png"/>
+            </div>
+        </section>
+
+        <section id="logic-details">
+            <h2>Logic Details</h2>
+            <h3>Digital Gates</h3>
+            <p>
+                In the case of <a href="Digital_Gates.html">Digital Gates</a>, the Parallel logic can be viewed as if the left and right inputs are combined using an <strong>OR Gate</strong>, and the result is passed into the main logic gate. The back of the <a href="Digital_Gates.html">Digital Gate</a> is connected directly to the main logic gate. This allows for seamless integration of multiple signals in a parallel configuration.
+            </p>
+            <div class="image400">
+                <img alt="Digital Parallel Gate logic" src="media/getting_started/Parallel Digital Logic signed.png"/>
+            </div>
+
+            <h3>Analog Gates</h3>
+            <p>
+                For <a href="Analog_Gates.html">Analog Gates</a>, the signals from the left and right inputs are processed through the <strong>max function</strong>, which outputs the greatest signal value. This result, along with the signal from the back side of the gate, is passed as parameters into the main function of the gate. This allows for efficient handling of variable signal strengths in parallel configurations.
+            </p>
+            <div class="image400">
+                <img alt="Analog Parallel Gate logic" src="media/getting_started/Parallel Analog Logic signed.png"/>
+            </div>
+        </section>
+
+        <section id="input-configuration">
+            <h2>Input Configuration</h2>
+            <p>
+                Most Parallel Gates do not configure their inputs on right click. This is because the line logic does not change from rearranging the inputs. Any gate that has only <a href="Pin_Marks.html">Pin Mark A</a> does not allow input configuration via right click.
+            </p>
+            <p>
+                However, if <a href="Pin_Marks.html">Pin Mark B</a> is present along with <a href="Pin_Marks.html">Pin Mark A</a>, right clicking the gate will switch their positions and change the input configurations. This is because the order of input connections matters when <a href="Pin_Marks.html">Pin Mark B</a> is present. Depending on how the gate inputs are connected, the same circuit might lead to different results.
+            </p>
+            <div class="image800-with-pinmarks"><div id="blitz-parallel-gate-conf-1"></div><div id="blitz-parallel-gate-conf-2"></div></div>
+        </section>
+
+        <section id="known-bugs">
+            <h2>Known Bugs</h2>
+            <p>
+                Parallel Gates have some known bugs that do not affect gameplay much but are worth noting. They are assumed to be inactive:
+            </p>
+            <ul>
+                <li><a href="Bugs/RCGB_2.html">Row Ghosting</a></li>
+                <li><a href="Bugs/RCGB_2.html">Schrödinger's Redstone</a></li>
+            </ul>
+        </section>
+
+        <section id="usage-notes">
+            <h2>Usage Notes</h2>
+            <p>
+                Parallel Gates are ideal for building circuits that handle multiple signals simultaneously. Whether using Digital or Analog logic, their design ensures efficient signal processing in parallel lines. 
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        blitzComponent("blitz-parallel-gate-conf-1", "components/analog/memory.png", ["b", "l_alt", "r_alt"], ["components/parallel.png"]);
+        blitzComponent("blitz-parallel-gate-conf-2", "components/analog/memory.png", ["b_alt", "l", "r"], ["components/parallel.png"]);
+    </script>
+</body>
+</html>

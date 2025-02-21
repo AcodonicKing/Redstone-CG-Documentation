@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAND Gate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="and-gate">
+    <header>
+        <h1>NAND Gate</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>NAND Gate</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-lr" class="bt-button active">LR</button>
+                <button id="bt-btn-bl" class="bt-button">BL</button>
+                <button id="bt-btn-br" class="bt-button">BR</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>AND Gate</strong> is a <a href="Digital_Gates.html">Digital Gate</a> that outputs a Redstone signal of <strong>0</strong> if both input pins receive a Redstone signal <strong>greater than 0</strong>. Otherwise, it outputs <strong>15</strong>. This makes the NAND Gate one of the simplest and most widely used gates in digital logic. Any <a href="Digital_Gates.html">Digital Gate</a> can be made just with NAND gates.
+            </p>
+            <!-- Image Placeholder: Diagram of a standard AND Gate // Maybe in future -->
+        </section>
+
+        <section id="boolean-logic">
+            <h2>Boolean Logic Table</h2>
+            <p>The NAND Gate operates according to the following <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic table</a>:</p>
+            <div class="logic-table"><table>
+                <thead>
+                    <tr><th>Input A</th><th>Input B</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>1</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>0</td><td>1</td><td>1</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td></tr>
+                </tbody>
+            </table></div>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                <a href="Pin_Marks.html">Pin Marks A</a> denote the inputs of the gate. They can be configured to face any direction on right-click.
+            </p>
+        </section>
+    </main>
+    <div class="block_table">
+        <table>
+            <th>Parallel NAND Gate</th>
+            <tr><td><div id="bt-prl-dsp" class="block_table-dsp">
+                <div id="bt-prl-rnd"><div id="prl-rnd"></div></div>
+                <div id="bt-prl-btz" style="display: none;"><div id="prl-btz"></div></div>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="parallel-gate">
+            <h2>Parallel NAND Gate</h2>
+            <p>
+                The NAND Gate also has a <a href="Parallel_Gates.html">Parallel Gate</a> version, which is used in parallel circuit designs. Unlike the standard NAND Gate, the <a href="Parallel_Gates.html">Parallel Gate</a> version does not allow input configuration because its logic relies on fixed input arrangements.
+            </p>
+            <p>The <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic table</a> for the Parallel NAND Gate is as follows:</p>
+            <div class="logic-table"><table>
+                <thead>
+                    <tr><th>Left</th><th>Back</th><th>Right</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+                    <tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                    <tr><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                    <tr><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+                </tbody>
+            </table></div>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <p>Normal NAND Gate</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                </table>
+            </div>
+            <p>Parallel NAND Gate</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Parallel-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const gate = "components/digital/nand.png";
+        const rccr1array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 3, img: `media/textures/${gate}` },
+            { slot: 4, img: `media/textures/${gate}` },
+        ];
+        const rccr2array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 3, img: `media/textures/${gate}`, addon: ["media/textures/components/parallel.png"] },
+            { slot: 4, img: `media/textures/${gate}`, addon: ["media/textures/components/parallel.png"] },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Parallel-Making", {category: 1, tipe: 1}, rccr2array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Parallel-Making", {category: 1, tipe: 1}, rccr2array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const mods = ["components/torch.png"]
+            const buttonsArray = [
+                {
+                    buttonId: `bt-btn-lr`,
+                    functionCall: function () {
+                        const pinmarks = ["l","r"];
+                        renderComponent("rnd", gate, pinmarks, mods);
+                        blitzComponent("btz", gate, pinmarks, mods);
+                    }
+                },
+                {
+                    buttonId: `bt-btn-bl`,
+                    functionCall: function () {
+                        const pinmarks = ["b","l"];
+                        renderComponent("rnd", gate, pinmarks, mods);
+                        blitzComponent("btz", gate, pinmarks, mods);
+                    }
+                },
+                {
+                    buttonId: `bt-btn-br`,
+                    functionCall: function () {
+                        const pinmarks = ["b","r"];
+                        renderComponent("rnd", gate, pinmarks, mods);
+                        blitzComponent("btz", gate, pinmarks, mods);
+                    }
+                },
+            ];
+            setupButtonDivSwitcher(buttonsArray, "bt-rnd", "bt-btz", "bt-dsp");
+            renderComponent("prl-rnd", gate, ["l","b","r"], ["components/parallel.png","components/torch.png"]);
+            blitzComponent("prl-btz", gate, ["l","b","r"], ["components/parallel.png","components/torch.png"]);
+            toggleDivHover("bt-prl-dsp", function() {
+                document.getElementById("bt-prl-btz").style.display = "none";
+                document.getElementById("bt-prl-rnd").style.display = "block";
+            }, function() {
+                document.getElementById("bt-prl-rnd").style.display = "none";
+                document.getElementById("bt-prl-btz").style.display = "block";
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedCu Crafter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1>RedCu Crafter</h1></header>
+    <div class="block_table">
+        <table>
+            <th>RedCu Crafter</th>
+            <tr><td class="block_table-img"><img alt="RedCu Crafter Render" src="media/renders/RedCu_Crafter.png"/></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>RedCu Crafter</strong> is a key block in Redstone CG that allows you to create most of the Redstone CG blocks.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="https://minecraft.wiki/w/Crafting">Crafting</a> Recipe</b></td></th>
+                    <tr>
+                        <td>2 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="RedCu-Crafter-Crafting"></div></td>
+                    </tr>
+                    <tr><td>4 <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Blocks</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="interface">
+            <h2>The RedCu Crafter Interface</h2>
+            <ul>
+                <li>
+                    On your <strong>left side</strong>, you will see the <em>block categories</em>, starting from the top:
+                    <ul>
+                        <li>Wires</li>
+                        <li><a href="Digital_Gates.html">Digital Gates</a></li>
+                        <li><a href="Analog_Gates.html">Analog Gates</a></li>
+                        <li>Indicators</li>
+                    </ul>
+                </li>
+                <li>
+                    On your <strong>right side</strong>, you will see the <em>block shape types</em>, starting from the top:
+                    <ul>
+                        <li>Normal</li>
+                        <li><a href="Parallel_Gates.html">Parallel</a></li>
+                    </ul>
+                </li>
+                <li>
+                    In the <strong>very middle</strong>, there is a window that allows you to select the block you wish to craft.
+                </li>
+                <li>
+                    When a block is selected, you will see the required items for crafting it on the right, to the <strong>left of the block categories</strong>.
+                </li>
+            </ul>
+            <p>
+                The crafting process is similar to using a <a href="https://minecraft.wiki/w/Crafting_Table">Crafting Table</a>. When the correct block is selected, and the items are placed
+                in the correct slots, the <strong>result</strong> will appear on your right, to the left of the block shape types. Once you take the crafted block, 
+                the RedCu Crafter will consume the items provided.
+            </p>
+            <div class="image800">
+                <img alt="RedCu Crafter interface overview" src="media/gui/RedCu_Crafter_Interface.png"/>
+            </div>
+        </section>
+        <section id="tips">
+            <h2>Tips for Crafting</h2>
+            <p>
+                Pay close attention to the items required for each block, as they can sometimes be hard to see. For most blocks, 
+                the top-most slot usually requires a <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a>. The image above is such a case. 
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const crft1array = [
+            { slot: 0, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 3, img: "https://minecraft.wiki/images/Smooth_Stone_JE2_BE2.png?52fd2" },
+            { slot: 4, img: "https://minecraft.wiki/images/Smooth_Stone_JE2_BE2.png?52fd2" },
+            { slot: 6, img: "https://minecraft.wiki/images/Smooth_Stone_JE2_BE2.png?52fd2" },
+            { slot: 7, img: "https://minecraft.wiki/images/Smooth_Stone_JE2_BE2.png?52fd2" },
+            { slot: 9, img: "media/renders/RedCu_Crafter.png" },
+        ];
+
+        populateTable("RedCu-Crafter-Crafting", "crafting", crft1array);
+        window.addEventListener("resize", () => {
+            populateTable("RedCu-Crafter-Crafting", "crafting", crft1array);
+        });
+    </script>
+</body>

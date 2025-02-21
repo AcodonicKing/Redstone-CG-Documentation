@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D Latch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>D Latch</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>D Latch</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-bl" class="bt-button active">BL</button>
+                <button id="bt-btn-br" class="bt-button">BR</button>
+                <button id="bt-btn-lr" class="bt-button">LR</button>
+                <button id="bt-btn-lb" class="bt-button">LB</button>
+                <button id="bt-btn-rb" class="bt-button">RB</button>
+                <button id="bt-btn-rl" class="bt-button">RL</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>D Latch</strong> is essentially a modification of the <a href="SR_Latch.html">SR Latch</a>. It has a <strong>Data pin</strong> and an <strong>Enable pin</strong>.
+                When the Redstone signal at the <strong>Enable pin</strong> is greater than 0, the D Latch reads the <strong>Data pin</strong> and remembers its state. Based on whether the Redstone Signal at the <strong>Data pin</strong> is greater than 0 or equal to 0, the Output pin will output 15 or 0 accordingly.
+            </p>
+            <p>
+                When the Redstone Signal at the <strong>Enable pin</strong> is 0, the Output remains in the same state it was when the <strong>Enable pin</strong> was last powered. If the <strong>Enable pin</strong> is powered, the D Latch changes its state immediately as the <strong>Data pin</strong> changes.
+            </p>
+            <p>
+                To properly set the <strong>D Latch Output pin</strong>'s state, you must configure it in at least three Minecraft ticks:
+            </p>
+            <ol>
+                <li>On the first tick, set the <strong>Data pin</strong>'s state according to your needs.</li>
+                <li>On the second tick, set the Redstone signal at the <strong>Enable pin</strong> to at least 1.</li>
+                <li>On the third tick, set the Redstone signal at the <strong>Enable pin</strong> back to 0.</li>
+            </ol>
+        </section>
+        <section id="boolean-logic">
+            <h2>Boolean Logic Table</h2>
+            <p>The D Latch operates according to the following <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic table</a>:</p>
+            <div class="logic-table"><table>
+                <thead>
+                    <tr><th>Data</th><th>Enable</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>Q</td></tr>
+                    <tr><td>1</td><td>0</td><td>Q</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>1</td><td>1</td><td>1</td></tr>
+                </tbody>
+            </table></div>
+            <p>
+                The <strong>Q</strong> state represents the stored state of the latch, that being the last set Output.
+            </p>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                The Normal D Latch has three connections: Data (<a href="Pin_Marks.html">Pin Mark A</a>), Enable (<a href="Pin_Marks.html">Pin Mark B</a>), and Output. Inputs are configurable by right-clicking to face the desired sides.
+            </p>
+        </section>
+    </main>
+    <div class="block_table">
+        <table>
+            <th>Parallel D Latch</th>
+            <tr><td><div id="bt-prl-dsp" class="block_table-dsp">
+                <div id="bt-prl-rnd"><div id="prl-rnd"></div></div>
+                <div id="bt-prl-btz" style="display: none;"><div id="prl-btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-bs" class="bt-button active">BS</button>
+                <button id="bt-btn-sb" class="bt-button">SB</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="parallel-gate">
+            <h2>Parallel D Latch</h2>
+            <p>
+                The <a href="Parallel_Gates.html">Parallel Gate</a> version of D Latch behaves similarly to the Normal D Latch but allows for parallel signals. It has a configurable input setup that determines whether the Data or Enable pin faces the Back of the block. 
+            </p>
+
+            <h3>When configured for <strong>Set</strong> pin to face the <strong>Back</strong> (BS):</h3>
+            <div class="logic-table"><table>
+                <thead>
+                    <tr><th>Left</th><th>Back</th><th>Right</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>0</td><td>Q</td></tr>
+                    <tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td><td>Q</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+                    <tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+                </tbody>
+            </table></div>
+
+            <h3>When configured for <strong>Reset</strong> pin to face the <strong>Back</strong> (SB):</h3>
+            <div class="logic-table"><table>
+                <thead>
+                    <tr><th>Left</th><th>Back</th><th>Right</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>0</td><td>Q</td></tr>
+                    <tr><td>1</td><td>0</td><td>0</td><td>Q</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>0</td><td>0</td><td>1</td><td>Q</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td><td>Q</td></tr>
+                    <tr><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+                    <tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+                </tbody>
+            </table></div>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <p>Normal SR Latch</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+            <p>Parallel SR Latch</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Parallel-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const rccr1array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: "media/items/d_latch.png" },
+            { slot: 4, img: "media/items/d_latch.png" },
+        ];
+        const rccr2array = [
+            { slot: 0, img: "media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: "media/items/d_latch.png", addon: ["media/textures/components/parallel.png"] },
+            { slot: 4, img: "media/items/d_latch.png", addon: ["media/textures/components/parallel.png"] },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Parallel-Making", {category: 1, tipe: 1}, rccr2array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Parallel-Making", {category: 1, tipe: 1}, rccr2array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const gate = "components/digital/gate.png";
+            const addons1 = ["components/digital/d_latch_cover.png"];
+            const ptrn1 = [
+                ["bl", ["b","l_alt"], ["f","r_alt"]],
+                ["br", ["b","r_alt"], ["f","l_alt"]],
+                ["lr", ["l","r_alt"], ["r","l_alt"]],
+                ["lb", ["l","b_alt"], ["r","f_alt"]],
+                ["rb", ["r","b_alt"], ["l","f_alt"]],
+                ["rl", ["r","l_alt"], ["l","r_alt"]],
+            ];
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        renderComponent("rnd", gate, entry[1], addons1);
+                        blitzComponent("btz", gate, entry[2], addons1);
+                    }
+                }
+            });
+            const addons2 = ["components/parallel.png","components/digital/d_latch_cover.png"];
+            const ptrn2 = [
+                ["bs", ["b","l_alt","r_alt"], ["f","l_alt","r_alt"]],
+                ["sb", ["b_alt","l","r"], ["f_alt","l","r"]],
+            ];
+            const buttonsArray2 = ptrn2.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        renderComponent("prl-rnd", gate, entry[1], addons2);
+                        blitzComponent("prl-btz", gate, entry[2], addons2);
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            setupButtonDivSwitcher(buttonsArray2, "bt-prl-rnd", "bt-prl-btz", "bt-prl-dsp");
+        });
+    </script>
+</body>
+</html>

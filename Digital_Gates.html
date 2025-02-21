@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Gates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="digital-gates">
+    <header>
+        <h1>Digital Gates</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Boolean Logic</h2>
+            <p>This is a quick guide and a simplification to those who are not familliar with <a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean logic</a>.</p>
+            <p>
+                Digital gates operate on <a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean logic</a>, where the values represent either <strong>0</strong> (false) or <strong>1</strong> (true). 
+                In the case of Redstone signal levels, a statement is considered:
+            </p>
+            <ul>
+                <li><strong>False (0):</strong> Redstone Signal is 0.</li>
+                <li><strong>True (1):</strong> Redstone Signal is greater than 0.</li>
+            </ul>
+            <p>
+                Boolean logic tables (also called the <a href="https://en.wikipedia.org/wiki/Truth_table">Truth table</a>) describe the behavior of gates by showing the output signal for every possible input condition. 
+                This guide will teach you how to read <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic tables</a> and apply them to Redstone circuits.
+            </p>
+        </section>
+
+        <section id="buffer-example">
+            <h2>Example: Buffer Gate</h2>
+            <p>
+                Let's start with the simplest logic gate: the <a href="Buffer_Gate.html">Buffer</a>. It has one input and one output. Here's its adjusted <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic table</a>:
+            </p>
+            <div class="logic-table">
+                <table>
+                    <thead>
+                        <tr><th>Input</th><th>Output</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>= 0</td><td>0</td></tr>
+                        <tr><td>> 0</td><td>15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                To understand the table, follow these steps:
+            </p>
+            <ol>
+                <li>Create a simple circuit with a lever connected to the <a href="Buffer_Gate.html">Buffer</a>'s input and a <a href="Universal_Indicator.html">Universal Indicator</a> on the output.</li>
+                <li>Refer to the table to see how the input value corresponds to the output value. Observe one row at the time.</li>
+                <div class="image400">
+                    <img alt="Buffer Circuit" src="media/getting_started/Buffer circuit.png"/>
+                </div>
+            </ol>
+            <p>
+                When the Redstone signal is <strong>0</strong> at the <a href="Buffer_Gate.html">Buffer</a>'s input, the output is also <strong>0</strong>. 
+                When the input signal is greater than <strong>0</strong>, the output gives <strong>15</strong>.
+            </p>
+        </section>
+
+        <section id="or-example">
+            <h2>Example: OR Gate</h2>
+            <p>
+                From now on, "= 0" will be replaced by 0. "> 0" and "15" will be replaced with 1.
+                Now, let's look at a slightly more complex gate: the <a href="OR_Gate.html">OR gate</a>. It has two inputs and one output. Here's its <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic table</a>:
+            </p>
+            <div class="logic-table">
+                <table>
+                    <thead>
+                        <tr><th>Input A</th><th>Input B</th><th>Output</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>1</td></tr>
+                        <tr><td>0</td><td>1</td><td>1</td></tr>
+                        <tr><td>1</td><td>1</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                To test this gate, follow these steps:
+            </p>
+            <ol>
+                <li>Create a circuit with two levers connected to the <a href="OR_Gate.html">OR gate</a>'s inputs and a <a href="Universal_Indicator.html">Universal Indicator</a> on the output.</li>
+                <li>Observe how the output changes based on the combination of inputs.</li>
+                <div class="image400">
+                    <img alt="Or Circuit" src="media/getting_started/Or Circuit.png"/>
+                </div>
+            </ol>
+            <p>
+                Explanation:
+                <ul>
+                    <li>If both input signals are <strong>0</strong>, the output is <strong>0</strong>.</li>
+                    <li>If one input OR the other receives a signal greater than <strong>0</strong>, the output becomes <strong>15</strong>.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+                <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic tables</a> are tools for understanding the behavior of logic gates. 
+                With practice, you can combine multiple gates to create more complex circuits for your Redstone creations. 
+                Use the tables as a quick reference to predict and troubleshoot your circuits' behavior.
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
