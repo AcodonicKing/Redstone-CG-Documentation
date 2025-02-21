@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Row Ghosting</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Row Ghosting</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p>
+                <strong>Description:</strong> Row Ghosting occurs exclusively with <a href="../../Parallel_Gates.html">Parallel Gates</a>. When lines (columns) of <a href="../../Parallel_Gates.html">Parallel Gates</a> are constructed, observing the output of any parallel gate causes the entire row of gates to visually appear as if they are turned off.
+            </p>
+            <p>
+                <strong>Cause:</strong> This issue seems related to <a href="../RCGB-3/page.html">Schrödinger's Redstone</a>. Changing default values in <code>net.mcreator.redstonecg.procedures.GetParalelGateSignalProcedure.java</code> from 0 to -1 activates both bugs. Comments in the code mark the problematic locations. The root issue lies in MCreator's default behavior of returning "-1" for conditions where a signal cannot be reliably read.
+            </p>
+            <p>
+                <strong>Consequences:</strong> This bug has no significant gameplay effects. Redstone might be affected. However, its existence highlights potential instability in Parallel Gate logic handling.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong> No specific configuration has been identified to reliably avoid this visual issue. Further investigation is required to confirm the exact trigger conditions.
+            </p>
+            <p>
+                <strong>Special Notes:</strong> This bug is categorized as "Assumed Inactive" due to unresolved uncertainties. Specifically, it is unknown which specific parts of the code cause this bug and how the code paths are traversed to trigger it. While modifying the default value from "-1" to "0" has mitigated the issue, similar circumstances might reintroduce the bug. Additionally, there are other MCreator-generated files that retain default behavior but do not exhibit this issue, further complicating the analysis. 
+            </p>
+            <div class="image800">
+                <img alt="Buffer Brakeless Gate Loop" src="img.png"/>
+                <p>The only image remaining showing the effect. While not visible, a setup of Parallel Analog Bias is present. The effect could not be recreated.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="../../index.html">Welcome Page</a>
+        <a href="../../Getting_Started.html">Getting Started</a>
+        <a href="../../List_of_Elements.html">List of Elements</a>
+        <a href="../../Pin_Marks.html">Pin Marks</a>
+        <a href="../../Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-2"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverted Logic Lag Circuits</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Inverted Logic Lag Circuits</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p>
+                <strong>Description:</strong> Inverted Logic Lag Circuits cause severe game time lag, halting all movement and updates. These circuits can be as simple as connecting the output of a NOT Gate to its input. 
+            </p>
+            <p>
+                <strong>Cause:</strong> Such circuits endlessly attempt to find a stable configuration but fail, cycling through all possible states. For example, in a NOT Gate loop, the high signal from the output switches the input, switching the output to low, which then switches the output high again, creating an endless loop. Minecraft detects excessive neighbor updates and tries to stop the updates, but the delays in updates are still noticible.
+            </p>
+            <p>
+                <strong>Consequences:</strong> Severe delay in game time and so Lag.
+            </p>
+            <p>
+                A loop composed of an odd number of Signal Inverting Gates also causes lag. Signal Inverting Gates include, but are not limited to:
+            </p>
+            <ul>
+                <li>NOT</li>
+                <li>XOR</li>
+                <li>NAND</li>
+                <li>NOR</li>
+                <li>NXOR</li>
+                <li>Analog Subtractor</li>
+                <li>Analog Differential</li>
+                <li>Inverted Comparator</li>
+                <li>Parallel Gate variants of these gates</li>
+            </ul>
+            <p>
+                Depending on the configuration, lag may begin immediately after building the circuit or when controlled by a Redstone signal. A single NAND Gate can form the simplest controlled Inverted Logic Lag Circuit.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong> Use Redstone Repeaters to delay input updates and prevent the rapid feedback loop.
+            </p>
+            <div class="image800">
+                <img alt="setups of Inverted Logic Lag Circuits" src="img.png"/>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="../../index.html">Welcome Page</a>
+        <a href="../../Getting_Started.html">Getting Started</a>
+        <a href="../../List_of_Elements.html">List of Elements</a>
+        <a href="../../Pin_Marks.html">Pin Marks</a>
+        <a href="../../Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-1"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

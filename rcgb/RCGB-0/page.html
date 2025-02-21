@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brakeless Gate Loop</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Brakeless Gate Loop</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p>
+                <strong>Description:</strong> The Brakeless Gate Loop is a circuit where Redstone CG logic gates are arranged in a loop without any spaces or components between them. This loop can consist of any combination of logic gates and must have at least 4 components, increasing in increments of 2.
+            </p>
+            <p>
+                <strong>Cause:</strong> When the last block in the loop is placed, it triggers neighbor updates, causing the gates to recursively check their inputs. This results in an overwhelming recursion, leading to a <code>StackOverflowError</code> exception in Java.
+            </p>
+            <p>
+                <strong>Consequences:</strong> The Minecraft world is not corrupted and can be reloaded. However, if the loop updates immediately upon reloading, the game crashes again. To fix this, the loop must be disarmed by removing one of the blocks without causing updates.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong> Include at least one Redstone Dust Wire or any non-logic gate component in the loop to break the recursion.
+            </p>
+            <div class="image400">
+                <img alt="Buffer Brakeless Gate Loop" src="img.png"/>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="../../index.html">Welcome Page</a>
+        <a href="../../Getting_Started.html">Getting Started</a>
+        <a href="../../List_of_Elements.html">List of Elements</a>
+        <a href="../../Pin_Marks.html">Pin Marks</a>
+        <a href="../../Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-0"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

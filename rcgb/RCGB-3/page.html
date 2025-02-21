@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schrödinger's Redstone</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Schrödinger's Redstone</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p>
+                <strong>Description:</strong> Schrödinger's Redstone is a partially visual, partially mod mechanical bug observed when a line (column) of <a href="../../Parallel_Gates.html">Parallel Gates</a> is constructed. Measuring the output of any row causes the output signal to change its value by a difference of one, giving the impression that the redstone exists in two states simultaneously. This is often followed by the related bug, <a href="../RCGB-2/page.html">Row Ghosting</a>. During testing, both the output and the row of <a href="../../Parallel_Gates.html">Parallel Gates</a> appeared to blink rapidly and inconsistently, despite no timing circuit being involved. The effect ceased immediately when the output was no longer measured.
+            </p>
+            <p>
+                <strong>Cause:</strong> Changing default values in <code>net.mcreator.redstonecg.procedures.GetParalelGateSignalProcedure.java</code> from 0 to -1 activates both this bug and <a href="../RCGB-2/page.html">Row Ghosting</a>. Comments in the code identify problematic locations. This issue stems from MCreator's default behavior of returning "-1" in scenarios where a signal cannot be reliably read. The interaction between Parallel Gate outputs and input logic under these conditions results in unstable signal states.
+            </p>
+            <p>
+                <strong>Consequences:</strong> This bug introduces both visual and mechanical inconsistencies. While gameplay impact is minimal, the behavior highlights potential vulnerabilities in Parallel Gate logic, particularly in how signal reliability is handled.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong> No safe configurations have been identified. The exact triggers for this bug remain unclear, necessitating further investigation.
+            </p>
+            <p>
+                <strong>Special Notes:</strong> This bug is classified as "Assumed Inactive" due to unresolved uncertainties about its exact triggers and execution paths. While changing the default return value from "-1" to "0" has mitigated the issue, similar conditions may reintroduce it. Additionally, there are other MCreator-generated files retaining default behaviors that do not exhibit this issue, suggesting potential interactions or overlooked factors. 
+            </p>
+            <p>
+                During testing, a collaborator known as CaptainOverkill humorously referred to this behavior as a feature rather than a bug, likening it to a unique game mechanic. While this was intended as a joke, the developer found the visual and mechanical effect fascinating and is considering incorporating a controlled version of this phenomenon as a future gameplay element. CaptainOverkill has also expressed a strong desire for the effect to remain in some form.
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="../../index.html">Welcome Page</a>
+        <a href="../../Getting_Started.html">Getting Started</a>
+        <a href="../../List_of_Elements.html">List of Elements</a>
+        <a href="../../Pin_Marks.html">Pin Marks</a>
+        <a href="../../Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-3"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>
