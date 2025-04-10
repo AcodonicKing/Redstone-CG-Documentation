@@ -163,7 +163,7 @@ function populateRedCuCrafter(containerId, toggles, objectList) {
         const objDiv = document.createElement("div");
 
         objDiv.classList.add("selector");
-        objDiv.style.backgroundImage = `url("media/gui/selector.png")`;
+        objDiv.style.backgroundImage = `url("/Redstone-CG-Documentation/media/gui/selector.png")`;
         objDiv.style.width = `${(144 / tableData.width) * 100}%`;
         objDiv.style.height = `${(144 / tableData.height) * 100}%`;
         objDiv.style.position = "absolute";
@@ -197,12 +197,12 @@ function renderComponent(containerId, baseImage, marks, modifiers) {
         return img;
     }
 
-    container.appendChild(createImageElement(`media/renders/${baseImage}`));
+    container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${baseImage}`));
     marks.forEach(mark => {
-        container.appendChild(createImageElement(`media/renders/pinmarks/${mark}.png`));
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/pinmarks/${mark}.png`));
     });
     modifiers.forEach(modifier => {
-        container.appendChild(createImageElement(`media/renders/${modifier}`));
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${modifier}`));
     });
 }
 /**
@@ -227,11 +227,11 @@ function renderMidComponent(containerId, background, baseImage, forwground) {
     }
 
     background.forEach(bg => {
-        container.appendChild(createImageElement(`media/renders/${bg}`));
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${bg}`));
     });
-    container.appendChild(createImageElement(`media/renders/${baseImage}`));
+    container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${baseImage}`));
     forwground.forEach(fg => {
-        container.appendChild(createImageElement(`media/renders/${fg}`));
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${fg}`));
     });
 }
 /**
@@ -256,12 +256,12 @@ function blitzComponent(containerId, baseImage, marks, modifiers) {
         return img;
     }
 
-    container.appendChild(createImageElement(`media/textures/${baseImage}`));
+    container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/${baseImage}`));
     marks.forEach(mark => {
-        container.appendChild(createImageElement(`media/textures/pinmarks/${mark}.png`));
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/pinmarks/${mark}.png`));
     });
     modifiers.forEach(modifier => {
-        container.appendChild(createImageElement(`media/textures/${modifier}`));
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/${modifier}`));
     });
 }
 
