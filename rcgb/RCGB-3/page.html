@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schrödinger's Redstone</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body>
     <header>
@@ -16,10 +16,10 @@
             <p><strong>Status:</strong> <span id="status"></span></p>
             <p><strong>Code:</strong> <span id="code"></span></p>
             <p>
-                <strong>Description:</strong> Schrödinger's Redstone is a partially visual, partially mod mechanical bug observed when a line (column) of <a href="/Parallel_Gates.html">Parallel Gates</a> is constructed. Measuring the output of any row causes the output signal to change its value by a difference of one, giving the impression that the redstone exists in two states simultaneously. This is often followed by the related bug, <a href="/RCGB-2/page.html">Row Ghosting</a>. During testing, both the output and the row of <a href="/Parallel_Gates.html">Parallel Gates</a> appeared to blink rapidly and inconsistently, despite no timing circuit being involved. The effect ceased immediately when the output was no longer measured.
+                <strong>Description:</strong> Schrödinger's Redstone is a partially visual, partially mod mechanical bug observed when a line (column) of <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gates</a> is constructed. Measuring the output of any row causes the output signal to change its value by a difference of one, giving the impression that the redstone exists in two states simultaneously. This is often followed by the related bug, <a href="/Redstone-CG-Documentation/RCGB-2/page.html">Row Ghosting</a>. During testing, both the output and the row of <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gates</a> appeared to blink rapidly and inconsistently, despite no timing circuit being involved. The effect ceased immediately when the output was no longer measured.
             </p>
             <p>
-                <strong>Cause:</strong> Changing default values in <code>net.mcreator.redstonecg.procedures.GetParalelGateSignalProcedure.java</code> from 0 to -1 activates both this bug and <a href="/RCGB-2/page.html">Row Ghosting</a>. Comments in the code identify problematic locations. This issue stems from MCreator's default behavior of returning "-1" in scenarios where a signal cannot be reliably read. The interaction between Parallel Gate outputs and input logic under these conditions results in unstable signal states.
+                <strong>Cause:</strong> Changing default values in <code>net.mcreator.redstonecg.procedures.GetParalelGateSignalProcedure.java</code> from 0 to -1 activates both this bug and <a href="/Redstone-CG-Documentation/RCGB-2/page.html">Row Ghosting</a>. Comments in the code identify problematic locations. This issue stems from MCreator's default behavior of returning "-1" in scenarios where a signal cannot be reliably read. The interaction between Parallel Gate outputs and input logic under these conditions results in unstable signal states.
             </p>
             <p>
                 <strong>Consequences:</strong> This bug introduces both visual and mechanical inconsistencies. While gameplay impact is minimal, the behavior highlights potential vulnerabilities in Parallel Gate logic, particularly in how signal reliability is handled.
@@ -36,12 +36,12 @@
         </section>
     </main>
     <footer class="nav-links">
-        <a href="/index.html">Welcome Page</a>
-        <a href="/Getting_Started.html">Getting Started</a>
-        <a href="/List_of_Elements.html">List of Elements</a>
-        <a href="/Pin_Marks.html">Pin Marks</a>
-        <a href="/Known_Bugs.html">Known Bugs</a>
-        <a href="/Version_Log.html">Version Log</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
     </footer>
     <script>
         fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
