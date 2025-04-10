@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Way Through Not Gate</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>One Way Through Not Gate</h1>
+  </header>
+  <div class="block_table">
+    <table>
+      <th>One Way Through Not Gate</th>
+      <tr><td><div id="bt-dsp-norm" class="block_table-dsp">
+        <div id="bt-rnd-norm"><div id="rnd-norm"></div></div>
+        <div id="bt-btz-norm" style="display: none;"><div id="btz-norm"></div></div>
+      </div></td></tr>
+      <!-- Buttons for selecting pin mark configuration -->
+      <tr><td><div>
+        <!-- Six configurations: BL, BR, LR, LB, RB, RL -->
+        <button id="bt-btn-bl" class="bt-button active">BL</button>
+        <button id="bt-btn-br" class="bt-button">BR</button>
+        <button id="bt-btn-lr" class="bt-button">LR</button>
+        <button id="bt-btn-lb" class="bt-button">LB</button>
+        <button id="bt-btn-rb" class="bt-button">RB</button>
+        <button id="bt-btn-rl" class="bt-button">RL</button>
+      </div></td></tr>
+      <!-- Buttons for redirection options -->
+      <tr><td><div>
+        <button id="bt-block-norm" class="bt-button">Block Signal</button>
+        <button id="bt-pass-norm" class="bt-button active">Pass Signal</button>
+      </div></td></tr>
+      <!-- Buttons for signal settings -->
+      <tr><td><div>
+        <button id="bt-low-norm" class="bt-button active">Set Signal Low</button>
+        <button id="bt-high-norm" class="bt-button">Set Signal High</button>
+      </div></td></tr>
+      <!-- Additional Information Rows -->
+      <tr><td><div>
+        <div>Stackable</div><div>Yes(64)</div>
+      </div></td></tr>
+      <tr><td><div>
+        <div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div>
+        <div>10</div>
+      </div></td></tr>
+      <tr><td><div>
+        <div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div>
+        <div>1</div>
+      </div></td></tr>
+    </table>
+  </div>
+  <main>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>
+        The <strong>One Way Through Not Gate</strong> is an <a href="/Analog_Gates.html">Analog Gate</a> that controls the passage of an incoming signal based on the Redstone Signal at its Control Pin (located on the unmarked Front Side).
+      </p>
+      <p>
+        When the Control Pin’s signal is low (0), the gate allows the signal from <a href="/Pin_Marks.html">Pin Mark A</a> to pass through to <a href="/Pin_Marks.html">Pin Mark B</a>. When the signal is high (&gt;0), the gate blocks the signal. This behavior is similar to a relay with two connectable pins or a transistor that fully saturates even at low signal levels.
+      </p>
+      <div class="image800">
+        <!-- Image Placeholder: Example of One Way Through Gate -->
+        <img alt="One Way Through Not Gate Example" src="/media/images/One_Way_Through_Not_Gate_Example.png"/>
+      </div>
+    </section>
+    <section id="configuration">
+      <h2>Configuration</h2>
+      <ul>
+        <li><strong>Unmarked:</strong> Control Pin</li>
+        <li><strong><a href="/Pin_Marks.html">Pin Mark A</a>:</strong> Input Signal</li>
+        <li><strong><a href="/Pin_Marks.html">Pin Mark B</a>:</strong> Output Signal</li>
+        <li>The gate is configurable on right-click, allowing you to adjust connections.</li>
+      </ul>
+    </section>
+  </main>
+  <div class="block_table">
+    <table>
+      <th>Parallel One Way Through Not Gate</th>
+      <tr><td><div id="bt-dsp-prll" class="block_table-dsp">
+        <div id="bt-rnd-prll"><div id="rnd-prll"></div></div>
+        <div id="bt-btz-prll" style="display: none;"><div id="btz-prll"></div></div>
+      </div></td></tr>
+      <!-- Buttons for selecting pin mark configuration -->
+      <tr><td><div>
+        <!-- Six configurations: BL, BR, LR, LB, RB, RL -->
+        <button id="bt-btn-fs" class="bt-button active">FS</button>
+        <button id="bt-btn-sf" class="bt-button">SF</button>
+      </div></td></tr>
+      <!-- Buttons for redirection options -->
+      <tr><td><div>
+        <button id="bt-block-prll" class="bt-button">Block Signal</button>
+        <button id="bt-pass-prll" class="bt-button active">Pass Signal</button>
+      </div></td></tr>
+      <!-- Buttons for signal settings -->
+      <tr><td><div>
+        <button id="bt-low-prll" class="bt-button active">Set Signal Low</button>
+        <button id="bt-high-prll" class="bt-button">Set Signal High</button>
+      </div></td></tr>
+      <!-- Additional Information Rows -->
+      <tr><td><div>
+        <div>Stackable</div><div>Yes(64)</div>
+      </div></td></tr>
+      <tr><td><div>
+        <div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div>
+        <div>10</div>
+      </div></td></tr>
+      <tr><td><div>
+        <div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div>
+        <div>1</div>
+      </div></td></tr>
+    </table>
+  </div>
+  <main>
+    <section id="parallel-gate">
+      <h2>Parallel Variant</h2>
+      <p>
+        The <strong>Parallel One Way Through Not Gate</strong> operates similarly to the normal variant by choosing whether to allow a signal to pass, but it uses a different pin mark layout.
+      </p>
+      <ul>
+        <li><strong><a href="/Pin_Marks.html">Pin Mark A</a></strong> shows the location of the <strong>Signal Input Pin</strong>.</li>
+        <li><strong><a href="/Pin_Marks.html">Pin Mark B</a></strong> shows the location of the <strong>Control Pin</strong>.</li>
+        <li>The <strong>Signal Output Pin</strong> is always located on the <strong>Back</strong> side of the block.</li>
+      </ul>
+      <p>
+        The Parallel variant supports two configurations that are changeable with a right-click:
+      </p>
+      <ol>
+        <li>
+          <strong>Configuration:</strong> Signal Input Pin on the <strong>Front</strong> side, Control Pin on the <strong>Right</strong> and <strong>Left</strong> sides.
+        </li>
+        <li>
+          <strong>Configuration:</strong> Control Pin on the <strong>Front</strong> side, Signal Input Pin on the <strong>Right</strong> and <strong>Left</strong> sides.
+        </li>
+      </ol>
+    </section>
+    <!-- Crafting Section -->
+    <section id="obtaining">
+      <h2>Crafting</h2>
+      <p>Normal One Way Through Not Gate</p>
+      <div class="recipe_table">
+        <table>
+          <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+          <tr><td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td><td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td></tr>
+          <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+          <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+        </table>
+      </div>
+      <p>Parallel One Way Through Not Gate</p>
+      <div class="recipe_table">
+        <table>
+          <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+          <tr><td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td><td rowspan="3" width="400px"><div class="table-place" id="Parallel-Making"></div></td></tr>
+          <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+          <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="nav-links">
+    <a href="/index.html">Welcome Page</a>
+    <a href="/Getting_Started.html">Getting Started</a>
+    <a href="/List_of_Elements.html">List of Elements</a>
+    <a href="/Pin_Marks.html">Pin Marks</a>
+    <a href="/Known_Bugs.html">Known Bugs</a>
+    <a href="/Version_Log.html">Version Log</a>
+  </footer>
+  <script src="/script.js"></script>
+  <script>
+    // JavaScript to compose the views in the display area
+    const gate = "components/hybrid/one_way_through_not_gate";
+    const rccr1array = [
+      { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+      { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+      { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+      { slot: 3, img: `/media/textures/${gate}.png` },
+      { slot: 4, img: `/media/textures/${gate}.png` }
+    ];
+    const rccr2array = [
+      { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+      { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+      { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+      { slot: 3, img: `/media/textures/${gate}.png`, addon: ["/media/textures/components/parallel.png"]  },
+      { slot: 4, img: `/media/textures/${gate}.png`, addon: ["/media/textures/components/parallel.png"]  }
+    ];
+
+    // Populate the crafting recipe view (using the same recipe as before)
+    populateRedCuCrafter("Normal-Making", { category: 2, tipe: 0 }, rccr1array);
+    populateRedCuCrafter("Parallel-Making", { category: 2, tipe: 1 }, rccr2array);
+    window.addEventListener("resize", () => {
+      populateRedCuCrafter("Normal-Making", { category: 2, tipe: 0 }, rccr1array);
+      populateRedCuCrafter("Parallel-Making", { category: 2, tipe: 1 }, rccr2array);
+    });
+
+    // Setup button array for switching pin configurations (6 configurations)
+    const normalButtonArray = [
+      { buttonId: 'bt-btn-bl', pinMark: ["b", "l_alt"]},
+      { buttonId: 'bt-btn-br', pinMark: ["b", "r_alt"]},
+      { buttonId: 'bt-btn-lr', pinMark: ["l", "r_alt"]},
+      { buttonId: 'bt-btn-lb', pinMark: ["l", "b_alt"]},
+      { buttonId: 'bt-btn-rb', pinMark: ["r", "b_alt"]},
+      { buttonId: 'bt-btn-rl', pinMark: ["r", "l_alt"]}
+    ];
+    const normalAddon = [["components/torch_off.png"],["components/torch.png"]];
+    
+    const parallelButtonArray = [
+      { buttonId: 'bt-btn-fs', pinMark: ["f","l_alt","r_alt"]},
+      { buttonId: 'bt-btn-sf', pinMark: ["f_alt","l","r"]}
+    ];
+    const parallelAddon = [["components/parallel.png","components/torch_off.png"],["components/parallel.png","components/torch.png"]];
+
+    const normalStateButtonArray = [
+      { buttonId: 'bt-block-norm', directed: "0" },
+      { buttonId: 'bt-pass-norm', directed: "1" },
+      { buttonId: "bt-low-norm", powered: "0" },
+      { buttonId: "bt-high-norm", powered: "1" }
+    ];
+    const parallelStateButtonArray = [
+      { buttonId: 'bt-block-prll', directed: "0" },
+      { buttonId: 'bt-pass-prll', directed: "1" },
+      { buttonId: "bt-low-prll", powered: "0" },
+      { buttonId: "bt-high-prll", powered: "1" }
+    ];
+
+    let normal_actvind = 0;
+    let normal_powered = "0";
+    let normal_directed = "1";
+    let parallel_actvind = 0;
+    let parallel_powered = "0";
+    let parallel_directed = "1";
+
+    document.addEventListener("DOMContentLoaded", function () {
+      function rendering(idn, tipe, arr, powered, directed, addon){
+        renderComponent(`rnd-${tipe}`, `${gate}/${powered}${directed}.png`, arr[idn].pinMark, addon);
+        blitzComponent(`btz-${tipe}`, `${gate}/${powered}${directed}.png`, arr[idn].pinMark, addon);
+      }
+      setupButtonDivSwitcher(normalButtonArray.map(({ buttonId, pinMark }, index) => ({
+        buttonId,
+        functionCall: () => {
+          rendering(index, "norm", normalButtonArray, normal_powered, normal_directed, normalAddon[normal_directed]);
+          normal_actvind = index;
+        }
+      })), "bt-rnd-norm", "bt-btz-norm", "bt-dsp-norm");
+      normalStateButtonArray.forEach(entry => {
+        const elm = document.getElementById(entry.buttonId);
+        if ("directed" in entry) {
+          elm.onclick = function () {
+            normal_directed = entry.directed;
+            rendering(normal_actvind, "norm", normalButtonArray, normal_powered, normal_directed, normalAddon[normal_directed]);
+            normalStateButtonArray.forEach(oentry => { if ("directed" in oentry) {document.getElementById(oentry.buttonId).classList.remove("active"); } });
+            elm.classList.add("active");
+          };
+        }
+        if ("powered" in entry) {
+          elm.onclick = function () {
+            normal_powered = entry.powered;
+            rendering(normal_actvind, "norm", normalButtonArray, normal_powered, normal_directed, normalAddon[normal_directed]);
+            normalStateButtonArray.forEach(oentry => { if ("powered" in oentry) { document.getElementById(oentry.buttonId).classList.remove("active"); } });
+            elm.classList.add("active");
+          };
+        }
+      });
+
+      setupButtonDivSwitcher(parallelButtonArray.map(({ buttonId, pinMark }, index) => ({
+        buttonId,
+        functionCall: () => {
+          rendering(index, "prll", parallelButtonArray, parallel_powered, parallel_directed, parallelAddon[parallel_directed]);
+          parallel_actvind = index;
+        }
+      })), "bt-rnd-prll", "bt-btz-prll", "bt-dsp-prll");
+      parallelStateButtonArray.forEach(entry => {
+        const elm = document.getElementById(entry.buttonId);
+        if ("directed" in entry) {
+          elm.onclick = function () {
+            parallel_directed = entry.directed;
+            rendering(parallel_actvind, "prll", parallelButtonArray, parallel_powered, parallel_directed, parallelAddon[parallel_directed]);
+            parallelStateButtonArray.forEach(oentry => { if ("directed" in oentry) {document.getElementById(oentry.buttonId).classList.remove("active"); } });
+            elm.classList.add("active");
+          };
+        }
+        if ("powered" in entry) {
+          elm.onclick = function () {
+            parallel_powered = entry.powered;
+            rendering(parallel_actvind, "prll", parallelButtonArray, parallel_powered, parallel_directed, parallelAddon[parallel_directed]);
+            parallelStateButtonArray.forEach(oentry => { if ("powered" in oentry) { document.getElementById(oentry.buttonId).classList.remove("active"); } });
+            elm.classList.add("active");
+          };
+        }
+      });
+    });
+  </script>
+</body>
+</html>

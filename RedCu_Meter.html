@@ -65,15 +65,15 @@
         <section id="redcu-wires">
             <h2>Extended Range for RedCu Wires</h2>
             <p>
-                <a href="RedCu_Wire.html">RedCu Wires</a> operate on an extended Redstone signal range of <strong>0-255</strong>, compared to the standard range of <strong>0-15</strong>.
-                When used to measure <a href="RedCu_Wire.html">RedCu Wires</a>, the RedCu Meter will display a decimal point value. 
+                <a href="Wires/RedCu_Wire.html">RedCu Wires</a> operate on an extended Redstone signal range of <strong>0-255</strong>, compared to the standard range of <strong>0-15</strong>.
+                When used to measure <a href="Wires/RedCu_Wire.html">RedCu Wires</a>, the RedCu Meter will display a decimal point value. 
                 The <em>whole part</em> of the displayed value represents the Redstone signal output to standard Redstone components. 
             </p>
             <p>
                 For example:
             </p>
             <blockquote>
-                If the RedCu Meter shows a value of <strong>10.625</strong> while pointing at a <a href="RedCu_Wire.html">RedCu Wire</a>, the connected <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> 
+                If the RedCu Meter shows a value of <strong>10.625</strong> while pointing at a <a href="Wires/RedCu_Wire.html">RedCu Wire</a>, the connected <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> 
                 will show an output of <strong>10.0</strong>.
             </blockquote>
             <div class="image800">
@@ -86,7 +86,8 @@
         <a href="Getting_Started.html">Getting Started</a>
         <a href="List_of_Elements.html">List of Elements</a>
         <a href="Pin_Marks.html">Pin Marks</a>
-        <a onclick="showPage('known-bugs')">Known Bugs</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+        <a href="Version_Log.html">Version Log</a>
     </footer>
     <script src="script.js"></script>
     <script>
@@ -102,9 +103,9 @@
             { slot: 4, img: "media/items/red_cu_meter.png" },
         ];
 
-        populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 64}, rccr1array);
+        populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 0}, rccr1array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 64}, rccr1array);
+            populateRedCuCrafter("RedCu-Meter-Making", {category: 3, tipe: 0}, rccr1array);
         });
     </script>
 </body>

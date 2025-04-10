@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Log</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Version Log</h1>
+    </header>
+    <main>
+        <section id="0.1.0">
+            <h2>1.0.0 - Flow Control Update</h2>
+            <p>Introduced Gates:</p>
+            <ul>
+                <li><a href="Analog/Analog_Minimum.html">Analog Minimum</a></li>
+                <li><a href="Analog/Analog_Maximum.html">Analog Maximum</a></li>
+                <li><a href="Wires/Parallel_Line_Output.html">Parallel Line Output</a></li>
+                <li><a href="Analog/Forward_Path_Selector.html">Forward Path Selector</a></li>
+                <li><a href="Analog/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
+                <li><a href="Analog/Parallel_Path_Selector.html">Parallel Path Selector</a></li>
+                <li><a href="Analog/One_Way_Through_Gate.html">One Way Through Gate</a></li>
+                <li><a href="Analog/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
+            </ul>
+            <p>Updated:</p>
+            <ul>
+                <li>Increased the amount of pin configurations up to 15 for blocks:
+                    <ul>
+                        <li><a href="Analog/Analog_Source.html">Analog Source</a></li>
+                        <li><a href="Indicators/Universal_Indicator.html">Universal Indicator</a></li>
+                        <li><a href="Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a></li>
+                        <li><a href="Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a></li>
+                        <li><a href="Indicators/Orb_Indicator.html">Orb Indicator</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Restructured Documentation.</p>
+        </section>
+        <section id="0.0.1">
+            <h2>0.0.1 - Bugfix + Extra</h2>
+            <p>Changed the way how gates update their states by making the gate read the blockstate of the neighboring gate instead of reading the Redstone signal, making <a href="rcgb/RCGB-0/page.html">Brakeless Gate Loop (RCGB-0)</a> inactive.</p>
+            <p>Reduced the amount of pin configurations for <a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> from 15 down to 12, by removing configurations 6, 9 and 12.</p>
+            <p>Remade Documentation.</p>
+        </section>
+        <section id="0.0.0">
+            <h2>0.0.0 - Welcome!</h2>
+            <p>Introduced the Redstone CG, with blocks:</p>
+            <ul>
+                <li><a href="RedCu_Crafter.html">RedCu Crafter</a></li>
+                <li><a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></li>
+                <li><a href="Wires/RedCu_Wire.html">RedCu Wire</a></li>
+                <li><a href="Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a></li>
+                <li><a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> (Updated)</li>
+                <li><a href="Digital/AND_Gate.html">AND Gate</a></li>
+                <li><a href="Digital/OR_Gate.html">OR Gate</a></li>
+                <li><a href="Digital/XOR_Gate.html">XOR Gate</a></li>
+                <li><a href="Digital/Buffer_Gate.html">Buffer Gate</a></li>
+                <li><a href="Digital/NAND_Gate.html">NAND Gate</a></li>
+                <li><a href="Digital/NOR_Gate.html">NOR Gate</a></li>
+                <li><a href="Digital/NXOR_Gate.html">NXOR Gate</a></li>
+                <li><a href="Digital/NOT_Gate.html">NOT Gate</a></li>
+                <li><a href="Digital/SR_Latch.html">SR Latch</a></li>
+                <li><a href="Digital/D_Latch.html">D Latch</a></li>
+                <li><a href="Digital/T_Trigger.html">T Trigger</a></li>
+                <li><a href="Digital/JK_Trigger.html">JK Trigger</a></li>
+                <li><a href="Analog/Analog_Source.html">Analog Source</a> (Updated)</li>
+                <li><a href="Analog/Analog_Bias.html">Analog Bias</a></li>
+                <li><a href="Analog/Analog_Gain.html">Analog Gain</a></li>
+                <li><a href="Analog/Analog_Pass.html">Analog Pass</a></li>
+                <li><a href="Analog/Analog_Memory.html">Analog Memory</a></li>
+                <li><a href="Analog/Analog_Subtractor.html">Analog Subtractor</a></li>
+                <li><a href="Analog/Analog_Differential.html">Analog Differential</a></li>
+                <li><a href="Analog/Comparator.html">Comparator</a></li>
+                <li><a href="Analog/Comparator.html">Inverted Comparator</a></li>
+                <li><a href="Digital/AND_Gate.html">Parallel AND Gate</a></li>
+                <li><a href="Digital/OR_Gate.html">Parallel OR Gate</a></li>
+                <li><a href="Digital/XOR_Gate.html">Parallel XOR Gate</a></li>
+                <li><a href="Digital/NAND_Gate.html">Parallel NAND Gate</a></li>
+                <li><a href="Digital/NOR_Gate.html">Parallel NOR Gate</a></li>
+                <li><a href="Digital/NXOR_Gate.html">Parallel NXOR Gate</a></li>
+                <li><a href="Digital/SR_Latch.html">Parallel SR Latch</a></li>
+                <li><a href="Digital/D_Latch.html">Parallel D Latch</a></li>
+                <li><a href="Analog/Analog_Bias.html">Parallel Analog Bias</a></li>
+                <li><a href="Analog/Analog_Gain.html">Parallel Analog Gain</a></li>
+                <li><a href="Analog/Analog_Pass.html">Parallel Analog Pass</a></li>
+                <li><a href="Analog/Analog_Memory.html">Parallel Analog Memory</a></li>
+                <li><a href="Analog/Analog_Subtractor.html">Parallel Analog Subtractor</a></li>
+                <li><a href="Analog/Analog_Differential.html">Parallel Analog Differential</a></li>
+                <li><a href="Analog/Comparator.html">Parallel Comparator</a></li>
+                <li><a href="Analog/Comparator.html">Parallel Inverted Comparator</a></li>
+                <li><a href="Indicators/Universal_Indicator.html">Universal Indicator</a> (Updated)</li>
+                <li><a href="Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a> (Updated)</li>
+                <li><a href="Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a> (Updated)</li>
+                <li><a href="Indicators/Orb_Indicator.html">Orb Indicator</a> (Updated)</li>
+            </ul>
+            <p>and items:</p>
+            <ul>
+                <li><a href="RedCu_Meter.html">RedCu Meter</a></li>
+                <li><a href="RedCu_Mixture.html">RedCu Mixture</a></li>
+                <li><a href="RedCu_Ingot.html">RedCu Ingot</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="index.html">Welcome Page</a>
+        <a href="Getting_Started.html">Getting Started</a>
+        <a href="List_of_Elements.html">List of Elements</a>
+        <a href="Pin_Marks.html">Pin Marks</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+    </footer>
+</body>
+</html>

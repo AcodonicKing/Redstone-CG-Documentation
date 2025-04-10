@@ -54,7 +54,7 @@
         <section id="c-mark" class="const_width">
             <h3>C Mark</h3>
             <p>
-                The <strong>C Mark</strong> indicates the third connection of the gate. Currently, this is only used in the <a onclick="showPage('jk-trigger')">JK Trigger</a>,
+                The <strong>C Mark</strong> indicates the third connection of the gate. Currently, this is only used in the <a href="Digital/JK_Trigger.html">JK Trigger</a>,
                 where it serves as the clock pin.
             </p>
             <div class="image800-with-pinmarks"><div id="render-gate-with-c-mark"></div><div id="blitz-gate-with-c-mark"></div></div>
@@ -77,19 +77,20 @@
         <a href="index.html">Welcome Page</a>
         <a href="Getting_Started.html">Getting Started</a>
         <a href="List_of_Elements.html">List of Elements</a>
-        <a onclick="showPage('known-bugs')">Known Bugs</a>
+        <a href="Known_Bugs.html">Known Bugs</a>
+        <a href="Version_Log.html">Version Log</a>
     </footer>
     <script src="script.js"></script>
     <script>
         renderComponent("render-gate-with-pinmarks", "components/digital/or.png", ["l", "r"], []);
         renderComponent("render-gate-with-a-mark", "components/digital/xor.png", ["b", "r"], []);
         renderComponent("render-gate-with-b-mark", "components/analog/subtractor.png", ["b", "r_alt"], []);
-        renderComponent("render-gate-with-c-mark", "components/digital/gate.png", ["l", "r_alt", "b_altalt"], ["components/digital/jk_trigger.png"]);
+        renderComponent("render-gate-with-c-mark", "components/digital/gate.png", ["l", "r_alt", "b_altalt"], ["components/digital/jk_trigger_cover.png"]);
 
         blitzComponent("blitz-gate-with-pinmarks", "components/digital/or.png", ["l", "r"], []);
         blitzComponent("blitz-gate-with-a-mark", "components/digital/xor.png", ["b", "r"], []);
         blitzComponent("blitz-gate-with-b-mark", "components/analog/subtractor.png", ["b", "r_alt"], []);
-        blitzComponent("blitz-gate-with-c-mark", "components/digital/gate.png", ["r", "l_alt", "f_altalt"], ["components/digital/jk_trigger.png"]);
+        blitzComponent("blitz-gate-with-c-mark", "components/digital/gate.png", ["r", "l_alt", "f_altalt"], ["components/digital/jk_trigger_cover.png"]);
     </script>
 </body>
 </html>

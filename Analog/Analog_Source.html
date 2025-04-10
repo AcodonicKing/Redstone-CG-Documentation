@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Source</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Analog Source</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Analog Source</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn1" class="bt-button active">1</button>
+                    <button id="bt-btn2" class="bt-button">2</button>
+                    <button id="bt-btn3" class="bt-button">3</button>
+                    <button id="bt-btn4" class="bt-button">4</button>
+                    <button id="bt-btn5" class="bt-button">5</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn6" class="bt-button">6</button>
+                    <button id="bt-btn7" class="bt-button">7</button>
+                    <button id="bt-btn8" class="bt-button">8</button>
+                    <button id="bt-btn9" class="bt-button">9</button>
+                    <button id="bt-btn10" class="bt-button">10</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn11" class="bt-button">11</button>
+                    <button id="bt-btn12" class="bt-button">12</button>
+                    <button id="bt-btn13" class="bt-button">13</button>
+                    <button id="bt-btn14" class="bt-button">14</button>
+                    <button id="bt-btn15" class="bt-button">15</button>
+                </div>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>The <strong>Analog Source</strong> outputs a configurable Redstone signal at its output pins. Both the Redstone signal value and the output configuration can be set via its <strong>GUI Menu</strong>, which opens by right-clicking the block.</p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Nether_Quartz">Quartz</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="interface">
+            <h2>The Analog Source Interface</h2>
+            <p>
+                In the GUI Menu:
+            </p>
+            <ul>
+                <li>Press <strong>"+"</strong> or <strong>"-"</strong> to change the Redstone signal strength.</li>
+                <li>Press <strong>"Change"</strong> to modify the output pin configuration.</li>
+            </ul>
+            <p>
+                The output pins are marked with <a href="/Pin_Marks.html">Pin Mark A</a>.
+            </p>
+            <div class="image800" style="position: relative;">
+                <img alt="GUI Menu" src="/media/gui/AnalogSourceGUI.png">
+                <!--<div style="position: absolute; left: 4.5%; top: 9.34%; width: 18.19%; height: 38.56%;"><div id="btz-gui" style="position: absolute; width: 100%; height: 100%;"></div></div>-->
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/index.html">Welcome Page</a>
+        <a href="/Getting_Started.html">Getting Started</a>
+        <a href="/List_of_Elements.html">List of Elements</a>
+        <a href="/Pin_Marks.html">Pin Marks</a>
+        <a href="/Known_Bugs.html">Known Bugs</a>
+    </footer>
+    <script src="/script.js"></script>
+    <script>
+        const gate = "components/analog/source.png";
+        const rccr1array = [
+            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
+            { slot: 3, img: `/media/textures/${gate}` },
+            { slot: 4, img: `/media/textures/${gate}` },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const ptrn1 = [
+                ["1", ["f"]],
+                ["2", ["r"]],
+                ["3", ["r","f"]],
+                ["4", ["b"]],
+                ["5", ["b","f"]],
+                ["6", ["b","r"]],
+                ["7", ["b","r","f"]],
+                ["8", ["l"]],
+                ["9", ["l","f"]],
+                ["10", ["l","r"]],
+                ["11", ["l","r","f"]],
+                ["12", ["l","b"]],
+                ["13", ["l","b","f"]],
+                ["14", ["l","b","r"]],
+                ["15", ["l","b","r","f"]],
+            ];
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn${entry[0]}`,
+                    functionCall: function () {
+                        renderComponent("rnd", gate, entry[1], []);
+                        blitzComponent("btz", gate, entry[1], []);
+                        //blitzComponent("btz-gui", gate, entry[1], []);
+                        //document.getElementById("btz-gui").classList.remove("component-blitz-container");
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+        });
+    </script>
+</body>
+</html>

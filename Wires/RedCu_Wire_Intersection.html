@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedCu Wire Intersection</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body id='redcu-intercection'>
+    <header>
+        <h1>RedCu Wire Intersection</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>RedCu Wire Intersection</th>
+            <tr><td class="block_table-img"><img id="bt-rnd" alt="RedCu Wire Intersection Render" src="/media/renders/components/wires/redcuwirecrossintersection.png"/></td></tr>
+            <tr><td><div>
+                <button id="bt-btn1" class="bt-button active">Cross</button>
+                <button id="bt-btn2" class="bt-button">Divert</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>RedCu Wire Intersection</strong> allows two <a href="RedCu_Wire.html">RedCu Wires</a> to cross the same block without affecting each other's signal. Beyond that, it functions just like two individual <a href="RedCu_Wire.html">RedCu Wires</a>.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>2 <a href="RedCu_Wire.html">RedCu Wire</a></td>
+                        <td rowspan="1" width="400px"><div class="table-place" id="RedCu-Wire-Intersection-Making"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="functionality">
+            <h2>Functionality</h2>
+            <ul>
+                <li>
+                    By <strong>right-clicking</strong> on the RedCu Wire Intersection, you can change its intersection type and rotate it.
+                </li>
+                <li>
+                    The two intersection types are:
+                    <ul>
+                        <li><strong>Cross Type:</strong> Signals travel straight through the intersection from one side to the opposite.</li>
+                        <li><strong>Diverting Type:</strong> Signals divert either to the left or right, depending on the player's orientation.</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="RedCu_Wire.html">RedCu Wires</a> will not automatically connect to the intersection unless their end points directly at the intersection.
+                </li>
+                <li>
+                    The <a href="/RedCu_Meter.html">RedCu Meter</a> cannot measure signals on the RedCu Wire Intersection. If it displays a value, it will always be the indirect signal (e.g., from neighboring blocks), as direct measurements return <strong>0</strong>.
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/index.html">Welcome Page</a>
+        <a href="/Getting_Started.html">Getting Started</a>
+        <a href="/List_of_Elements.html">List of Elements</a>
+        <a href="/Pin_Marks.html">Pin Marks</a>
+        <a href="/Known_Bugs.html">Known Bugs</a>
+        <a href="/Version_Log.html">Version Log</a>
+    </footer>
+    <script src="/script.js"></script>
+    <script>
+        const rccr1array = [
+            { slot: 0, img: "/media/items/red_cu_wire.png" },
+            { slot: 1, img: "/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/media/items/red_cu_intersection.png" },
+            { slot: 4, img: "/media/items/red_cu_intersection.png" },
+        ];
+        populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 64}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 64}, rccr1array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            setupImageSwitcher("bt-rnd", [
+                { buttonId: "bt-btn1", imageSrc: "/media/renders/components/wires/redcuwirecrossintersection.png" },
+                { buttonId: "bt-btn2", imageSrc: "/media/renders/components/wires/redcuwiredivertedintersection.png" },
+            ]);
+        });
+    </script>
+</body>
+</html>
