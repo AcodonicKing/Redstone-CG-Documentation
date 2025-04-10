@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parallel Path Selector</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body>
   <header>
@@ -83,37 +83,37 @@
       <h2>Overview</h2>
       <p>
         The <strong>Parallel Path Selector</strong> is an
-        <a href="/Analog_Gates.html">Analog Block</a> that selects a path for an incoming signal,
-        based on the <a href="/Parallel_Gates.html">Parallel Gate Line Signal</a>.
+        <a href="/Redstone-CG-Documentation/Analog_Gates.html">Analog Block</a> that selects a path for an incoming signal,
+        based on the <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate Line Signal</a>.
       </p>
       <p>
-        (Small Recap from <a href="/Parallel_Gates.html">Parallel Gates</a>)
-        The <strong><a href="/Parallel_Gates.html">Parallel Gate Line Signal</a></strong> is a signal applied at the either end of a
-        <a href="/Parallel_Gates.html">Parallel Gate Line</a> and is used by all
-        <a href="/Parallel_Gates.html">Parallel Gates</a> in the line.
+        (Small Recap from <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gates</a>)
+        The <strong><a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate Line Signal</a></strong> is a signal applied at the either end of a
+        <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate Line</a> and is used by all
+        <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gates</a> in the line.
       </p>
       <p>
         Based on this signal, the Parallel Path Selector determines whether to pass the input signal at the Front
         to the output signal at the Back, or redirect it to the next
-        <a href="/Parallel_Gates.html">Parallel Path Selector</a> on the Left or Right in the
-        <a href="/Parallel_Gates.html">Parallel Gate Line</a>.
+        <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Path Selector</a> on the Left or Right in the
+        <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate Line</a>.
       </p>
       <p>
-        When the <a href="/Parallel_Gates.html">Parallel Gate Line Signal</a> is low (0), the signal
-        from the Front is sent to <a href="/Pin_Marks.html">Pin Mark A</a>. The signal for
-        <a href="/Pin_Marks.html">Pin Mark B</a> is then provided by an Alternate Input read from the
+        When the <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate Line Signal</a> is low (0), the signal
+        from the Front is sent to <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a>. The signal for
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a> is then provided by an Alternate Input read from the
         Parallel Path Selector on the Left side, if any of the
-        <a href="/Pin_Marks.html">Pin Marks</a> are on the Right side. If any of the
-        <a href="/Pin_Marks.html">Pin Marks</a> are on the Left side, the signal is instead provided from the
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a> are on the Right side. If any of the
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a> are on the Left side, the signal is instead provided from the
         Parallel Path Selector on the Right side.
       </p>
       <p>
-        When the <a href="/Parallel_Gates.html">Parallel Gate Line Signal</a> is high (&gt;0), the signal
-        from the Front is sent to <a href="/Pin_Marks.html">Pin Mark B</a>. The signal for
-        <a href="/Pin_Marks.html">Pin Mark A</a> is then provided by an Alternate Input read from the
+        When the <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate Line Signal</a> is high (&gt;0), the signal
+        from the Front is sent to <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a>. The signal for
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> is then provided by an Alternate Input read from the
         Parallel Path Selector on the Left side, if any of the
-        <a href="/Pin_Marks.html">Pin Marks</a> are on the Right side. If any of the
-        <a href="/Pin_Marks.html">Pin Marks</a> are on the Left side, the signal is instead provided from the
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a> are on the Right side. If any of the
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a> are on the Left side, the signal is instead provided from the
         Parallel Path Selector on the Right side.
       </p>
       <p>
@@ -121,7 +121,7 @@
       </p>
       <div class="image800">
         <!-- Image Placeholder: Example of Parallel Path Selector -->
-        <img alt="Parallel Path Selector Example" src="/media/images/Parallel_Path_Selector_Example.png"/>
+        <img alt="Parallel Path Selector Example" src="/Redstone-CG-Documentation/media/images/Parallel_Path_Selector_Example.png"/>
       </div>
     </section>
 
@@ -133,10 +133,10 @@
           By right-clicking the gate, you can configure the outputs and alternate input.
         </li>
         <li>
-          Either <strong><a href="/Pin_Marks.html">Pin Mark A</a></strong> or <strong><a href="/Pin_Marks.html">Pin Mark B</a></strong> will always face the Front of the gate, while the other pin mark will face the Left or Right.
+          Either <strong><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a></strong> or <strong><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a></strong> will always face the Front of the gate, while the other pin mark will face the Left or Right.
         </li>
         <li>
-          The Alternate Input will be on the side opposite to the non-front <a href="/Pin_Marks.html">Pin Mark</a>.
+          The Alternate Input will be on the side opposite to the non-front <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark</a>.
         </li>
       </ul>
     </section>
@@ -148,11 +148,11 @@
         <table>
           <tr>
             <td><b>Ingredients</b></td>
-            <td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td>
+            <td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td>
           </tr>
           <tr>
             <td>
-              1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a>
+              1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a>
             </td>
             <td rowspan="3" width="400px">
               <div class="table-place" id="Parallel-Making"></div>
@@ -174,23 +174,23 @@
   </main>
 
   <footer class="nav-links">
-    <a href="/index.html">Welcome Page</a>
-    <a href="/Getting_Started.html">Getting Started</a>
-    <a href="/List_of_Elements.html">List of Elements</a>
-    <a href="/Pin_Marks.html">Pin Marks</a>
-    <a href="/Known_Bugs.html">Known Bugs</a>
-    <a href="/Version_Log.html">Version Log</a>
+    <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+    <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+    <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+    <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+    <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+    <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
   </footer>
-  <script src="/script.js"></script>
+  <script src="/Redstone-CG-Documentation/script.js"></script>
   <script>
     // JavaScript to compose the views in the display area
     const gate = "components/hybrid/parallel_path_selector";
     const rccr1array = [
-      { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+      { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
       { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
       { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
-      { slot: 3, img: `/media/textures/${gate}.png` },
-      { slot: 4, img: `/media/textures/${gate}.png` }
+      { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate}.png` },
+      { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate}.png` }
     ];
 
     // Populate the recipe view (same as for the Forward Path Selector)

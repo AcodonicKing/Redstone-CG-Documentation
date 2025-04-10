@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedCu Wire</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body id="redcu-wire">
     <header>
@@ -13,7 +13,7 @@
     <div class="block_table">
         <table>
             <th>RedCu Wire</th>
-            <tr><td class="block_table-img"><img id="bt-rnd" alt="RedCu Wire Render" src="/media/renders/components/wires/redcuwirei.png"/></td></tr>
+            <tr><td class="block_table-img"><img id="bt-rnd" alt="RedCu Wire Render" src="/Redstone-CG-Documentation/media/renders/components/wires/redcuwirei.png"></td></tr>
             <tr><td><div>
                 <button id="bt-btn1" class="bt-button active">I</button>
                 <button id="bt-btn2" class="bt-button">L</button>
@@ -30,14 +30,14 @@
             <h2>Overview</h2>
             <p>
                 The <strong>RedCu Wire</strong> functions similarly to <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust Wire</a>, but with an extended range of signal values up to <strong>255</strong>. 
-                Unlike <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a>, RedCu Wire does not change its color based on the signal value. For measurements, use the <a href="/RedCu_Meter.html">RedCu Meter</a>, or attach an Indicator.
+                Unlike <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a>, RedCu Wire does not change its color based on the signal value. For measurements, use the <a href="/Redstone-CG-Documentation/RedCu_Meter.html">RedCu Meter</a>, or attach an Indicator.
             </p>
         </section>
         <section id="obtaining">
             <h2>Crafting</h2>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></th>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></th>
                     <tr>
                         <td>1 RedCu Ingot</td>
                         <td rowspan="1" width="400px"><div class="table-place" id="RedCu-Wire-Making"></div></td>
@@ -50,7 +50,7 @@
             <h3><a href="RedCu_Wire_Intersection.html">RedCu Wire Intersection</a></h3>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
                         <td>2 RedCu Wire</td>
                         <td rowspan="1" width="400px"><div class="table-place" id="RedCu-Wire-Intersection-Making"></div></td>
@@ -60,9 +60,9 @@
             <h3><a href="Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a></h3>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Redstone-RedCu-Converter-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -87,10 +87,10 @@
             </p>
             <p>
                 For crossing wires that must not connect, use the 
-                <a href="RedCu_Wire_Intersection.html">RedCu Wire Intersection</a>.
+                <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a>.
             </p>
             <div class="image400">
-                <img alt="RedCu Wire shaping and bending" src="/media/images/RedCu Wire Bends.png"/>
+                <img alt="RedCu Wire shaping and bending" src="/Redstone-CG-Documentation/media/images/RedCu Wire Bends.png">
             </div>
             <p>The RedCu Wire in the image faces left. Upon placement RedCu Wire will face the Player.</p>
         </section>
@@ -99,7 +99,7 @@
             <p>
                 RedCu Wire can connect directly to any redstone block. However, converting signals from Redstone to 
                 RedCu Wire causes signal losses. To reduce losses, use the 
-                <a href="Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a>.
+                <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a>.
             </p>
             <p>
                 The amount of Redstone signal (<strong>Pr</strong>) directly converted to a RedCu Wire signal (<strong>Prc</strong>) can be 
@@ -117,7 +117,7 @@
             </p>
             <p class="equation"><strong>Prn = max(Pr × 16 - 1, 0)</strong></p>
             <p>
-                However, you are unlikely to see this value directly. When the <a href="/RedCu_Meter.html">RedCu Meter</a> 
+                However, you are unlikely to see this value directly. When the <a href="/Redstone-CG-Documentation/RedCu_Meter.html">RedCu Meter</a> 
                 measures RedCu Wire, it displays the value (<strong>Pm</strong>) as:
             </p>
             <p class="equation"><strong>Pm = Prn ÷ 16</strong></p>
@@ -126,7 +126,7 @@
             </p>
             <p class="equation"><strong>Pr = floor(Prn ÷ 16)</strong></p>
             <div class="image800">
-                <img alt="RedCu Wire signal conversion and propagation" src="/media/images/RedCu Wire Propogation signed.png"/>
+                <img alt="RedCu Wire signal conversion and propagation" src="/Redstone-CG-Documentation/media/images/RedCu Wire Propogation signed.png">
             </div>
         </section>
         <section id="limitations">
@@ -139,32 +139,32 @@
         </section>
     </main>
     <footer class="nav-links">
-        <a href="/index.html">Welcome Page</a>
-        <a href="/Getting_Started.html">Getting Started</a>
-        <a href="/List_of_Elements.html">List of Elements</a>
-        <a href="/Pin_Marks.html">Pin Marks</a>
-        <a href="/Known_Bugs.html">Known Bugs</a>
-        <a href="/Version_Log.html">Version Log</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
     <script>
         const rccr1array = [
-            { slot: 0, img: "/media/items/red_cu_ingot.png" },
-            { slot: 3, img: "/media/items/red_cu_wire.png" },
-            { slot: 4, img: "/media/items/red_cu_wire.png", amount: 4 },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/red_cu_ingot.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png", amount: 4 },
         ];
         const rccr2array = [
-            { slot: 0, img: "/media/items/red_cu_wire.png" },
-            { slot: 1, img: "/media/items/red_cu_wire.png" },
-            { slot: 3, img: "/media/items/red_cu_intersection.png" },
-            { slot: 4, img: "/media/items/red_cu_intersection.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 1, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/red_cu_intersection.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/red_cu_intersection.png" },
         ];
         const rccr3array = [
-            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
-            { slot: 2, img: "/media/items/red_cu_wire.png" },
-            { slot: 3, img: "/media/items/redstone_to_red_cu_converter.png" },
-            { slot: 4, img: "/media/items/redstone_to_red_cu_converter.png" },
+            { slot: 2, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/redstone_to_red_cu_converter.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/redstone_to_red_cu_converter.png" },
         ];
         populateRedCuCrafter("RedCu-Wire-Making", {category: 0, tipe: 64}, rccr1array);
         populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 64}, rccr2array);
@@ -176,10 +176,10 @@
         });
         document.addEventListener("DOMContentLoaded", function () {
             setupImageSwitcher("bt-rnd", [
-                { buttonId: "bt-btn1", imageSrc: "/media/renders/components/wires/redcuwirei.png" },
-                { buttonId: "bt-btn2", imageSrc: "/media/renders/components/wires/redcuwirel.png" },
-                { buttonId: "bt-btn3", imageSrc: "/media/renders/components/wires/redcuwiret.png" },
-                { buttonId: "bt-btn4", imageSrc: "/media/renders/components/wires/redcuwirex.png" }
+                { buttonId: "bt-btn1", imageSrc: "/Redstone-CG-Documentation/media/renders/components/wires/redcuwirei.png" },
+                { buttonId: "bt-btn2", imageSrc: "/Redstone-CG-Documentation/media/renders/components/wires/redcuwirel.png" },
+                { buttonId: "bt-btn3", imageSrc: "/Redstone-CG-Documentation/media/renders/components/wires/redcuwiret.png" },
+                { buttonId: "bt-btn4", imageSrc: "/Redstone-CG-Documentation/media/renders/components/wires/redcuwirex.png" }
             ]);
         });
     </script>

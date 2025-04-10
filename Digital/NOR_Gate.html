@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOR Gate</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body>
     <header>
@@ -31,7 +31,7 @@
         <section id="overview">
             <h2>Overview</h2>
             <p>
-                The <strong>NOR Gate</strong> is a <a href="/Digital_Gates.html">Digital Gate</a> that outputs a Redstone Signal of <strong>0</strong> if at least one of its input pins receives a Redstone signal greater than 0. Otherwise, it outputs <strong>15</strong>. The NOR Gate is a fundamental logic gate in digital circuits, widely used for decision-making processes.
+                The <strong>NOR Gate</strong> is a <a href="/Redstone-CG-Documentation/Digital_Gates.html">Digital Gate</a> that outputs a Redstone Signal of <strong>0</strong> if at least one of its input pins receives a Redstone signal greater than 0. Otherwise, it outputs <strong>15</strong>. The NOR Gate is a fundamental logic gate in digital circuits, widely used for decision-making processes.
             </p>
             <!-- Image Placeholder: Diagram of a standard OR Gate // Maybe in future -->
         </section>
@@ -54,7 +54,7 @@
         <section id="configuration">
             <h2>Configuration</h2>
             <p>
-                <a href="/Pin_Marks.html">Pin Marks A</a> denote the inputs of the gate. They can be configured to face any direction on right-click.
+                <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks A</a> denote the inputs of the gate. They can be configured to face any direction on right-click.
             </p>
         </section>
     </main>
@@ -74,7 +74,7 @@
         <section id="parallel-gate">
             <h2>Parallel NOR Gate</h2>
             <p>
-                The NOR Gate also has a <a href="/Parallel_Gates.html">Parallel Gate</a> version, which is used in parallel circuit designs. Unlike the standard NOR Gate, the <a href="/Parallel_Gates.html">Parallel Gate</a> version does not allow input configuration because its logic relies on fixed input arrangements. The Parallel NOR Gate can be treated as a 3-input NOR.
+                The NOR Gate also has a <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate</a> version, which is used in parallel circuit designs. Unlike the standard NOR Gate, the <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate</a> version does not allow input configuration because its logic relies on fixed input arrangements. The Parallel NOR Gate can be treated as a 3-input NOR.
             </p>
             <p>The <a href="https://en.wikipedia.org/wiki/Truth_table">Boolean logic table</a> for the Parallel OR Gate is as follows:</p>
             <div class="logic-table"><table>
@@ -98,9 +98,9 @@
             <p>Normal NOR Gate</p>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="2" width="400px"><div class="table-place" id="Normal-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -109,9 +109,9 @@
             <p>Parallel NOR Gate</p>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="2" width="400px"><div class="table-place" id="Parallel-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -120,27 +120,27 @@
         </section>
     </main>
     <footer class="nav-links">
-        <a href="/index.html">Welcome Page</a>
-        <a href="/Getting_Started.html">Getting Started</a>
-        <a href="/List_of_Elements.html">List of Elements</a>
-        <a href="/Pin_Marks.html">Pin Marks</a>
-        <a href="/Known_Bugs.html">Known Bugs</a>
-        <a href="/Version_Log.html">Version Log</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
     <script>
         const gate = "components/digital/nor.png";
         const rccr1array = [
-            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
-            { slot: 3, img: `/media/textures/${gate}` },
-            { slot: 4, img: `/media/textures/${gate}` },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate}` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate}` },
         ];
         const rccr2array = [
-            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
-            { slot: 3, img: `/media/textures/${gate}`, addon: ["/media/textures/components/parallel.png"] },
-            { slot: 4, img: `/media/textures/${gate}`, addon: ["/media/textures/components/parallel.png"] },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png"] },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png"] },
         ];
         populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
         populateRedCuCrafter("Parallel-Making", {category: 1, tipe: 1}, rccr2array);

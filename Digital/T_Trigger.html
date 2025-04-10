@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T Trigger</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body>
     <header>
@@ -30,7 +30,7 @@
     <main>
         <section id="overview">
             <h2>Overview</h2>
-            <p>The T Trigger is a <a href="/Digital_Gates.html">Digital Gate</a> that toggles its output state when a Redstone Signal at the Toggle pin experiences a rising edge (the first tick when the signal goes from 0 to more than 0). Unlike Latches, Triggers only change their state on rising edges, while Latches change their state as long as the corresponding pin remains active.</p>
+            <p>The T Trigger is a <a href="/Redstone-CG-Documentation/Digital_Gates.html">Digital Gate</a> that toggles its output state when a Redstone Signal at the Toggle pin experiences a rising edge (the first tick when the signal goes from 0 to more than 0). Unlike Latches, Triggers only change their state on rising edges, while Latches change their state as long as the corresponding pin remains active.</p>
         </section>
         <section id="boolean-logic">
             <h2>Boolean Logic Table</h2>
@@ -58,7 +58,7 @@
             <p>The pins can be configured to face any side by right-clicking the block. This flexibility allows for easy integration into various circuit designs.</p>
             <table>
                 <tbody>
-                    <tr><td><a href="/Pin_Marks.html">Pin Mark A</a></td><td>Toggle pin</td></tr>
+                    <tr><td><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a></td><td>Toggle pin</td></tr>
                 </tbody>
             </table>
         </section>
@@ -66,9 +66,9 @@
             <h2>Crafting</h2>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -78,21 +78,21 @@
         </section>
     </main>
     <footer class="nav-links">
-        <a href="/index.html">Welcome Page</a>
-        <a href="/Getting_Started.html">Getting Started</a>
-        <a href="/List_of_Elements.html">List of Elements</a>
-        <a href="/Pin_Marks.html">Pin Marks</a>
-        <a href="/Known_Bugs.html">Known Bugs</a>
-        <a href="/Version_Log.html">Version Log</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
     <script>
         const rccr1array = [
-            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
             { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
-            { slot: 3, img: "/media/items/t_trigger.png" },
-            { slot: 4, img: "/media/items/t_trigger.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/t_trigger.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/t_trigger.png" },
         ];
         populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
         window.addEventListener("resize", () => {

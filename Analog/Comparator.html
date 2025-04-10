@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparator</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body>
     <header>
@@ -44,12 +44,12 @@
         <section id="overview">
             <h2>Overview</h2>
             <p>
-                The <strong>Comparator</strong> is an <a href="/Analog_Gates.html">Analog Gate</a> that functions like a <a href="https://minecraft.wiki/w/Redstone_Comparator">Minecraft Redstone Comparator</a> in comparator mode. It compares two input Redstone signals and outputs <strong>0</strong> or <strong>15</strong> depending on whether one is greater than the other. Specifically, the Redstone signal at <a href="/Pin_Marks.html">Pin Mark A</a> must be greater than the Redstone signal at <a href="/Pin_Marks.html">Pin Mark B</a> for the Output to provide <strong>15</strong>, and smaller or equal to provide <strong>0</strong>.</p>
+                The <strong>Comparator</strong> is an <a href="/Redstone-CG-Documentation/Analog_Gates.html">Analog Gate</a> that functions like a <a href="https://minecraft.wiki/w/Redstone_Comparator">Minecraft Redstone Comparator</a> in comparator mode. It compares two input Redstone signals and outputs <strong>0</strong> or <strong>15</strong> depending on whether one is greater than the other. Specifically, the Redstone signal at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> must be greater than the Redstone signal at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a> for the Output to provide <strong>15</strong>, and smaller or equal to provide <strong>0</strong>.</p>
             </p>
         </section>
         <section id="inverted">
             <h2>Inverted Comparator</h2>
-            <p>The <strong>Inverted Comparator</strong> outputs <strong>15</strong> if the Redstone signal at <a href="/Pin_Marks.html">Pin Mark A</a> is less or equal to the Redstone signal at <a href="/Pin_Marks.html">Pin Mark B</a>, and <strong>0</strong> otherwise.</p>
+            <p>The <strong>Inverted Comparator</strong> outputs <strong>15</strong> if the Redstone signal at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> is less or equal to the Redstone signal at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a>, and <strong>0</strong> otherwise.</p>
         </section>
         <section id="configuration">
             <h2>Configuration</h2>
@@ -57,15 +57,15 @@
         </section>
         <section id="parallel-gate">
             <h2>Parallel Comparator</h2>
-            <p>Both the Comparator and Inverted Comparator have a <a href="/Parallel_Gates.html">Parallel Gate</a> variant. In this variant, the inputs can be configured by right-clicking to have either <a href="/Pin_Marks.html">Pin Mark A</a> or <a href="/Pin_Marks.html">Pin Mark B</a> face the <strong>Back</strong> of the Block. The logic for the Parallel Comparator is as follows:</p>
+            <p>Both the Comparator and Inverted Comparator have a <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate</a> variant. In this variant, the inputs can be configured by right-clicking to have either <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> or <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a> face the <strong>Back</strong> of the Block. The logic for the Parallel Comparator is as follows:</p>
             <ul>
-                <li>If <a href="/Pin_Marks.html">Pin Mark A</a> faces the <strong>Back</strong>, then:
+                <li>If <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> faces the <strong>Back</strong>, then:
                     <ul>
                         <li>If the Redstone signal at the <strong>Back</strong> is greater than the signal at the <strong>Left</strong> or <strong>Right</strong> side, the <strong>Output</strong> provides <strong>15</strong>.</li>
                         <li>If the Redstone signal at the <strong>Back</strong> is smaller than or equal to the signal at the <strong>Left</strong> or <strong>Right</strong> side, the <strong>Output</strong> provides <strong>0</strong>.</li>
                     </ul>
                 </li>
-                <li>If <a href="/Pin_Marks.html">Pin Mark B</a> faces the <strong>Back</strong>, then:
+                <li>If <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a> faces the <strong>Back</strong>, then:
                     <ul>
                         <li>If the Redstone signal at the <strong>Back</strong> is smaller than or equal to the signal at the <strong>Left</strong> or <strong>Right</strong> side, the <strong>Output</strong> provides <strong>15</strong>.</li>
                         <li>If the Redstone signal at the <strong>Back</strong> is greater than the signal at the <strong>Left</strong> or <strong>Right</strong> side, the <strong>Output</strong> provides <strong>0</strong>.</li>
@@ -109,9 +109,9 @@
             <p>Normal Comparator</p>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Normal-Dir-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -121,9 +121,9 @@
             <p>Normal Inverted Comparator</p>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Normal-Inv-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -133,9 +133,9 @@
             <p>Parallel Comparator</p>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Parallel-Dir-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -145,9 +145,9 @@
             <p>Parallel Inverted Comparator</p>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Parallel-Inv-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
@@ -157,37 +157,37 @@
         </section>
     </main>
     <footer class="nav-links">
-        <a href="/index.html">Welcome Page</a>
-        <a href="/Getting_Started.html">Getting Started</a>
-        <a href="/List_of_Elements.html">List of Elements</a>
-        <a href="/Pin_Marks.html">Pin Marks</a>
-        <a href="/Known_Bugs.html">Known Bugs</a>
-        <a href="/Version_Log.html">Version Log</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
     <script>
         const gate1 = "components/analog/comparator.png";
         const gate2 = "components/analog/ncomparator.png";
         const ingredientarray = [
-            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
             { slot: 2, img: "https://minecraft.wiki/images/Nether_Quartz_JE2_BE2.png?d0049" },
         ]
         const rccr1array = [
-            { slot: 3, img: `/media/textures/${gate1}` },
-            { slot: 4, img: `/media/textures/${gate1}` },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate1}` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate1}` },
         ];
         const rccr2array = [
-            { slot: 3, img: `/media/textures/${gate2}`, addon: ["/media/textures/components/torch.png"] },
-            { slot: 4, img: `/media/textures/${gate2}`, addon: ["/media/textures/components/torch.png"] },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate2}`, addon: ["/Redstone-CG-Documentation/media/textures/components/torch.png"] },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate2}`, addon: ["/Redstone-CG-Documentation/media/textures/components/torch.png"] },
         ];
         const rccr3array = [
-            { slot: 3, img: `/media/textures/${gate1}`, addon: ["/media/textures/components/parallel.png"] },
-            { slot: 4, img: `/media/textures/${gate1}`, addon: ["/media/textures/components/parallel.png"] },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate1}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png"] },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate1}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png"] },
         ];
         const rccr4array = [
-            { slot: 3, img: `/media/textures/${gate2}`, addon: ["/media/textures/components/parallel.png","/media/textures/components/torch.png"] },
-            { slot: 4, img: `/media/textures/${gate2}`, addon: ["/media/textures/components/parallel.png","/media/textures/components/torch.png"] },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate2}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png","/Redstone-CG-Documentation/media/textures/components/torch.png"] },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate2}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png","/Redstone-CG-Documentation/media/textures/components/torch.png"] },
         ];
         function populate() {
             populateRedCuCrafter("Normal-Dir-Making", {category: 2, tipe: 0}, ingredientarray.concat(rccr1array));

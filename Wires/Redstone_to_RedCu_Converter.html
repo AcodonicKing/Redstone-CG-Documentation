@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redstone to RedCu Converter</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
 </head>
 <body id="redstone-to-redcu-converter">
     <header>
@@ -54,13 +54,13 @@
             <h2>Crafting</h2>
             <div class="recipe_table">
                 <table>
-                    <tr><td><b>Ingredients</b></td><td><b><a href="/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
                     <tr>
-                        <td>1 <a href="/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
                         <td rowspan="3" width="400px"><div class="table-place" id="Redstone-RedCu-Converter-Making"></div></td>
                     </tr>
                     <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
-                    <tr><td>1 <a href="RedCu_Wire.html">RedCu Wire</a></td></tr>
+                    <tr><td>1 <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a></td></tr>
                 </table>
             </div>
         </section>
@@ -74,7 +74,7 @@
                 <strong>Prc = Pr * 16 + 15</strong>
             </div>
             <p>
-                The Redstone to RedCu Converter can also transfer signals between <a href="RedCu_Wire.html">RedCu Wires</a> by following the equation:
+                The Redstone to RedCu Converter can also transfer signals between <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wires</a> by following the equation:
             </p>
             <div class="equation">
                 <strong>Prn = max(Prc - L, 0)</strong>
@@ -86,7 +86,7 @@
                 The block supports up to 15 configurations, which can be cycled through by right-clicking. To rotate the block, players must destroy and place it again from a different angle.
             </p>
             <p>
-                While it visually resembles <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> in some configurations, the block operates differently. It only takes the highest Redstone signal it is connected to and converts it to a RedCu Wire signal. Outputs are exclusively at the RedCu Wire ends, and the conversion back to Redstone signal follows the same rules as a <a href="RedCu_Wire.html">RedCu Wire</a>.
+                While it visually resembles <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> in some configurations, the block operates differently. It only takes the highest Redstone signal it is connected to and converts it to a RedCu Wire signal. Outputs are exclusively at the RedCu Wire ends, and the conversion back to Redstone signal follows the same rules as a <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a>.
             </p>
         </section>
 
@@ -102,11 +102,11 @@
         <section id="usage-pattern">
             <h2>Usage Pattern for Long Distances</h2>
             <p>
-                For long-distance <a href="RedCu_Wire.html">RedCu Wire</a> setups where signal strength must remain consistent beyond 15 blocks, use the following pattern:
+                For long-distance <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a> setups where signal strength must remain consistent beyond 15 blocks, use the following pattern:
             </p>
             <ol>
                 <li>Place a Redstone to RedCu Converter.</li>
-                <li>Connect up to 15 <a href="RedCu_Wire.html">RedCu Wires</a>.</li>
+                <li>Connect up to 15 <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wires</a>.</li>
                 <li>Add <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> to maintain circuit updates.</li>
                 <li>Repeat the pattern.</li>
             </ol>
@@ -114,19 +114,19 @@
                 Redstone to RedCu Converters amplify the signal, while <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> ensures the circuit updates properly when the signal changes.
             </p>
             <div class="image800">
-                <img alt="Long Distance Example" src="/media/images/Converter_Extender.png"/>
+                <img alt="Long Distance Example" src="/Redstone-CG-Documentation/media/images/Converter_Extender.png">
             </div>
         </section>
     </main>
     <footer class="nav-links">
-        <a href="/index.html">Welcome Page</a>
-        <a href="/Getting_Started.html">Getting Started</a>
-        <a href="/List_of_Elements.html">List of Elements</a>
-        <a href="/Pin_Marks.html">Pin Marks</a>
-        <a href="/Known_Bugs.html">Known Bugs</a>
-        <a href="/Version_Log.html">Version Log</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const ptrn = [
@@ -151,11 +151,11 @@
         });
 
         const rccr1array = [
-            { slot: 0, img: "/media/items/smooth_stone_plate.png" },
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
-            { slot: 2, img: "/media/items/red_cu_wire.png" },
-            { slot: 3, img: "/media/items/redstone_to_red_cu_converter.png" },
-            { slot: 4, img: "/media/items/redstone_to_red_cu_converter.png" },
+            { slot: 2, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/redstone_to_red_cu_converter.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/redstone_to_red_cu_converter.png" },
         ];
         populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 64}, rccr1array);
         window.addEventListener("resize", () => {populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 64}, rccr1array);})
