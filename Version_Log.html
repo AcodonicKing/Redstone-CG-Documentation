@@ -11,8 +11,85 @@
         <h1>Version Log</h1>
     </header>
     <main>
+        <section id="0.1.1">
+            <h2>0.1.1 - Farewell MCreator!</h2>
+            <p>Since the very beginning of Redstone CG, MCreator has been the primary development tool. Without it, starting the project and implementing its early features would have been extremely difficult. MCreator is a great platform for starting mod development and learning how to create Minecraft mods. But that’s also where its limitations begin.</p>
+            <p>As of now, MCreator is restricted in its capabilities and the range of functions it supports. To implement the features that Redstone CG offers today, most of the code had to be locked and manually adjusted — and managing new features this way was becoming increasingly tedious. MCreator also tends to enforce its own mod structure and, in one instance, even deleted a file in an attempt to "fix" something. Things got even more complicated when trying to port the mod to other Minecraft versions — almost every file contained code that only worked with version 1.19.2.</p>
+            <p>This is where Redstone CG parts ways with MCreator.</p>
+            <p>While version 0.1.1 doesn’t add many new features, the codebase has undergone a massive overhaul — equivalent to rewriting the entire mod. The code has been updated to support all versions from 1.19 to 1.20.1. Many redundancies were removed, shrinking the mod’s size from 818 KB to 587 KB.</p>
+            <p>Registry names were updated to fix logical and grammatical issues and to lay the groundwork for future updates. A registry name re-mapper is included, so existing worlds should still load correctly.</p>
+            <p>Nevertheless, I’m deeply thankful to the developers of MCreator for providing a platform that made mod development approachable and accessible.</p>
+            <p>Changed:</p>
+            <ul>
+                <li>Removed <a href="Depricated/Test_Block.html">"Test" Block</a> and <a href="Depricated/Test_Block.html">"Test On" Block</a> Block.</li>
+                <li>Fixed Gate bottom textures.</li>
+                <li>Added Shift+LeftClick to <a href="RedCu_Crafter.html">RedCu Crafter</a>.</li>
+                <li>RedCu Wire auto-connection is now false by default.</li>
+                <li>Codebase overhaul - support for Minecraft Forge 1.19, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.20, 1.20.1</li>
+                <li>Registry name change.</li>
+            </ul>
+            <p>Registry names:</p>
+            <ul>
+                <li>"and" -&gt; "floor_and"</li>
+                <li>"or" -&gt; "floor_or"</li>
+                <li>"xor" -&gt; "floor_xor"</li>
+                <li>"buf" -&gt; "floor_buf"</li>
+                <li>"nand" -&gt; "floor_nand"</li>
+                <li>"nor" -&gt; "floor_nor"</li>
+                <li>"nxor" -&gt; "floor_nxor"</li>
+                <li>"not" -&gt; "floor_not"</li>
+                <li>"sr_trigger" -&gt; "floor_sr_latch"</li>
+                <li>"d_trigger" -&gt; "floor_d_latch"</li>
+                <li>"t_trigger" -&gt; "floor_t_trigger"</li>
+                <li>"jk_trigger" -&gt; "floor_jk_trigger"</li>
+                <li>"analog_source" -&gt; "floor_analog_source"</li>
+                <li>"analog_bias" -&gt; "floor_analog_bias"</li>
+                <li>"analog_gain" -&gt; "floor_analog_gain"</li>
+                <li>"analog_pass" -&gt; "floor_analog_pass"</li>
+                <li>"analog_memory" -&gt; "floor_analog_memory"</li>
+                <li>"analog_subtractor" -&gt; "floor_analog_subtractor"</li>
+                <li>"analog_differential" -&gt; "floor_analog_differential"</li>
+                <li>"analog_max" -&gt; "floor_analog_max"</li>
+                <li>"analog_min" -&gt; "floor_analog_min"</li>
+                <li>"comparator" -&gt; "floor_comparator"</li>
+                <li>"n_comparator" -&gt; "floor_n_comparator"</li>
+                <li>"path_selector" -&gt; "floor_forward_path_selector"</li>
+                <li>"reversed_path_selector" -&gt; "floor_reversed_path_selector"</li>
+                <li>"through_gate" -&gt; "floor_one_way_through_gate"</li>
+                <li>"through_not_gate" -&gt; "floor_one_way_through_not_gate"</li>
+                <li>"universal_indicator" -&gt; "floor_universal_indicator"</li>
+                <li>"seven_segment_indicator" -&gt; "floor_seven_segment_indicator"</li>
+                <li>"clock_filling_indicator" -&gt; "floor_clock_filling_indicator"</li>
+                <li>"orb_indicator" -&gt; "floor_orb_indicator"</li>
+                <li>"paralel_and" -&gt; "floor_parallel_and"</li>
+                <li>"paralel_or" -&gt; "floor_parallel_or"</li>
+                <li>"paralel_xor" -&gt; "floor_parallel_xor"</li>
+                <li>"paralel_nand" -&gt; "floor_parallel_nand"</li>
+                <li>"paralel_nor" -&gt; "floor_parallel_nor"</li>
+                <li>"paralel_nxor" -&gt; "floor_parallel_nxor"</li>
+                <li>"paralel_sr_latch" -&gt; "floor_parallel_sr_latch"</li>
+                <li>"paralel_d_latch" -&gt; "floor_parallel_d_latch"</li>
+                <li>"paralel_analog_bias" -&gt; "floor_parallel_analog_bias"</li>
+                <li>"paralel_analog_gain" -&gt; "floor_parallel_analog_gain"</li>
+                <li>"paralel_analog_pass" -&gt; "floor_parallel_analog_pass"</li>
+                <li>"paralel_analog_differential" -&gt; "floor_parallel_analog_differential"</li>
+                <li>"paralel_analog_memory" -&gt; "floor_parallel_analog_memory"</li>
+                <li>"paralel_analog_subtractor" -&gt; "floor_parallel_analog_subtractor"</li>
+                <li>"paralel_analog_max" -&gt; "floor_parallel_analog_max"</li>
+                <li>"paralel_analog_min" -&gt; "floor_parallel_analog_min"</li>
+                <li>"paralel_comparator" -&gt; "floor_parallel_comparator"</li>
+                <li>"paralel_n_comparator" -&gt; "floor_parallel_n_comparator"</li>
+                <li>"parallel_path_selector" -&gt; "floor_parallel_one_way_path_selector"</li>
+                <li>"parallel_through_gate" -&gt; "floor_parallel_one_way_through_gate"</li>
+                <li>"parallel_through_not_gate" -&gt; "floor_parallel_one_way_through_not_gate"</li>
+                <li>"red_cu_wire" -&gt; "floor_red_cu_wire"</li>
+                <li>"redstone_to_red_cu_converter" -&gt; "floor_redstone_to_red_cu_converter"</li>
+                <li>"red_cu_intersection" -&gt; "floor_red_cu_intersection"</li>
+                <li>"paralel_line_output" -&gt; "floor_parallel_line_output"</li>
+            </ul>
+        </section>
         <section id="0.1.0">
-            <h2>1.0.0 - Flow Control Update</h2>
+            <h2>0.1.0 - Flow Control Update</h2>
             <p>Introduced Gates:</p>
             <ul>
                 <li><a href="Analog/Analog_Minimum.html">Analog Minimum</a></li>
@@ -101,6 +178,7 @@
                 <li><a href="RedCu_Mixture.html">RedCu Mixture</a></li>
                 <li><a href="RedCu_Ingot.html">RedCu Ingot</a></li>
             </ul>
+            <p>Only for Minecraft Forge 1.19.2.</p>
         </section>
     </main>
     <footer class="nav-links">

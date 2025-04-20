@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Test</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Test</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-off"><div id="rnd-off"></div></div>
+                <div id="bt-on" style="display: none;"><div id="rnd-on"></div></div>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+            <tr><td><div><div>Version</div><div>0.0.0 - 0.1.0</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                "Test" is the first block in Redstone CG. It was used to find out how to change blocks texture when a Redstone Signal was applied.
+                When Redstone Signal level greater than 0 was applied to it, the texture changed to "Test On" blocks texture.
+                "Test On" is the second block, with no functionality - used as a placeholder for a texture and a model.
+            </p>
+            <p>
+                Both blocks have served their purpose since even before the release of 0.0.0, but kept until 0.1.0 (inclusive).
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Obtaining</h2>
+            <p>These were only obtainable with commands:</p>
+            <p><code>/give @s redstonecg:test</code></p>
+            <p><code>/give @s redstonecg:test_on</code></p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            renderComponent("rnd-off", "depricated/test.png", [], []);
+            renderComponent("rnd-on", "depricated/test_on.png", [], []);
+            toggleDivHover("bt-dsp", function() {
+                document.getElementById("bt-on").style.display = "none";
+                document.getElementById("bt-off").style.display = "block";
+            }, function() {
+                document.getElementById("bt-off").style.display = "none";
+                document.getElementById("bt-on").style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>
