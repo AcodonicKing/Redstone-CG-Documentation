@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation Bracket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1>Rotation Bracket</h1></header>
+    <div class="block_table">
+        <table>
+            <th>Rotation Bracket</th>
+            <tr><td class="block_table-img"><img alt="Rotation Bracket Render" src="media/items/rotation_bracket.png"/></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Rarity">Rarity tier</a></div><div>Common</div></div></td></tr>
+            <tr><td><div><div>Stackable</div><div>No(1)</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Rotation Bracket</strong> is a <em>tool</em> used to rotate blocks added by the Redstone CG mod. By default, right-clicking a compatible block with the Rotation Bracket in your main hand will rotate the block <strong>clockwise</strong>.
+            </p>
+            <p>
+                If you crouch while right-clicking, the block will instead rotate <strong>counterclockwise</strong>. This enables precise orientation control during circuit design.
+            </p>
+            <p>
+                <strong>Note:</strong> Only blocks from the Redstone CG mod can be rotated using the Rotation Bracket. The following blocks are exceptions and cannot be rotated:
+            </p>
+            <ul>
+                <li><a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a></li>
+                <li><a href="RedCu_Crafter.html">RedCu Crafter</a></li>
+            </ul>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="https://minecraft.wiki/w/Crafting">Crafting</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>8 <a href="https://minecraft.wiki/w/Iron_Bars">Iron Bars</a></td>
+                        <td rowspan="1" width="400px"><div class="table-place" id="Rotation-Bracket-Crafting"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.2.0</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const texture = "https://minecraft.wiki/images/Iron_Bars_%28texture%29_JE1_BE1.png?de9b3"
+        const crft1array = [
+            { slot: 0, img: texture },
+            { slot: 1, img: texture },
+            { slot: 2, img: texture },
+            { slot: 3, img: texture },
+            { slot: 5, img: texture },
+            { slot: 6, img: texture },
+            { slot: 7, img: texture },
+            { slot: 8, img: texture },
+            { slot: 9, img: "media/items/rotation_bracket.png" },
+        ];
+        populateTable("Rotation-Bracket-Crafting", "crafting", crft1array);
+        window.addEventListener("resize", () => {
+            populateTable("Rotation-Bracket-Crafting", "crafting", crft1array);
+        });
+    </script>
+</body>
+</html>

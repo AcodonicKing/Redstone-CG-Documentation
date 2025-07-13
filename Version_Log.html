@@ -11,6 +11,118 @@
         <h1>Version Log</h1>
     </header>
     <main>
+        <section id="0.2.0">
+            <h2>0.2.0 – On the Wall and Ceiling</h2>
+            <p>Before updating to <strong>version 0.2.0</strong>, make sure to <strong>backup your world</strong> and carefully follow the <a href="Oh0You2Beta0.html">transition guide</a> to avoid potential issues.</p>
+            <p>
+                The original plan for this update was to add wall variants as <strong>separate blocks</strong> alongside floor-only gates.
+                That’s why previous registry names included the keyword <code>floor</code>.
+                However, as development progressed, it became clear that a generalized system could support <strong>all six faces</strong> with a unified implementation.
+            </p>
+            <p>
+                This decision required a near-complete rewrite of the block updating and signal reading systems – nearly done twice – but allowed for a <strong>single flexible gate system</strong> instead of multiple separate ones.
+            </p>
+            <p>
+                Unfortunately, this improvement came at a cost: gates supporting six-face placement caused <strong>six times higher RAM usage</strong> per gate.
+                As a solution, <strong>Block Entities</strong> are now used to offload data from block states, helping reduce memory pressure. 
+            </p>
+            <p> 
+                The new directional update mechanic should also reduce <strong>CPU usage</strong> by minimizing unnecessary neighbor updates.
+                While more efficient in the long run, this architectural shift made backward compatibility difficult – hence the need for a <a href="Oh0You2Beta0.html">manual transition</a>.
+            </p>
+            <h3>Major Features</h3>
+            <ul>
+                <li><strong>Gates can now be placed</strong> on all sides of a block – <em>floor</em>, <em>walls</em>, and <em>ceiling</em>.</li>
+                <li><strong>Redstone Torches</strong> on gates now have a more <em>Minecraft-like rendering</em>.</li>
+                <li>All <strong>Gates</strong> and <strong>Indicators</strong> have <em>Block Entities</em>.</li>
+                <li><strong>Indicators</strong> are now rendered using <em>Block Entity Renderer</em>.</li>
+                <li>Placement direction has changed: 
+                    <ul>
+                        <li><em>Outputs</em> now face <strong>away from the player</strong> or <strong>up</strong>.</li>
+                        <li><em>Inputs</em> now face <strong>towards the player</strong> or <strong>down</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Rotated labels</strong> on the following gates: <em>SR Latch</em>, <em>D Latch</em>, <em>T Trigger</em>, <em>JK Trigger</em>, <em>Parallel SR Latch</em>, and <em>Parallel D Latch</em>. </li>
+                <li>Added new tool: <a href="Rotation_Bracket.html">Rotation Bracket</a> for rotating placed gates and wires.</li>
+                <li><a href="Wires/RedCu_Wire.html">RedCu Wire</a> now bends differently when right-clicked – using <strong>fewer block states</strong>.</li>
+                <li><strong>Gate and Wire updates</strong> now propagate in <em>output directions</em> only – reducing <strong>unnecessary block updates</strong> and improving performance.</li>
+                <li><a href="Wires/Parallel_Line_Output.html">Parallel Line Output</a> now connects differently than before.</li>
+                <li><a href="RedCu_Meter.html">RedCu Meter</a> enhancements:
+                    <ul> 
+                        <li>Now also measures <em>Redstone Torch</em>.</li>
+                        <li>When measuring <a href="Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a> or <a href="Hybrid/Forward_Path_Selector.html">Forward Path Selector</a>, it will display <strong>two signal values</strong>.</li>
+                    </ul>
+                </li>
+                <li>Introduced new block: <a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> – allows signal transition between floor, wall, and ceiling.</li>
+            </ul>
+            <h3>Technical Changes</h3>
+            <ul>
+                <li>The <strong>core mechanics</strong> of: <em>block updates</em>, and <em>redstone signal reading</em> have been <strong>entirely rewritten</strong>.</li>
+                <li>Bugs <a href="rcgb/RCGB-2/page.html">RCGB-2</a> and <a href="rcgb/RCGB-3/page.html">RCGB-3</a> are now confirmed <strong>inactive</strong>.</li>
+                <li>New known bug: <a href="rcgb/RCGB-4/page.html">RCGB-4</a>.</li>
+                <li>Registry names have been changed again to match the new placement system:
+                    <ul>
+                        <li>"floor_and" -&gt; "normal_and"</li>
+                        <li>"floor_or" -&gt; "normal_or"</li>
+                        <li>"floor_xor" -&gt; "normal_xor"</li>
+                        <li>"floor_buf" -&gt; "normal_buf"</li>
+                        <li>"floor_nand" -&gt; "normal_nand"</li>
+                        <li>"floor_nor" -&gt; "normal_nor"</li>
+                        <li>"floor_nxor" -&gt; "normal_nxor"</li>
+                        <li>"floor_not" -&gt; "normal_not"</li>
+                        <li>"floor_sr_latch" -&gt; "normal_sr_latch"</li>
+                        <li>"floor_d_latch" -&gt; "normal_d_latch"</li>
+                        <li>"floor_t_trigger" -&gt; "normal_t_trigger"</li>
+                        <li>"floor_jk_trigger" -&gt; "normal_jk_trigger"</li>
+                        <li>"floor_analog_source" -&gt; "normal_analog_source"</li>
+                        <li>"floor_analog_bias" -&gt; "normal_analog_bias"</li>
+                        <li>"floor_analog_gain" -&gt; "normal_analog_gain"</li>
+                        <li>"floor_analog_pass" -&gt; "normal_analog_pass"</li>
+                        <li>"floor_analog_memory" -&gt; "normal_analog_memory"</li>
+                        <li>"floor_analog_subtractor" -&gt; "normal_analog_subtractor"</li>
+                        <li>"floor_analog_differential" -&gt; "normal_analog_differential"</li>
+                        <li>"floor_analog_max" -&gt; "normal_analog_max"</li>
+                        <li>"floor_analog_min" -&gt; "normal_analog_min"</li>
+                        <li>"floor_comparator" -&gt; "normal_comparator"</li>
+                        <li>"floor_n_comparator" -&gt; "normal_n_comparator"</li>
+                        <li>"floor_forward_path_selector" -&gt; "normal_forward_path_selector"</li>
+                        <li>"floor_reversed_path_selector" -&gt; "normal_reversed_path_selector"</li>
+                        <li>"floor_one_way_through_gate" -&gt; "normal_one_way_trough_gate"</li>
+                        <li>"floor_one_way_through_not_gate" -&gt; "normal_one_way_trough_not_gate"</li>
+                        <li>"floor_universal_indicator" -&gt; "universal_indicator"</li>
+                        <li>"floor_seven_segment_indicator" -&gt; "seven_segment_indicator"</li>
+                        <li>"floor_clock_filling_indicator" -&gt; "clock_filling_indicator"</li>
+                        <li>"floor_orb_indicator" -&gt; "orb_indicator"</li>
+                        <li>"floor_parallel_and" -&gt; "parallel_and"</li>
+                        <li>"floor_parallel_or" -&gt; "parallel_or"</li>
+                        <li>"floor_parallel_xor" -&gt; "parallel_xor"</li>
+                        <li>"floor_parallel_nand" -&gt; "parallel_nand"</li>
+                        <li>"floor_parallel_nor" -&gt; "parallel_nor"</li>
+                        <li>"floor_parallel_nxor" -&gt; "parallel_nxor"</li>
+                        <li>"floor_parallel_sr_latch" -&gt; "parallel_sr_latch"</li>
+                        <li>"floor_parallel_d_latch" -&gt; "parallel_d_latch"</li>
+                        <li>"floor_parallel_analog_bias" -&gt; "parallel_analog_bias"</li>
+                        <li>"floor_parallel_analog_gain" -&gt; "parallel_analog_gain"</li>
+                        <li>"floor_parallel_analog_pass" -&gt; "parallel_analog_pass"</li>
+                        <li>"floor_parallel_analog_differential" -&gt; "parallel_analog_differential"</li>
+                        <li>"floor_parallel_analog_memory" -&gt; "parallel_analog_memory"</li>
+                        <li>"floor_parallel_analog_subtractor" -&gt; "parallel_analog_subtractor"</li>
+                        <li>"floor_parallel_analog_max" -&gt; "parallel_analog_max"</li>
+                        <li>"floor_parallel_analog_min" -&gt; "parallel_analog_min"</li>
+                        <li>"floor_parallel_comparator" -&gt; "parallel_comparator"</li>
+                        <li>"floor_parallel_n_comparator" -&gt; "parallel_n_comparator"</li>
+                        <li>"floor_parallel_one_way_path_selector" -&gt; "arallel_one_way_path_selector"</li>
+                        <li>"floor_parallel_one_way_through_gate" -&gt; "parallel_one_way_through_gate"</li>
+                        <li>"floor_parallel_one_way_through_not_gate" -&gt; "parallel_one_way_through_not_gate"</li>
+                        <li>"floor_red_cu_wire" -&gt; "redcu_wire"</li>
+                        <li>"floor_redstone_to_red_cu_converter" -&gt; "redstone_to_redcu_converter"</li>
+                        <li>"floor_red_cu_intersection" -&gt; "redcu_intersection"</li>
+                        <li>"floor_parallel_line_output" -&gt; "parallel_line_output"</li>
+                        <li>"red_cu_crafter" -&gt; "redcu_crafter"</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
         <section id="0.1.1">
             <h2>0.1.1 - Farewell MCreator!</h2>
             <p>Since the very beginning of Redstone CG, MCreator has been the primary development tool. Without it, starting the project and implementing its early features would have been extremely difficult. MCreator is a great platform for starting mod development and learning how to create Minecraft mods. But that’s also where its limitations begin.</p>
@@ -187,6 +299,7 @@
         <a href="List_of_Elements.html">List of Elements</a>
         <a href="Pin_Marks.html">Pin Marks</a>
         <a href="Known_Bugs.html">Known Bugs</a>
+        <a href="Other_Links.html">Other</a>
     </footer>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedCu Wire Transition Walk-Through Blockage</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>RedCu Wire Transition Walk-Through Blockage</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p><strong>Affected Versions:</strong> <span id="affected_versions"></span></p>
+            <p>
+                <strong>Description:</strong> After placing and configuring a RedCu Wire Transition, the player may experience difficulty walking through the block—even though it visually appears passable. Attempting to walk through the block can result in player movement slowing down or becoming stuck. Sometimes, even retreating becomes difficult.
+            </p>
+            <p>
+                <strong>Cause:</strong> Unconfirmed, but likely an issue between Server-Client synchronization.
+            </p>
+            <p>
+                <strong>Consequences:</strong> Despite making player movement trough the block difficult, it is not a threat to the client or server.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong> Reloading the world or rejoining the server usually resolves the issue for placed blocks.
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-4"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    document.getElementById("affected_versions").textContent = page.affected_versions;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

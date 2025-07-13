@@ -1,6 +1,7 @@
 [
-    {"title": "Brakeless Gate Loop", "severity": "High", "status": "Inactive", "code": "RCGB-0"},
-    {"title": "Inverted Logic Lag Circuits", "severity": "Medium", "status": "Active", "code": "RCGB-1"},
-    {"title": "Row Ghosting", "severity": "Low", "status": "Assumed Inactive", "code": "RCGB-2"},
-    {"title": "Schrödinger's Redstone", "severity": "Low", "status": "Assumed Inactive", "code": "RCGB-3"}
+    {"title": "Brakeless Gate Loop", "severity": "High", "status": "Inactive", "code": "RCGB-0", "affected_versions": "0.0.0"},
+    {"title": "Inverted Logic Lag Circuits", "severity": "Medium", "status": "Active", "code": "RCGB-1", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1, 0.2.0"},
+    {"title": "Row Ghosting", "severity": "Low", "status": "Inactive", "code": "RCGB-2", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1"},
+    {"title": "Schrödinger's Redstone", "severity": "Low", "status": "Inactive", "code": "RCGB-3", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1"},
+    {"title": "RedCu Wire Transition Walk-Through Blockage", "severity": "Low", "status": "Active", "code": "RCGB-4", "affected_versions": "0.2.0"}
 ]

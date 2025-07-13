@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redstonecg_repair</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1><code>/redstonecg_repair</code></h1></header>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The /redstonecg_repair command is used to repair and reconfigure RedstoneCG blocks that may have been corrupted, misplaced, or require transition fixes between versions.
+            </p>
+            <p>
+                This command requires Command Permission Level 1 (Moderator). It can be used in both Singleplayer with cheats enabled and Multiplayer with proper permissions.
+            </p>
+            <code>/redstonecg_repair</code>
+            <ul>
+                <li>
+                    <code>canSurviveAir &lt;boolean&gt;</code>
+                </li>
+                <li>
+                    <code>flooring</code>
+                    <ul>
+                        <li><code>&lt;pos: x y z&gt;</code></li>
+                        <li><code>chunk</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <code>old</code>
+                    <ul>
+                        <li><code>&lt;pos: x y z&gt;</code></li>
+                        <li><code>chunk</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="can_survive_air">
+            <h2><code>/redstonecg_repair canSurviveAir &lt;boolean&gt;</code></h2>
+            <p>Temporarily overrides the internal physics check for RedstoneCG blocks.</p>
+            <ul>
+                <li><code>/redstonecg_repair canSurviveAir true</code> - Prevents RedstoneCG blocks from breaking when floating in mid-air.</li>
+                <li><code>/redstonecg_repair canSurviveAir false</code> - Restores default behavior, causing gates and wires to break when updated and if not attached to a solid surface on their base face.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li><code>true</code> - <strong>"RedstoneCG blocks will now stay while being suspended in the air."</strong></li>
+                <li><code>false</code> - <strong>"RedstoneCG blocks will drop once updated if suspended in the air."</strong></li>
+            </ul>
+        </section>
+        <section id="flooring">
+            <h2><code>/redstonecg_repair flooring [argument]</code></h2>
+            <p>Forces gates and wires to reorient so that their base is the floor.<br> This is typically used when converting worlds from versions that did not support wall or ceiling placement.</p>
+            <ul>
+                <li><code>/redstonecg_repair flooring &lt;pos: x y z&gt;</code> - Applies to the block at the given coordinates.</li>
+                <li><code>/redstonecg_repair flooring chunk</code> - Applies to all RedstoneCG blocks in the <strong>chunk you are currently standing in</strong>.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li>Success (position) - <code>"Block at {position} has been floored."</code></li>
+                <li>Success (chunk) - <code>"Blocks at this Chunk have been floored."</code></li>
+                <li>Failure (position) - <code>"Block at {position} cannot be floored."</code></li>
+                <li>Failure (chunk) - <code>"Blocks at this Chunk cannot be floored."</code></li>
+            </ul>
+            <p>Note: Failure must likely means that there are no RedstoneCG blocks in the chunk or at the given position that can be floored.</p>
+        </section>
+        <section id="old">
+            <h2><code>/redstonecg_repair old [argument]</code></h2>
+            <p>Attempts to remap blocks to their older version format.</p>
+            <ul>
+                <li><code>/redstonecg_repair old &lt;pos: x y z&gt;</code> - Applies to the block at the given coordinates.</li>
+                <li><code>/redstonecg_repair old chunk</code> - Applies to all RedstoneCG blocks in the <strong>chunk you are currently standing in</strong>.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li>Success (position) - <code>"Block at {position} has been adjusted to match block from the old version."</code></li>
+                <li>Success (chunk) - <code>"Blocks at this Chunk have been adjusted to match blocks from the old version."</code></li>
+                <li>Failure (position) - <code>"Block at {position} cannot be adjusted to match old version."</code></li>
+                <li>Failure (chunk) - <code>"Blocks at this Chunk cannot be adjusted to match old version."</code></li>
+            </ul>
+            <p>Note: Running this multiple times on the same block may cause unexpected behavior.</p>
+            <p>This command can be used on:</p>
+            <ul>
+                <li><a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a></li>
+                <li><a href="/Redstone-CG-Documentation/Wires/Parallel_Line_Output.html">Parallel Line Output</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+</body>
+</html>

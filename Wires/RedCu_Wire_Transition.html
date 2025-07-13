@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedCu Wire Transition</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>RedCu Wire Transition</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Smooth Stone Plate</th>
+            <tr><td class="block_table-img"><img id="redcu-wire-transition-showcase" alt="RedCu Wire Transition" src="/Redstone-CG-Documentation/media/items/redcu_wire_transition.png"/></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+        <h2>Overview</h2>
+            <p>
+                The <strong>RedCu Wire Transition</strong> is a special type of <a href="RedCu_Wire.html">RedCu Wire</a> designed to connect Redstone CG blocks across different surfaces—such as <strong>floors, walls, and ceilings</strong>. Other than this capability, it functions identically to standard RedCu Wire.
+            </p>
+            <p>
+                When placed, the RedCu Wire Transition automatically scans for nearby connectable components like <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a>, <a href="RedCu_Wire.html">RedCu Wires</a>, and <a href="../List_of_Elements.html">Gates</a>. If such components are found, it will automatically configure itself to form connections.
+            </p>
+            <p>
+                If no valid connections are found upon placement, the block will visually appear as a rotating item to indicate an unconnected state.
+            </p>
+        </section>
+        <section id="interface">
+            <h2>RedCu Wire Transition Interface</h2>
+            <p>
+                After placement, the <strong>RedCu Wire Transition</strong> can be right-clicked to open its configuration GUI. This interface allows manual tuning of connection directions.
+            </p>
+            <div class="image800"><img alt="RedCu Wire Transition GUI" src="/Redstone-CG-Documentation/media/images/RedCu_Wire_Transition_GUI.png"/></div>
+            <ul>
+                <li>The GUI uses a <strong>fully transparent background</strong> to allow the player to see the block while making adjustments.</li>
+                <li>The GUI shows 6 regions, representing the 6 faces of the block</a>:
+                <strong>D</strong> (Down), <strong>U</strong> (Up), <strong>N</strong> (North), <strong>E</strong> (East), <strong>S</strong> (South), and <strong>W</strong> (West).
+                </li>
+                <li>Each face displays <strong>4 small white squares</strong>, corresponding to possible connection points. Only <strong>one</strong> connection per face can be active at a time.</li>
+                <li>To better understand the orientation, imagine standing inside the cube where the wire is placed: your body faces North, and your head looks Down.</li>
+            </ul>
+            <p>
+                If configuring via GUI is unclear, it is recommended to place other connectable blocks first, then place the RedCu Wire Transition. In most cases, it will auto-configure correctly.
+            </p>
+            <p>
+                <strong>Note:</strong> If the wire doesn’t connect to a block, it doesn’t necessarily mean it can’t be configured to exchange signals with that block. It might simply be unable to determine where to connect automatically.
+            </p>
+        </section>
+        <section id="known-bugs">
+            <h2>Known Bug: <a href="/Redstone-CG-Documentation/rcgb/RCGB-4/page.html">RedCu Wire Transition Walk-Through Blockage</a></h2>
+            <p>
+                After placing and configuring a RedCu Wire Transition, the player may experience difficulty walking through the block—even though it visually appears passable.
+            </p>
+            <p>
+                Attempting to walk through the block can result in player movement slowing down or becoming stuck. Sometimes, even retreating becomes difficult.
+            </p>
+            <p>
+                <strong>Workaround:</strong> Reloading the world or rejoining the session usually resolves the issue for placed blocks.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>2 <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a></td>
+                        <td rowspan="1" width="400px"><div class="table-place" id="RedCu-Wire-Transition-Making"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.2.0</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 1, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/redcu_wire_transition.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/redcu_wire_transition.png" },
+        ];
+        populateRedCuCrafter("RedCu-Wire-Transition-Making", {category: 0, tipe: 64}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("RedCu-Wire-Transition-Making", {category: 0, tipe: 64}, rccr1array);
+        });
+    </script>
+</body>

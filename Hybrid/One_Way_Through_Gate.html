@@ -17,9 +17,7 @@
         <div id="bt-rnd-norm"><div id="rnd-norm"></div></div>
         <div id="bt-btz-norm" style="display: none;"><div id="btz-norm"></div></div>
       </div></td></tr>
-      <!-- Buttons for selecting pin mark configuration -->
       <tr><td><div>
-        <!-- Six configurations: BL, BR, LR, LB, RB, RL -->
         <button id="bt-btn-bl" class="bt-button active">BL</button>
         <button id="bt-btn-br" class="bt-button">BR</button>
         <button id="bt-btn-lr" class="bt-button">LR</button>
@@ -27,17 +25,14 @@
         <button id="bt-btn-rb" class="bt-button">RB</button>
         <button id="bt-btn-rl" class="bt-button">RL</button>
       </div></td></tr>
-      <!-- Buttons for redirection options -->
       <tr><td><div>
         <button id="bt-block-norm" class="bt-button active">Block Signal</button>
         <button id="bt-pass-norm" class="bt-button">Pass Signal</button>
       </div></td></tr>
-      <!-- Buttons for signal settings -->
       <tr><td><div>
         <button id="bt-low-norm" class="bt-button active">Set Signal Low</button>
         <button id="bt-high-norm" class="bt-button">Set Signal High</button>
       </div></td></tr>
-      <!-- Additional Information Rows -->
       <tr><td><div>
         <div>Stackable</div><div>Yes(64)</div>
       </div></td></tr>
@@ -61,7 +56,6 @@
         When the Control Pin’s signal is high (&gt;0), the gate allows the signal from <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> to pass through to <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a>. When the signal is low (0), the gate blocks the signal. This behavior is similar to a relay with two connectable pins or a transistor that fully saturates even at low signal levels.
       </p>
       <div class="image800">
-        <!-- Image Placeholder: Example of One Way Through Gate -->
         <img alt="One Way Through Gate Example" src="/Redstone-CG-Documentation/media/images/One_Way_Through_Gate_Example.png">
       </div>
     </section>
@@ -82,23 +76,18 @@
         <div id="bt-rnd-prll"><div id="rnd-prll"></div></div>
         <div id="bt-btz-prll" style="display: none;"><div id="btz-prll"></div></div>
       </div></td></tr>
-      <!-- Buttons for selecting pin mark configuration -->
       <tr><td><div>
-        <!-- Six configurations: BL, BR, LR, LB, RB, RL -->
         <button id="bt-btn-fs" class="bt-button active">FS</button>
         <button id="bt-btn-sf" class="bt-button">SF</button>
       </div></td></tr>
-      <!-- Buttons for redirection options -->
       <tr><td><div>
         <button id="bt-block-prll" class="bt-button active">Block Signal</button>
         <button id="bt-pass-prll" class="bt-button">Pass Signal</button>
       </div></td></tr>
-      <!-- Buttons for signal settings -->
       <tr><td><div>
         <button id="bt-low-prll" class="bt-button active">Set Signal Low</button>
         <button id="bt-high-prll" class="bt-button">Set Signal High</button>
       </div></td></tr>
-      <!-- Additional Information Rows -->
       <tr><td><div>
         <div>Stackable</div><div>Yes(64)</div>
       </div></td></tr>
@@ -135,7 +124,6 @@
         </li>
       </ol>
     </section>
-    <!-- Crafting Section -->
     <section id="obtaining">
       <h2>Crafting</h2>
       <p>Normal One Way Through Gate</p>
@@ -157,6 +145,17 @@
         </table>
       </div>
     </section>
+    <section id="version_log">
+      <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+      <div class="version_table">
+        <table>
+          <tr><td>Version</td><td>Description</td></tr>
+          <tr><td>0.1.0</td><td>Introduced. Block first reads the blockstate on the input, and if suitable, uses blockstate value, if not, reads redstone signal. Updates neighbours when output changes.</td></tr>
+          <tr><td>0.1.1</td><td>Changed registry name from <code>through_gate</code> to <code>floor_one_way_through_gate</code> and <code>parallel_through_gate</code> to <code>floor_parallel_one_way_through_gate</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
+          <tr><td>0.2.0</td><td>Changed registry name from <code>floor_one_way_through_gate</code> to <code>normal_one_way_through_gate</code> and <code>floor_parallel_one_way_through_gate</code> to <code>parallel_one_way_through_gate</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity.</td></tr>
+        </table>
+      </div>
+    </section>
   </main>
   <footer class="nav-links">
     <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
@@ -164,8 +163,8 @@
     <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
     <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
     <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
-    <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
-</footer>
+    <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+  </footer>
 <script src="/Redstone-CG-Documentation/script.js"></script>
   <script>
     // JavaScript to compose the views in the display area

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old to 0.2.0</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1>Old to 0.2.0</h1></header>
+    <main>
+        <section id="immediate">
+            <h2>Immediate Instructions</h2>
+            <p>If you’ve just loaded your world from older version to version 0.2.0 and things look very wrong—don’t panic! Follow these steps exactly:</p>
+            <ol>
+                <li> <strong>Backup Your World!</strong><br> <em>If you haven’t opened the world in 0.2.0 yet</em>, make a backup or duplicate your world folder. Then, load it in version <strong>0.2.0</strong>.<br> <em>If you already did</em>, and don’t have a backup, then still make a backup. At this stage, loading the world in older version will not fix your world.<br> <em>If you are updating from version before 0.1.1</em>, then it's recommended to update to version 0.1.1 first and then start over from this step.</li>
+                <li> <strong>Enable Cheats (Singleplayer Only):</strong><br> If cheats are disabled, pause the game, click <em>“Open to LAN”</em>, enable cheats, and click <em>“Start LAN World”</em>. This will allow you to use the repair commands. </li>
+                <li> <strong>Prevent Block Breaking:</strong><br> Run:<br> <code>/redstonecg_repair canSurviveAir true</code><br> This keeps RedstoneCG blocks from falling or breaking while suspended. </li>
+                <li> <strong>Fix Block Orientation:</strong><br> Press <kbd>F3 + G</kbd> to display chunk borders.<br> Then, for every chunk containing RedstoneCG blocks (visit each chunk only once), run:<br> <code>/redstonecg_repair flooring chunk</code><br> This sets all gates and wires to face the floor. </li>
+                <li> <strong>Fix RedCu Wire Shape:</strong><br> Again, for each relevant chunk (without repeating any), run:<br> <code>/redstonecg_repair old chunk</code><br> This adjusts RedCu Wire visuals and behavior to the ones in the old version. </li>
+                <li> <strong>Re-enable Normal Physics:</strong><br> Run:<br> <code>/redstonecg_repair canSurviveAir false</code><br> This sets blocks back to their normal survival-mode behavior. </li>
+                <li> <strong>Kickstart Your Circuits:</strong><br> Most circuits will now look correct, but they may not work yet.<br>
+                    <ul>
+                        <li>Manually re-enter values into any <a href="../Analog_Source.html">Analog Source</a>.</li>
+                        <li>Find a gate connected to Redstone Dust, and activate the dust to send a signal pulse. This should get everything running again.</li>
+                    </ul>
+                </li>
+            </ol>
+            <p><a href="/Redstone-CG-Documentation/RedstoneCG_Repair_Command.html"><code>/redstonecg_repair</code> documentation page</a></p>
+        </section>
+        <section id="reason">
+            <h2>Reasons</h2>
+            <h3>What happened?</h3>
+            <p>When updating to version <strong>0.2.0</strong>, you may have noticed all of your RedstoneCG blocks are rotated incorrectly or no longer behave as they should. This is due to a fundamental change in how gates determine their placement orientation.</p>
+            <p>Previously, the mod used a property called <code>facing</code> to define the direction a gate was looking. Starting from <strong>0.2.0</strong>, this same property is now used to define which <em>face</em> of the block the gate is placed on—allowing support for <strong>walls and ceilings</strong>.</p>
+            <p>Some Block State properties were also moved to Block Entity, which most blocks didn't have.</p>
+            <p>Unfortunately, this change broke backward compatibility with old saves.</p>
+            <h3>Why Didn’t the Mod Fix This Automatically?</h3>
+            <p>Although RedstoneCG can rename or replace blocks in the registry easily, it has very limited access to world save data. That means detecting how a gate was originally placed or rewriting blockstates across chunks is not feasible from within the mod itself.</p>
+            <p>Because of these constraints, manual repair commands are required.</p>
+            <h3>Will This Happen Again?</h3>
+            <p>Possibly. RedstoneCG is still in its <strong>Beta</strong> phase, where major structural and data changes may occur. Every effort is made to maintain compatibility, but drastic changes—especially those enabling new features—may require manual world repair in the future.</p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+</body>
+</html>

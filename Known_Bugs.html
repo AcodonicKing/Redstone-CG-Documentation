@@ -36,7 +36,7 @@
         <a href="Getting_Started.html">Getting Started</a>
         <a href="List_of_Elements.html">List of Elements</a>
         <a href="Pin_Marks.html">Pin Marks</a>
-        <a href="Version_Log.html">Version Log</a>
+        <a href="Other_Links.html">Other</a>
     </footer>
     <script>
         fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
@@ -45,7 +45,7 @@
             const list = document.getElementById("bug-list");
             data.forEach(page => {
                 const li = document.createElement("li");
-                li.innerHTML = `<a href="rcgb/${page.code}/page.html">${page.title}</a><ul style="list-style-type: none;"><li>Code: ${page.code}</li><li>Severity: ${page.severity}</li><li>Status: ${page.status}</li></ul>`;
+                li.innerHTML = `<a href="rcgb/${page.code}/page.html">${page.title}</a><ul style="list-style-type: none;"><li>Code: ${page.code}</li><li>Severity: ${page.severity}</li><li>Status: ${page.status}</li><li>Versions: ${page.affected_versions}</li></ul>`;
                 list.appendChild(li);
             });
         })
