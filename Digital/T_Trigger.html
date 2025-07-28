@@ -84,7 +84,8 @@
                     <tr><td>0.0.0</td><td>Introduced. On update from anywhere reads redstone signal only and updates neighbours when output changes.</td></tr>
                     <tr><td>0.0.1</td><td>Unlike in the previous version, block first reads the blockstate on the input, and if suitable, uses blockstate value, if not, reads redstone signal.</td></tr>
                     <tr><td>0.1.1</td><td>Changed registry name from <code>t_trigger</code> to <code>floor_t_trigger</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
-                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_t_trigger</code> to <code>normal_t_trigger</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity.</td></tr>
+                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_t_trigger</code> to <code>normal_t_trigger</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
+                    <tr><td>0.2.1</td><td>Reimplemented `rotate` block method.</td></tr>
                 </table>
             </div>
         </section>

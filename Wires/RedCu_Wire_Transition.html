@@ -37,7 +37,7 @@
             <p>
                 After placement, the <strong>RedCu Wire Transition</strong> can be right-clicked to open its configuration GUI. This interface allows manual tuning of connection directions.
             </p>
-            <div class="image800"><img alt="RedCu Wire Transition GUI" src="/Redstone-CG-Documentation/media/images/RedCu_Wire_Transition_GUI.png"/></div>
+            <div class="image800"><img alt="RedCu Wire Transition GUI" src="/Redstone-CG-Documentation/media/gui/RedCu_Wire_Transition_GUI.png"/></div>
             <ul>
                 <li>The GUI uses a <strong>fully transparent background</strong> to allow the player to see the block while making adjustments.</li>
                 <li>The GUI shows 6 regions, representing the 6 faces of the block</a>:
@@ -45,6 +45,7 @@
                 </li>
                 <li>Each face displays <strong>4 small white squares</strong>, corresponding to possible connection points. Only <strong>one</strong> connection per face can be active at a time.</li>
                 <li>To better understand the orientation, imagine standing inside the cube where the wire is placed: your body faces North, and your head looks Down.</li>
+                <li>The thin gray line squares on each face can be clicked to add <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a> on that face. Doing so will search for <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a> in your inventory and remove one for a face. Clicking again will remove the cover and return <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a> to your inventory.</li>
             </ul>
             <p>
                 If configuring via GUI is unclear, it is recommended to place other connectable blocks first, then place the RedCu Wire Transition. In most cases, it will auto-configure correctly.
@@ -77,12 +78,21 @@
                 </table>
             </div>
         </section>
+        <section id="adventure">
+            <h2>Adventure Mode</h2>
+            <p>While in adventure mode, <a href="/Redstone-CG-Documentation/RedstoneCG_Adventure_Command.html"><code>/redstonecg_adventure</code></a> controls:</p>
+            <ul>
+                <li><code>/redstonecg_adventure gateGUI false</code> - Disables GUI.</li>
+                <li><code>/redstonecg_adventure pinConfig false</code> - Forbids changing shape including adding plates.</li>
+            </ul>
+        </section>
         <section id="version_log">
             <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
             <div class="version_table">
                 <table>
                     <tr><td>Version</td><td>Description</td></tr>
                     <tr><td>0.2.0</td><td>Introduced.</td></tr>
+                    <tr><td>0.2.1</td><td>Can be covered with <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a>.</td></tr>
                 </table>
             </div>
         </section>

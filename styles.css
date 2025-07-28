@@ -39,7 +39,7 @@
 }
 .redcu-crafting {
     background-image: url("media/gui/redcu_crafting.png");
-    aspect-ratio: 1160 / 680;
+    aspect-ratio: 1650 / 680;
     max-width: 400px;
 }
 .recipe_table {

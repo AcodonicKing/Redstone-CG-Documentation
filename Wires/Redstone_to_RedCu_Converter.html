@@ -36,6 +36,9 @@
                     <button id="bt-btn11" class="bt-button">11</button>
                     <button id="bt-btn12" class="bt-button">12</button>
                 </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn13" class="bt-button">13</button>
+                </div>
             </div></td></tr>
             <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
             <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
@@ -83,7 +86,7 @@
                 Here, <strong>L</strong> is the wire length in blocks.
             </p>
             <p>
-                The block supports up to 15 configurations, which can be cycled through by right-clicking. To rotate the block, players must destroy and place it again from a different angle.
+                The block supports up to 13 configurations, which can be cycled through by right-clicking. To rotate the block, players must destroy and place it again from a different angle or use <a href="Rotation_Bracket.html">Rotation Bracket</a>.
             </p>
             <p>
                 While it visually resembles <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a> in some configurations, the block operates differently. It only takes the highest Redstone signal it is connected to and converts it to a RedCu Wire signal. Outputs are exclusively at the RedCu Wire ends, and the conversion back to Redstone signal follows the same rules as a <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a>.
@@ -95,7 +98,7 @@
             <ul>
                 <li>The block’s color does not change based on the signal applied.</li>
                 <li>Even if the Redstone Dust end appears powered, it may not be.</li>
-                <li>Signals cannot be applied backward. Input-to-output flow is strict.</li>
+                <li>Signals cannot be applied backward. Redstone-to-RedCu flow is strict.</li>
             </ul>
         </section>
 
@@ -123,9 +126,10 @@
                 <table>
                     <tr><td>Version</td><td>Description</td></tr>
                     <tr><td>0.0.0</td><td>Introduced. On update from anywhere reads redstone signal only and updates neighbors when signal changes. Stores signal data as NBT in Block Entity. Toggles Block State property to update neighbors.</td></tr>
-                    <tr><td>0.0.1</td><td>Unlike in the previous version, block first reads the Block State on the input, and if suitable, uses Block State value, if not, reads redstone signal.</td></tr>
+                    <tr><td>0.0.1</td><td>Unlike in the previous version, block first reads the Block State on the input, and if suitable, uses Block State value, if not, reads redstone signal. Reduced the amount of pin configurations from 15 down to 12, by removing configurations 6, 9 and 12.</td></tr>
                     <tr><td>0.1.1</td><td>Changed registry name from <code>redstone_to_red_cu_converter</code> to <code>floor_redstone_to_red_cu_converter</code>.</td></tr>
-                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_redstone_to_red_cu_converter</code> to <code>redstone_to_redcu_converter</code>. Can be placed on walls and ceiling. Updates the block directly on the RedCu Wire connection side when signal changes instead of updating all neighbours. Signal data is stored directly on Block Entity.</td></tr>
+                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_redstone_to_red_cu_converter</code> to <code>redstone_to_redcu_converter</code>. Can be placed on walls and ceiling. Updates the block directly on the RedCu Wire connection side when signal changes instead of updating all neighbours. Signal data is stored directly on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
+                    <tr><td>0.2.1</td><td>Changed the amount of pin configurations from 12 down to 13, removing 6th (FR-BL) as it had an equivalent as rotated 9th (FL-BR) (now 10th) and added 2 new ones as 5th (F-BL) and 6th (F-BR). <code>/redstonecg_repair old</code> can be used to convert to an equivalent from earlier version. Reimplemented `rotate` block method.</td>
                 </table>
             </div>
         </section>
@@ -142,9 +146,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const ptrn = [
-                [["st_b"],       ["cu_f"]       ], [["st_r"],["cu_f"]       ], [[],             ["st_l","cu_f"]], [["st_r"],       ["st_l","cu_f"]],
-                [["st_r","st_b"],["st_l","cu_f"]], [["st_r"],["cu_l","cu_f"]], [["st_r","st_b"],["cu_l","cu_f"]], [["cu_r"],       ["st_l","cu_f"]],
-                [["cu_r","st_b"],["st_l","cu_f"]], [["cu_r"],["cu_l","st_f"]], [["cu_r","st_b"],["cu_l","st_f"]], [["cu_r","st_b"],["cu_l","cu_f"]],
+                [["st_b"],       ["cu_f"]       ], [[],             ["st_l","cu_f"]], [["st_r"],       ["cu_f"]       ], [["st_r"],       ["st_l","cu_f"]],
+                [["st_b"],       ["st_l","cu_f"]], [["st_b","st_r"],["cu_f"]       ], [["st_r","st_b"],["st_l","cu_f"]], [["st_b"],["cu_l","cu_f"]       ],
+                [["st_b","cu_r"],["cu_f"]       ], [["st_b","st_r"],["cu_l","cu_f"]], [["cu_r","st_b"],["cu_l"]       ], [["cu_r","st_b"],["cu_l","st_f"]],
+                [["cu_r","st_b"],["cu_l","cu_f"]],
             ]
             const buttonsArray = ptrn.map((entry, index) => {
                 const i = index + 1;

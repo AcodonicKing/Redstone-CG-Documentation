@@ -13,7 +13,7 @@
             <h2>Immediate Instructions</h2>
             <p>If you’ve just loaded your world from older version to version 0.2.0 and things look very wrong—don’t panic! Follow these steps exactly:</p>
             <ol>
-                <li> <strong>Backup Your World!</strong><br> <em>If you haven’t opened the world in 0.2.0 yet</em>, make a backup or duplicate your world folder. Then, load it in version <strong>0.2.0</strong>.<br> <em>If you already did</em>, and don’t have a backup, then still make a backup. At this stage, loading the world in older version will not fix your world.<br> <em>If you are updating from version before 0.1.1</em>, then it's recommended to update to version 0.1.1 first and then start over from this step.</li>
+                <li> <strong>Backup Your World!</strong><br> <em>If you haven’t opened the world in 0.2.0 or later yet</em>, make a backup or duplicate your world folder. Then, load it in version <strong>0.2.1</strong>.<br> <em>If you already did</em>, and don’t have a backup, then still make a backup. At this stage, loading the world in older version will not fix your world.<br> <em>If you are updating from version before 0.1.1</em>, then it's recommended to update to version 0.1.1 first and then start over from this step.</li>
                 <li> <strong>Enable Cheats (Singleplayer Only):</strong><br> If cheats are disabled, pause the game, click <em>“Open to LAN”</em>, enable cheats, and click <em>“Start LAN World”</em>. This will allow you to use the repair commands. </li>
                 <li> <strong>Prevent Block Breaking:</strong><br> Run:<br> <code>/redstonecg_repair canSurviveAir true</code><br> This keeps RedstoneCG blocks from falling or breaking while suspended. </li>
                 <li> <strong>Fix Block Orientation:</strong><br> Press <kbd>F3 + G</kbd> to display chunk borders.<br> Then, for every chunk containing RedstoneCG blocks (visit each chunk only once), run:<br> <code>/redstonecg_repair flooring chunk</code><br> This sets all gates and wires to face the floor. </li>
@@ -21,12 +21,13 @@
                 <li> <strong>Re-enable Normal Physics:</strong><br> Run:<br> <code>/redstonecg_repair canSurviveAir false</code><br> This sets blocks back to their normal survival-mode behavior. </li>
                 <li> <strong>Kickstart Your Circuits:</strong><br> Most circuits will now look correct, but they may not work yet.<br>
                     <ul>
-                        <li>Manually re-enter values into any <a href="../Analog_Source.html">Analog Source</a>.</li>
+                        <li>Manually re-enter values into any <a href="Analog/Analog_Source.html">Analog Source</a>.</li>
                         <li>Find a gate connected to Redstone Dust, and activate the dust to send a signal pulse. This should get everything running again.</li>
                     </ul>
                 </li>
             </ol>
             <p><a href="/Redstone-CG-Documentation/RedstoneCG_Repair_Command.html"><code>/redstonecg_repair</code> documentation page</a></p>
+            <p>If you are updating from 0.2.0. to 0.2.1. then on every <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> execute <code>/redstonecg_repair old &lt;position of the block&gt;</code> without executing this command twice on the same block.</p>
         </section>
         <section id="reason">
             <h2>Reasons</h2>

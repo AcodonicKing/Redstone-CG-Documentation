@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redstonecg_adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1><code>/redstonecg_adventure</code></h1></header>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <code>/redstonecg_adventure</code> command is used to control what features of the RedstoneCG mod are accessible to players in <strong>Adventure Mode</strong>.
+            </p>
+            <p>
+                This command has a permission level of <strong>2</strong>, meaning it requires <strong>gamemaster access</strong>—typically the same level needed to change a player’s game mode.
+            </p>
+            <code>/redstonecg_adventure</code>
+            <ul>
+                <li>
+                    <code>pinConfig &lt;boolean&gt;</code>
+                </li>
+                <li>
+                    <code>valueConfig &lt;boolean&gt;</code>
+                </li>
+                <li>
+                    <code>gateGUI &lt;boolean&gt;</code>
+                </li>
+                <li>
+                    <code>applySurvival &lt;boolean&gt;</code>
+                </li>
+            </ul>
+        </section>
+        <section id="pinConfig">
+            <h2><code>/redstonecg_adventure pinConfig &lt;boolean&gt;</code></h2>
+            <p>
+                Determines whether players in Adventure Mode can configure <a href="Pin_Marks.html">Pin Marks</a> on gates. Applies to Wires as well.<br/>
+                <strong>Default:</strong> <code>false</code>
+            </p>
+            <ul>
+                <li><code>/redstonecg_adventure pinConfig true</code> - Let's the players in Adventure Mode configure <a href="Pin_Marks.html">Pin Marks</a>.</li>
+                <li><code>/redstonecg_adventure pinConfig false</code> - Forbids the players in Adventure Mode to configure <a href="Pin_Marks.html">Pin Marks</a>.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li><code>true</code> - <strong>"Players in Adventure Mode can configure pins."</strong></li>
+                <li><code>false</code> - <strong>"Players in Adventure Mode can not configure pins."</strong></li>
+            </ul>
+        </section>
+        <section id="valueConfig">
+            <h2><code>/redstonecg_adventure valueConfig &lt;boolean&gt;</code></h2>
+            <p>
+                Controls whether players can change gate-specific values in Adventure Mode e.g. adjusting signal strength on an <a href="Analog/Analog_Source.html">Analog Source</a> block<br/>
+                <strong>Default:</strong> <code>false</code>
+            </p>
+            <ul>
+                <li><code>/redstonecg_adventure valueConfig true</code> - Let's the players in Adventure Mode configure values.</li>
+                <li><code>/redstonecg_adventure valueConfig false</code> - Forbids the players in Adventure Mode to configure values.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li><code>true</code> - <strong>"Players in Adventure Mode can configure block values."</strong></li>
+                <li><code>false</code> - <strong>"Players in Adventure Mode can not configure block values."</strong></li>
+            </ul>
+        </section>
+        <section id="gateGUI">
+            <h2><code>/redstonecg_adventure gateGUI &lt;boolean&gt;</code></h2>
+            <p>
+                Controls whether players can open GUIs of RedstoneCG blocks in Adventure Mode.</br>
+                This does not affect the <a href="../RedCu_Crafter.html">RedCu Crafter</a><br/>
+                <strong>Default:</strong> <code>false</code>
+            </p>
+            <ul>
+                <li><code>/redstonecg_adventure gateGUI true</code> - Let's the players in Adventure Mode open GUI.</li>
+                <li><code>/redstonecg_adventure gateGUI false</code> - Forbids the players in Adventure Mode to open GUI.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li><code>true</code> - <strong>"Players in Adventure Mode can open GUI of gates."</strong></li>
+                <li><code>false</code> - <strong>"Players in Adventure Mode can not open GUI of gates."</strong></li>
+            </ul>
+        </section>
+        <section id="applySurvival">
+            <h2><code>/redstonecg_adventure applySurvival &lt;boolean&gt;</code></h2>
+            <p>When enabled, applies all the above settings to players in <strong>Survival Mode</strong> as well.<br/><strong>Default:</strong> <code>false</code></p>
+            <ul>
+                <li><code>/redstonecg_adventure applySurvival true</code> - Settings above do apply to Survival mode and Adventure mode.</li>
+                <li><code>/redstonecg_adventure applySurvival false</code> - Settings above apply only to Adventure mode.</li>
+            </ul>
+            <p>Messages:</p>
+            <ul>
+                <li><code>true</code> - <strong>"Adventure Mode settings are applied to Survival Mode."</strong></li>
+                <li><code>false</code> - <strong>"Adventure Mode settings are Adventure Mode exclusive."</strong></li>
+            </ul>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.2.1</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+</body>
+</html>

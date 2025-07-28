@@ -145,7 +145,8 @@
                     <tr><td>0.0.0</td><td>Introduced. On update from anywhere reads redstone signal only and updates neighbors when signal changes. Stores signal data as NBT in Block Entity. Toggles Block State property to update neighbors.</td></tr>
                     <tr><td>0.0.1</td><td>Unlike in the previous version, block first reads the Block State on the input, and if suitable, uses Block State value, if not, reads redstone signal.</td></tr>
                     <tr><td>0.1.1</td><td>Changed registry name from <code>red_cu_wire</code> to <code>floor_red_cu_wire</code>.</td></tr>
-                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_red_cu_wire</code> to <code>redcu_wire</code>. Can be placed on walls and ceiling. Updates the block directly on the connection side when signal changes instead of updating all neighbours. Signal data is stored directly on Block Entity.</td></tr>
+                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_red_cu_wire</code> to <code>redcu_wire</code>. Can be placed on walls and ceiling. Updates the block directly on the connection side when signal changes instead of updating all neighbours. Signal data is stored directly on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
+                    <tr><td>0.2.1</td><td>Reimplemented `rotate` and `mirror` block method.</td></tr>
                 </table>
             </div>
         </section>

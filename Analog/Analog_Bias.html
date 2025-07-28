@@ -104,7 +104,12 @@
                     <tr><td>0.0.0</td><td>Introduced. On update from anywhere reads redstone signal only and updates neighbours when output changes.</td></tr>
                     <tr><td>0.0.1</td><td>Unlike in the previous version, block first reads the blockstate on the input, and if suitable, uses blockstate value, if not, reads redstone signal.</td></tr>
                     <tr><td>0.1.1</td><td>Changed registry name from <code>analog_bias</code> to <code>floor_analog_bias</code> and <code>paralel_analog_bias</code> to <code>floor_parallel_analog_bias</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
-                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_analog_bias</code> to <code>normal_analog_bias</code> and <code>floor_parallel_analog_bias</code> to <code>parallel_analog_bias</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity.</td></tr>
+                    <tr><td>0.2.0</td><td>
+                        Changed registry name from <code>floor_analog_bias</code> to <code>normal_analog_bias</code>
+                        and <code>floor_parallel_analog_bias</code> to <code>parallel_analog_bias</code>.
+                        Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours.
+                        Output data is stored on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
+                    <tr><td>0.2.1</td><td>Reimplemented `rotate` block method.</td></tr>
                 </table>
             </div>
         </section>
@@ -134,11 +139,11 @@
             { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png"] },
             { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate}`, addon: ["/Redstone-CG-Documentation/media/textures/components/parallel.png"] },
         ];
-        populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
-        populateRedCuCrafter("Parallel-Making", {category: 2, tipe: 1}, rccr2array);
+        populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Parallel-Making", {category: 3, tipe: 1}, rccr2array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
-            populateRedCuCrafter("Parallel-Making", {category: 2, tipe: 1}, rccr2array);
+            populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Parallel-Making", {category: 3, tipe: 1}, rccr2array);
         });
         document.addEventListener("DOMContentLoaded", function () {
             const ptrn1 = [

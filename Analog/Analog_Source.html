@@ -71,6 +71,10 @@
             </p>
             <ul>
                 <li>Press <strong>"+"</strong> or <strong>"-"</strong> to change the Redstone signal strength.</li>
+                <li>Pressing <strong>"+"</strong> while signal is at 15 will set the signal to 0.</li>
+                <li>Pressing <strong>"-"</strong> while signal is at 0 will set the signal to 15.</li>
+                <li>Clicking on the black numbers will set the signal to the clicked number.</li>
+                <li>Changing the signal will rotate the dial.</li>
                 <li>Press <strong>"Change"</strong> to modify the output pin configuration.</li>
             </ul>
             <p>
@@ -81,6 +85,15 @@
                 <!--<div style="position: absolute; left: 4.5%; top: 9.34%; width: 18.19%; height: 38.56%;"><div id="btz-gui" style="position: absolute; width: 100%; height: 100%;"></div></div>-->
             </div>
         </section>
+        <section id="adventure">
+            <h2>Adventure Mode</h2>
+            <p>While in adventure mode, <a href="/Redstone-CG-Documentation/RedstoneCG_Adventure_Command.html"><code>/redstonecg_adventure</code></a> controls:</p>
+            <ul>
+                <li><code>/redstonecg_adventure gateGUI false</code> - Disables GUI.</li>
+                <li><code>/redstonecg_adventure valueConfig false</code> - Removes "+" and "-" buttons and locks the dial.</li>
+                <li><code>/redstonecg_adventure pinConfig false</code> - Removes "Chamnge" button.</li>
+            </ul>
+        </section>
         <section id="version_log">
             <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
             <div class="version_table">
@@ -89,7 +102,8 @@
                     <tr><td>0.0.0</td><td>Introduced. Updates neighbours when output changes. Uses NBT to store output data.</td></tr>
                     <tr><td>0.1.0</td><td>Increased the amount of pin configurations up to 15.</td></tr>
                     <tr><td>0.1.1</td><td>Changed registry name from <code>analog_source</code> to <code>floor_analog_source</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
-                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_analog_source</code> to <code>normal_analog_source</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored directly on Block Entity.</td></tr>
+                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_analog_source</code> to <code>normal_analog_source</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored directly on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
+                    <tr><td>0.2.1</td><td>Redesigned GUI. Reimplemented `rotate` block method. <a href="/Redstone-CG-Documentation/RedstoneCG_Adventure_Command.html"><code>/redstonecg_adventure</code></a> affects GUI.</td></tr>
                 </table>
             </div>
         </section>
@@ -112,9 +126,9 @@
             { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate}` },
             { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate}` },
         ];
-        populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
         });
         document.addEventListener("DOMContentLoaded", function () {
             const ptrn1 = [

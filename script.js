@@ -89,18 +89,18 @@ function populateRedCuCrafter(containerId, toggles, objectList) {
 
     const tableData = {
         slots: [
-            { x: 240, y: 120 }, { x: 240, y: 264 }, { x: 240, y: 408 },
-            { x: 440, y: 192 }, { x: 776, y: 272 },
+            { x: 500, y: 70 }, { x: 500, y: 250 }, { x: 500, y: 430 },
+            { x: 750, y: 160 }, { x: 1170, y: 260 },
         ],
-        slotSize: 144,
-        itemSize: 128,
+        slotSize: 180,
+        itemSize: 160,
         categorories: [
-            { x: 56, y: 48 }, { x: 56, y: 192 }, { x: 56, y: 336 }, { x: 56, y: 480 }, 
+            { x: 70, y: 70 }, { x: 270, y: 70 }, { x: 270, y: 250 }, { x: 270, y: 430 }, { x: 70, y: 430 }
         ],
         tipes: [
-            { x: 960, y: 48 }, { x: 960, y: 192 },
+            { x: 1400, y: 70 }, { x: 1400, y: 250 },
         ],
-        width: 1160,
+        width: 1650,
         height: 680,
     };
     container.innerHTML = "";
@@ -164,15 +164,15 @@ function populateRedCuCrafter(containerId, toggles, objectList) {
 
         objDiv.classList.add("selector");
         objDiv.style.backgroundImage = `url("/Redstone-CG-Documentation/media/gui/selector.png")`;
-        objDiv.style.width = `${(144 / tableData.width) * 100}%`;
-        objDiv.style.height = `${(144 / tableData.height) * 100}%`;
+        objDiv.style.width = `${(180 / tableData.width) * 100}%`;
+        objDiv.style.height = `${(180 / tableData.height) * 100}%`;
         objDiv.style.position = "absolute";
-        objDiv.style.left = `${(pos.x + (tableData.slotSize-144)/2) * scale}px`;
-        objDiv.style.top = `${(pos.y + (tableData.slotSize-144)/2) * scale}px`;
+        objDiv.style.left = `${(pos.x + (tableData.slotSize-180)/2) * scale}px`;
+        objDiv.style.top = `${(pos.y + (tableData.slotSize-180)/2) * scale}px`;
 
         container.appendChild(objDiv);
     }
-    addSelector({ x: 440, y: 192 });
+    addSelector({ x: 750, y: 160 });
     if (tableData.categorories[toggles.category]){addSelector(tableData.categorories[toggles.category]);}
     if (tableData.tipes[toggles.tipe]){addSelector(tableData.tipes[toggles.tipe]);}
 }

@@ -11,6 +11,52 @@
         <h1>Version Log</h1>
     </header>
     <main>
+        <section id="0.2.1">
+            <h2>0.2.1 – Adventure Time</h2>
+            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
+            <p>Updating from version 0.2.0 to 0.2.1 requires going trough every <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> and executing <code>/redstonecg_repair old &lt;position of the block&gt;</code> without executing this command twice on the same block.</p>
+            <h3>Changes</h3>
+            <ul>
+                <li>Blocks can be configured for the Adventure Mode and even Survival mode using <a href="/Redstone-CG-Documentation/RedstoneCG_Adventure_Command.html"><code>/redstonecg_adventure</code></a> command. This let's the host lock some features from players in mentioned modes.</li>
+                <li><a href="Analog/Analog_Source.html">Analog Source</a> GUI was redesigned.</li>
+                <li>Changed <a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> pin configurations from 12 to 13. <code>/redstonecg_repair old</code> can be used to convert to an equivalent from earlier version.</li>
+                <li><a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> can now be covered with <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a>.</li>
+                <li>Slightly changed gate model to extend downwards by 0.0625 of a pixel (0.00390625 of a block). This is to prevent texture overlapping on RedCu Wire Transition.</li>
+                <li>Reclassified some of the blocks as Hybrid Gates. Added as a section to <a href="RedCu_Crafter.html">RedCu Crafter</a>. This includes:
+                    <ul>
+                        <li><a href="Hybrid/Comparator.html">Comparator</a></li>
+                        <li><a href="Hybrid/Forward_Path_Selector.html">Forward Path Selector</a></li>
+                        <li><a href="Hybrid/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
+                        <li><a href="Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></li>
+                        <li><a href="Hybrid/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
+                        <li><a href="Hybrid/Comparator.html">Parallel Comparator</a></li>
+                        <li><a href="Hybrid/Parallel_One_Way_Path_Selector.html">Parallel One Way Path Selector</a></li>
+                        <li><a href="Hybrid/One_Way_Through_Gate.html">Parallel One Way Through Gate</a></li>
+                        <li><a href="Hybrid/One_Way_Through_Not_Gate.html">Parallel One Way Through Not Gate</a></li>
+                    </ul>
+                </li>
+                <li>Fixed <code><a href="/Redstone-CG-Documentation/RedstoneCG_Repair_Command.html">/redstonecg_repair</a> xxxxx position</code> not executing.</li>
+                <li>Adding partial support for `rotate` and `mirror` block methods.
+                    <p>What this means is that some mods (like <a href="https://www.curseforge.com/minecraft/mc-mods/create">Create</a>) can rotate or mirror RedstoneCG Blocks.</p>
+                    <p>This capability was broken in 0.2.0 and is now partialy fixed. <a href="Rotation_Bracket.html">Rotation Bracket</a> works because it has it's own API.</p>
+                    <ul>
+                        <li>It is recommended to rotate blocks around Y axis only and mirror along X or Z axis.</li>
+                        <li>Indicators can only be mirrored.</li>
+                        <li>Wires can be both mirrored and rotated.</li>
+                        <li>Other blocks can only be rotated.</li>
+                        <li><a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> cannot be rotated or mirrored.</li>
+                        <li><a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> can only be rotated.</li>
+                    </ul>
+		        </li>
+                <li>Changed item registry names (should be the last registry name change):
+                    <ul>
+                        <li>"red_cu_meter" -&gt; "redcu_meter"</li>
+                        <li>"red_cu_mixture" -&gt; "redcu_mixture"</li>
+                        <li>"red_cu_ingot" -&gt; "redcu_ingot"</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
         <section id="0.2.0">
             <h2>0.2.0 – On the Wall and Ceiling</h2>
             <p>Before updating to <strong>version 0.2.0</strong>, make sure to <strong>backup your world</strong> and carefully follow the <a href="Oh0You2Beta0.html">transition guide</a> to avoid potential issues.</p>
@@ -207,11 +253,11 @@
                 <li><a href="Analog/Analog_Minimum.html">Analog Minimum</a></li>
                 <li><a href="Analog/Analog_Maximum.html">Analog Maximum</a></li>
                 <li><a href="Wires/Parallel_Line_Output.html">Parallel Line Output</a></li>
-                <li><a href="Analog/Forward_Path_Selector.html">Forward Path Selector</a></li>
-                <li><a href="Analog/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
-                <li><a href="Analog/Parallel_Path_Selector.html">Parallel Path Selector</a></li>
-                <li><a href="Analog/One_Way_Through_Gate.html">One Way Through Gate</a></li>
-                <li><a href="Analog/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
+                <li><a href="Hybrid/Forward_Path_Selector.html">Forward Path Selector</a></li>
+                <li><a href="Hybrid/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
+                <li><a href="Hybrid/Parallel_Path_Selector.html">Parallel Path Selector</a></li>
+                <li><a href="Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></li>
+                <li><a href="Hybrid/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
             </ul>
             <p>Updated:</p>
             <ul>
@@ -237,9 +283,9 @@
             <h2>0.0.0 - Welcome!</h2>
             <p>Introduced the Redstone CG, with blocks:</p>
             <ul>
-                <li><a href="RedCu_Crafter.html">RedCu Crafter</a></li>
+                <li><a href="RedCu_Crafter.html">RedCu Crafter</a> (Updated)</li>
                 <li><a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></li>
-                <li><a href="Wires/RedCu_Wire.html">RedCu Wire</a></li>
+                <li><a href="Wires/RedCu_Wire.html">RedCu Wire</a> (Updated)</li>
                 <li><a href="Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a></li>
                 <li><a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> (Updated)</li>
                 <li><a href="Digital/AND_Gate.html">AND Gate</a></li>
@@ -261,8 +307,8 @@
                 <li><a href="Analog/Analog_Memory.html">Analog Memory</a></li>
                 <li><a href="Analog/Analog_Subtractor.html">Analog Subtractor</a></li>
                 <li><a href="Analog/Analog_Differential.html">Analog Differential</a></li>
-                <li><a href="Analog/Comparator.html">Comparator</a></li>
-                <li><a href="Analog/Comparator.html">Inverted Comparator</a></li>
+                <li><a href="Hybrid/Comparator.html">Comparator</a></li>
+                <li><a href="Hybrid/Comparator.html">Inverted Comparator</a></li>
                 <li><a href="Digital/AND_Gate.html">Parallel AND Gate</a></li>
                 <li><a href="Digital/OR_Gate.html">Parallel OR Gate</a></li>
                 <li><a href="Digital/XOR_Gate.html">Parallel XOR Gate</a></li>
@@ -277,8 +323,8 @@
                 <li><a href="Analog/Analog_Memory.html">Parallel Analog Memory</a></li>
                 <li><a href="Analog/Analog_Subtractor.html">Parallel Analog Subtractor</a></li>
                 <li><a href="Analog/Analog_Differential.html">Parallel Analog Differential</a></li>
-                <li><a href="Analog/Comparator.html">Parallel Comparator</a></li>
-                <li><a href="Analog/Comparator.html">Parallel Inverted Comparator</a></li>
+                <li><a href="Hybrid/Comparator.html">Parallel Comparator</a></li>
+                <li><a href="Hybrid/Comparator.html">Parallel Inverted Comparator</a></li>
                 <li><a href="Indicators/Universal_Indicator.html">Universal Indicator</a> (Updated)</li>
                 <li><a href="Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a> (Updated)</li>
                 <li><a href="Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a> (Updated)</li>

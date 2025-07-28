@@ -163,7 +163,14 @@
                     <tr><td>0.0.0</td><td>Introduced. On update from anywhere reads redstone signal only and updates neighbours when output changes.</td></tr>
                     <tr><td>0.0.1</td><td>Unlike in the previous version, block first reads the blockstate on the input, and if suitable, uses blockstate value, if not, reads redstone signal.</td></tr>
                     <tr><td>0.1.1</td><td>Changed registry name from <code>comparator</code> to <code>floor_comparator</code>, <code>n_comparator</code> to <code>floor_n_comparator</code>, <code>paralel_comparator</code> to <code>floor_parallel_comparator</code> and <code>paralel_n_comparator</code> to <code>floor_parallel_n_comparator</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
-                    <tr><td>0.2.0</td><td>Changed registry name from <code>floor_comparator</code> to <code>normal_comparator</code>, <code>floor_n_comparator</code> to <code>normal_n_comparator</code>, <code>floor_parallel_comparator</code> to <code>parallel_comparator</code> and <code>floor_parallel_n_comparator</code> to <code>parallel_n_comparator</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity.</td></tr>
+                    <tr><td>0.2.0</td><td>
+                        Changed registry name from <code>floor_comparator</code> to <code>normal_comparator</code>,
+                        <code>floor_n_comparator</code> to <code>normal_n_comparator</code>,
+                        <code>floor_parallel_comparator</code> to <code>parallel_comparator</code>
+                        and <code>floor_parallel_n_comparator</code> to <code>parallel_n_comparator</code>.
+                        Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours.
+                        Output data is stored on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
+                    <tr><td>0.2.1</td><td>Reimplemented `rotate` block method. Reclassified as Hybrid Gate.</td></tr>
                 </table>
             </div>
         </section>
@@ -178,8 +185,8 @@
     </footer>
     <script src="/Redstone-CG-Documentation/script.js"></script>
     <script>
-        const gate1 = "components/analog/comparator.png";
-        const gate2 = "components/analog/ncomparator.png";
+        const gate1 = "components/hybrid/comparator.png";
+        const gate2 = "components/hybrid/ncomparator.png";
         const ingredientarray = [
             { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
             { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
