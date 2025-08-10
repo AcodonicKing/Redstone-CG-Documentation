@@ -153,6 +153,17 @@
     p {
         text-align: justify;
     }
+    .mc-version tr td code {
+        display: inline-block;
+        margin: 1px 1px 1px 0;
+        padding: 1px 1px;
+        background: #eeeeee;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        /*font-weight: bold;*/
+        /*box-shadow: 0 1px 3px rgba(0,0,0,0.08);*/
+        white-space: nowrap;
+    }
     .nav-links {
         margin-top: 20px;
         text-align: center;
@@ -364,6 +375,17 @@
     }
     p {
         text-align: justify;
+    }
+    .mc-version tr td code {
+        display: inline-block;
+        margin: 1px 1px 1px 0;
+        padding: 1px 1px;
+        background: #222222;
+        border: 1px solid #444444;
+        border-radius: 4px;
+        /*font-weight: bold;*/
+        /*box-shadow: 0 1px 3px rgba(0,0,0,0.08);*/
+        white-space: nowrap;
     }
     .nav-links {
         margin-top: 20px;
