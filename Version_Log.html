@@ -11,8 +11,59 @@
         <h1>Version Log</h1>
     </header>
     <main>
+        <section id="0.2.3">
+            <h2>0.2.3 - Timed and Read</h2>
+            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
+            <h3>Changes</h3>
+            <ul>
+                <li><p>New Blocks:</p>
+                    <ul>
+                        <li>
+                            <strong><a href="Hybrid/Delayer.html">Delayer</a></strong> —  
+                            Functions similarly to the Redstone Repeater, but uses a <em>signal queue</em> instead of fixed delays.  
+                            Allows signal delays from 1 to 8 game ticks and does not boost signal strength.
+                        </li>
+
+                        <li>
+                            <strong><a href="Hybrid/Parallel_Delayer.html">Parallel Delayer</a></strong> —  
+                            A Delayer designed for <a href="Parallel_Gates.html">Parallel Gate</a> setups.  
+                        </li>
+
+                        <li>
+                            <strong><a href="Hybrid/Block_Reader.html">Block Reader</a></strong> —  
+                            A block equivalent to the “reading” part of the Redstone Comparator,  
+                            capable of reading block data such as Containers, Lecterns, Item Frames,  
+                            or blocks behind Comparator-Conducting Blocks.
+                        </li>
+                    </ul>
+                </li>
+                <li><p>Improvements</p>
+                    <ul>
+                        <li>Small internal corrections to prevent potential crashes.</li>
+                        <li>Solved <strong><a href="rcgb/RCGB-5/page.html">RCGB-5</a></strong> (Wrong Turn Ceiling RedCu).</li>
+                        <li>
+                            Most <a href="List_of_Elements.html">RedstoneCG blocks</a>  
+                            outputs can now be read by <a href="../Block_Reader.html">Block Reader</a> or Minecraft's Redstone Comparator  
+                            from <strong>any side</strong>, allowing for smaller, more compact circuits.
+                        </li>
+                        <li>
+                            Because Block Reader works on all faces, you can replace floor-only Redstone Comparators  
+                            with surface-mounted readers.
+                        </li>
+                        <li>
+                            With the addition of Delayer, you can now add signal delays on walls and ceilings - 
+                            something previously possible only on the floor using a Repeater.
+                        </li>
+                        <li>
+                            The Delayer enables high-speed timing circuits, such as a <strong>10 Hz</strong> Redstone clock.  
+                            Put some mind to it and it is even possible to build a <strong>32-bit memory cell</strong> from a single Delayer.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
         <section id="0.2.2">
-            <h2>0.2.2 – NeoForged</h2>
+            <h2>0.2.2 - NeoForged</h2>
             <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
             <h3>Changes</h3>
             <ul>
@@ -24,7 +75,7 @@
             </ul>
         </section>
         <section id="0.2.1">
-            <h2>0.2.1 – Adventure Time</h2>
+            <h2>0.2.1 - Adventure Time</h2>
             <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
             <p>Updating from version 0.2.0 to 0.2.1 requires going trough every <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> and executing <code>/redstonecg_repair old &lt;position of the block&gt;</code> without executing this command twice on the same block.</p>
             <h3>Changes</h3>
@@ -70,11 +121,11 @@
             </ul>
         </section>
         <section id="0.2.0">
-            <h2>0.2.0 – On the Wall and Ceiling</h2>
+            <h2>0.2.0 - On the Wall and Ceiling</h2>
             <p>Before updating to <strong>version 0.2.0</strong>, make sure to <strong>backup your world</strong> and carefully follow the <a href="Oh0You2Beta0.html">transition guide</a> to avoid potential issues.</p>
             <p>
                 The original plan for this update was to add wall variants as <strong>separate blocks</strong> alongside floor-only gates.
-                That’s why previous registry names included the keyword <code>floor</code>.
+                That's why previous registry names included the keyword <code>floor</code>.
                 However, as development progressed, it became clear that a generalized system could support <strong>all six faces</strong> with a unified implementation.
             </p>
             <p>

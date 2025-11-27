@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrong Turn Ceiling RedCu</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wrong Turn Ceiling RedCu</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p>
+                <strong>Description:</strong> When using <strong>L-shaped</strong> or <strong>T-shaped</strong>
+                <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wires</a> or
+                <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Transition.html">RedCu Transition</a>
+                attached to the <strong>ceiling</strong>,  the signal may propagate in the <strong>wrong direction</strong>.
+            </p>
+            <p>
+                <strong>Cause:</strong> The issue was caused by an uncorrected directional case in: <code>net.acodonic_king.redstonecg.procedures.BlockTransformUtils#getLocalDirectionFromWorld</code>.
+                Specifically, when the world direction is <strong>North</strong> or <strong>South</strong>,  
+                the resulting primary direction must be <strong>inverted</strong>.  
+                When the direction is <strong>East</strong> or <strong>West</strong>,  
+                the direction must remain unchanged.  
+                The missing correction resulted in incorrect local mapping for ceiling-attached wiring.
+            </p>
+            <p>
+                <strong>Consequences:</strong> Affected RedCu Wires and RedCu Transitions attached to ceilings may <strong>send signals the wrong way</strong>, leading to incorrect circuit behavior.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong> Avoid <strong>bends</strong> in ceiling-attached RedCu Wires and RedCu Transitions.
+            </p>
+            <p>
+                <strong>Solution:</strong> This issue is fixed starting with <strong>RedstoneCG 0.2.3</strong>. Update to the latest version to ensure correct signal propagation.
+            </p>
+            <div class="image800">
+                <img alt="signal goes wrong way" src="img.png"/>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-5"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

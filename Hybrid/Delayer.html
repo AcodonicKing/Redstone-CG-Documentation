@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delayer</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Delayer</h1>
+    </header>
+
+    <div class="block_table">
+        <table>
+            <th>Delayer</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-nrm-rnd"><div id="nrm-rnd"></div></div>
+                <div id="bt-nrm-btz" style="display: none;"><div id="nrm-btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-bl" class="bt-button active">BL</button>
+                <button id="bt-btn-br" class="bt-button">BR</button>
+                <button id="bt-btn-lr" class="bt-button">LR</button>
+                <button id="bt-btn-lb" class="bt-button">LB</button>
+                <button id="bt-btn-rb" class="bt-button">RB</button>
+                <button id="bt-btn-rl" class="bt-button">RL</button>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-nrm-btn-1" class="bt-button active">1</button>
+                <button id="bt-nrm-btn-2" class="bt-button">2</button>
+                <button id="bt-nrm-btn-3" class="bt-button">3</button>
+                <button id="bt-nrm-btn-4" class="bt-button">4</button>
+                <button id="bt-nrm-btn-5" class="bt-button">5</button>
+                <button id="bt-nrm-btn-6" class="bt-button">6</button>
+                <button id="bt-nrm-btn-7" class="bt-button">7</button>
+                <button id="bt-nrm-btn-8" class="bt-button">8</button>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-nrm-lock-F" class="bt-button active">Unlocked</button>
+                <button id="bt-nrm-lock-T" class="bt-button">Locked</button>
+            </td></div></tr>
+            <tr><td><div>
+                <button id="bt-nrm-output-low" class="bt-button active">Output Low</button>
+                <button id="bt-nrm-output-high" class="bt-button">Output High</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Delayer</strong> functions similarly to <a href="https://minecraft.wiki/w/Redstone_Repeater">Minecraft's Repeater</a>, but with more flexibility and precision.  
+                Like a Repeater, it can delay incoming signals and be locked by a second input.  
+                However, unlike a Repeater, the Delayer <strong>does not boost</strong> signal strength - it preserves the exact strength it receives.
+            </p>
+            <p>
+                The Delayer reads its primary input signal from <a href="../Pin_Marks.html">Pin Mark A</a> and stores it. On the next game tick, it reads the next signal and adds it to an internal queue.  
+                Each tick, the Delayer outputs the next stored value in that queue, creating a programmable delay line.
+            </p>
+            <p>
+                The delay queue can be set anywhere between <strong>1 and 8 game ticks</strong> (note: these are <a href="https://minecraft.wiki/w/Tick#Game_tick">Game Ticks</a>, not <a href="https://minecraft.wiki/w/Tick#Redstone_tick">Redstone Ticks</a>).  
+                Applying any signal greater than 0 to <a href="../Pin_Marks.html">Pin Mark B</a> locks the queue, preventing it from updating until the lock is removed.
+            </p>
+            <p>
+                Because the Delayer can operate with a minimum delay of just one tick, it can be used to create clocks of up to <strong>10 Hz</strong>.  
+                Traditional redstone timing normally peaks at 5 Hz unless complex structures are used.
+            </p>
+            <p>
+                The Delayer was designed to provide <strong>controllable latency</strong> in RedstoneCG circuits, which typically resolve their logic in a fraction of a tick - extremely fast, but computationally expensive.  
+                Introducing deliberate delay smooths update flow and helps reduce CPU load for intensive builds.
+            </p>
+            <div class="image800">
+                <img alt="Delayer and Repeater" src="/Redstone-CG-Documentation/media/images/delayer_repeater.png"/>
+            </div>
+        </section>
+
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                After placing a Delayer, you can open its configuration GUI by right-clicking it with an empty main hand (or with a hand holding non-Delayer items).  
+                This GUI is similar to the <a href="../Analog_Source.html">Analog Source</a> interface.
+            </p>
+            <ul>
+                <li><strong>"Change"</strong> - cycles the input configuration (Pin Marks).</li>
+                <li><strong>"+"</strong> - increases delay by 1 tick.</li>
+                <li><strong>"-"</strong> - decreases delay by 1 tick.</li>
+            </ul>
+            <p>
+                The GUI displays the entire signal queue from bottom to top, ending at the Redstone Torch icon.  
+                It also visually indicates whether the Delayer is currently locked.  
+                The surrounding border shows the current pin configuration.
+            </p>
+            <div class="image800">
+                <img alt="Delayer GUI" src="/Redstone-CG-Documentation/media/gui/DelayerGUI.png"/>
+            </div>
+            <p>You can also configure Delayer without GUI:</p>
+            <ul>
+                <li><strong>Crouch + Right-Click</strong> - change input configuration.</li>
+                <li><strong>Right-Click a Delayer with another Delayer</strong> - adjust the delay value.</li>
+            </ul>
+        </section>
+    </main>
+    <div class="block_table">
+        <table>
+            <th>Parallel Analog Memory</th>
+            <tr><td><div id="bt-prl-dsp" class="block_table-dsp">
+                <div id="bt-prl-rnd"><div id="prl-rnd"></div></div>
+                <div id="bt-prl-btz" style="display: none;"><div id="prl-btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-bs" class="bt-button active">BS</button>
+                <button id="bt-btn-sb" class="bt-button">SB</button>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-prl-btn-1" class="bt-button active">1</button>
+                <button id="bt-prl-btn-2" class="bt-button">2</button>
+                <button id="bt-prl-btn-3" class="bt-button">3</button>
+                <button id="bt-prl-btn-4" class="bt-button">4</button>
+                <button id="bt-prl-btn-5" class="bt-button">5</button>
+                <button id="bt-prl-btn-6" class="bt-button">6</button>
+                <button id="bt-prl-btn-7" class="bt-button">7</button>
+                <button id="bt-prl-btn-8" class="bt-button">8</button>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-prl-lock-F" class="bt-button active">Unlocked</button>
+                <button id="bt-prl-lock-T" class="bt-button">Locked</button>
+            </td></div></tr>
+            <tr><td><div>
+                <button id="bt-prl-output-low" class="bt-button active">Output Low</button>
+                <button id="bt-prl-output-high" class="bt-button">Output High</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="parallel-gate">
+            <h2>Parallel Delayer</h2>
+            <p>
+                The <strong>Parallel Delayer</strong> behaves the same as the normal Delayer and is configured in the same ways.  
+                The primary difference is compatibility: it can be placed among <a href="../Parallel_Gates.html">Parallel Gates</a>, functioning within multi-line parallel RedstoneCG circuits.
+            </p>
+            <p>
+                In this version, either the <strong>primary input</strong> or the <strong>secondary input</strong> may face the <strong>Back</strong> side of the block, depending on the selected configuration.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <p>Normal Delayer</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Analog/Analog_Memory.html">Analog Memory</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Repeater">Redstone Repeater</a></td></tr>
+                </table>
+            </div>
+            <p>Parallel Delayer</p>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Analog/Analog_Memory.html">Parallel Analog Memory</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Parallel-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Repeater">Redstone Repeater</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.2.3</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        const gate1 = "components/hybrid/normal_delayer";
+        const gate2 = "components/hybrid/parallel_delayer";
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/textures/components/analog/memory.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Invicon_Redstone_Repeater.png?647be" },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/items/normal_delayer.png` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/items/normal_delayer.png`, amount: 2 },
+        ];
+        const rccr2array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/textures/components/analog/memory.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Invicon_Redstone_Repeater.png?647be" },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/items/parallel_delayer.png` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/items/parallel_delayer.png`, amount: 2 },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Parallel-Making", {category: 3, tipe: 1}, rccr2array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Parallel-Making", {category: 3, tipe: 1}, rccr2array);
+        });
+        const stateButtonArray = [
+            { buttonId: 'bt-nrm-btn-1', delay: "1" },
+            { buttonId: 'bt-nrm-btn-2', delay: "2" },
+            { buttonId: 'bt-nrm-btn-3', delay: "3" },
+            { buttonId: 'bt-nrm-btn-4', delay: "4" },
+            { buttonId: 'bt-nrm-btn-5', delay: "5" },
+            { buttonId: 'bt-nrm-btn-6', delay: "6" },
+            { buttonId: 'bt-nrm-btn-7', delay: "7" },
+            { buttonId: 'bt-nrm-btn-8', delay: "8" },
+            { buttonId: 'bt-nrm-lock-F', lock: "unlocked" },
+            { buttonId: 'bt-nrm-lock-T', lock: "locked" },
+            { buttonId: "bt-nrm-output-low", output: "off" },
+            { buttonId: "bt-nrm-output-high", output: "on" },
+            { buttonId: 'bt-prl-btn-1', delay: "1" },
+            { buttonId: 'bt-prl-btn-2', delay: "2" },
+            { buttonId: 'bt-prl-btn-3', delay: "3" },
+            { buttonId: 'bt-prl-btn-4', delay: "4" },
+            { buttonId: 'bt-prl-btn-5', delay: "5" },
+            { buttonId: 'bt-prl-btn-6', delay: "6" },
+            { buttonId: 'bt-prl-btn-7', delay: "7" },
+            { buttonId: 'bt-prl-btn-8', delay: "8" },
+            { buttonId: 'bt-prl-lock-F', lock: "unlocked" },
+            { buttonId: 'bt-prl-lock-T', lock: "locked" },
+            { buttonId: "bt-prl-output-low", output: "off" },
+            { buttonId: "bt-prl-output-high", output: "on" },
+        ]
+        let activepinmarks1 = 0;
+        let activepinmarks2 = 0;
+        let delay = "1";
+        let lock = "unlocked";
+        let output = "off"
+        document.addEventListener("DOMContentLoaded", function () {
+            const addons1 = [];
+            const ptrn1 = [
+                ["bl", ["b","l_alt"]],
+                ["br", ["b","r_alt"]],
+                ["lr", ["l","r_alt"]],
+                ["lb", ["l","b_alt"]],
+                ["rb", ["r","b_alt"]],
+                ["rl", ["r","l_alt"]],
+            ];
+            const addons2 = [];
+            const ptrn2 = [
+                ["bs", ["b","l_alt","r_alt"]],
+                ["sb", ["b_alt","l","r"]],
+            ];
+            function updateRendering(nrm, gate, pinmarks){
+                renderComponent(`${nrm}-rnd`, `${gate}/${delay}_${output}_${lock}.png`, pinmarks, addons1);
+                blitzComponent(`${nrm}-btz`, `${gate}/${delay}_${output}_${lock}.png`, pinmarks, addons1);
+            }
+            function updateBothGateRendering(){
+                updateRendering("nrm", gate1, ptrn1[activepinmarks1][1]);
+                updateRendering("prl", gate2, ptrn2[activepinmarks2][1]);
+            }
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        activepinmarks1 = index
+                        updateRendering("nrm", gate1, ptrn1[activepinmarks1][1]);
+                    }
+                }
+            });
+            const buttonsArray2 = ptrn2.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        activepinmarks2 = index
+                        updateRendering("prl", gate2, ptrn2[activepinmarks2][1]);
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            setupButtonDivSwitcher(buttonsArray2, "bt-prl-rnd", "bt-prl-btz", "bt-prl-dsp");
+            stateButtonArray.forEach((entry, index) => {
+                const elm = document.getElementById(entry.buttonId);
+                if("delay" in entry){
+                    elm.onclick = function() {
+                        delay = entry.delay;
+                        updateBothGateRendering()
+                        stateButtonArray.forEach((oentry, oindex) => {if("delay" in oentry){document.getElementById(oentry.buttonId).classList.remove("active");}});
+                        elm.classList.add("active");
+                    };
+                }
+                if("lock" in entry){
+                    elm.onclick = function() {
+                        lock = entry.lock;
+                        updateBothGateRendering()
+                        stateButtonArray.forEach((oentry, oindex) => {if("lock" in oentry){document.getElementById(oentry.buttonId).classList.remove("active");}});
+                        elm.classList.add("active");
+                    };
+                }
+                if("output" in entry){
+                    elm.onclick = function() {
+                        output = entry.output;
+                        updateBothGateRendering()
+                        stateButtonArray.forEach((oentry, oindex) => {if("output" in oentry){document.getElementById(oentry.buttonId).classList.remove("active");}});
+                        elm.classList.add("active");
+                    };
+                }
+            });
+        });
+    </script>
+</body>
+</html>

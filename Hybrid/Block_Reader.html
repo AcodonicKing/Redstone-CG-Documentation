@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Reader</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Block Reader</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Block Reader</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-1" class="bt-button active">1</button>
+                <button id="bt-btn-2" class="bt-button">2</button>
+                <button id="bt-btn-3" class="bt-button">3</button>
+                <button id="bt-btn-4" class="bt-button">4</button>
+                <button id="bt-btn-5" class="bt-button">5</button>
+                <button id="bt-btn-6" class="bt-button">6</button>
+                <button id="bt-btn-7" class="bt-button">7</button>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-output-low" class="bt-button active">Output Low</button>
+                <button id="bt-output-high" class="bt-button">Output High</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table> 
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Block Reader</strong> functions similarly to the Minecraft 
+                <a href="https://minecraft.wiki/w/Comparator">Redstone Comparator</a>, with one key difference: 
+                it <strong>cannot perform comparison</strong> on its own.  
+                To compare signals, connect it to a <a href="Comparator.html">Comparator</a>.
+            </p>
+            <p>
+                Aside from lacking comparison mode, the Block Reader is a direct functional copy of the vanilla Comparator. 
+                It reads data from blocks such as <a href = "https://minecraft.wiki/w/Chest">Chests</a>, <a href="https://minecraft.wiki/w/Lectern">Lecterns</a>, <a href="https://minecraft.wiki/w/Item_Frame">Item Frames</a>,
+                and any block placed behind a <a href="https://minecraft.wiki/w/Conductivity">Comparator-Conducting Block</a>.  
+                Its output signal strength depends on the block being read.
+            </p>
+
+            <h3>Container Logic</h3>
+            <p>
+                If the block is a container, the output signal <strong>O</strong> depends on the number of stored items:
+            </p>
+            <div class="equation">
+                <strong>O = (Q / V) × 15</strong>
+            </div>
+            <ul>
+                <li><strong>Q</strong> - Number of items currently inside the container</li>
+                <li><strong>V</strong> - Maximum number of items the container can store</li>
+            </ul>
+            <h3>Item Frame Logic</h3>
+            <ul>
+                <li>Empty <a href="https://minecraft.wiki/w/Item_Frame">Item Frame</a> = <strong>0</strong></li>
+                <li><a href="https://minecraft.wiki/w/Item_Frame">Item Frame</a> with item = <strong>1 to 8</strong> depending on item rotation</li>
+            </ul>
+            <p>
+                For all other cases, refer to <a href="https://minecraft.wiki/w/Redstone_Comparator#Measure_block_state">Minecraft's Comparator logic on the official wiki</a>.
+            </p>
+        </section>
+        <section id="semi-quasi">
+            <h2>Semi-Quasi Connectivity</h2>
+            <p>
+                The Block Reader has a special behavior when reading blocks behind a <a href="https://minecraft.wiki/w/Conductivity">Comparator-Conducting Block</a>.  
+                This behavior resembles <a href="https://minecraft.wiki/w/Tutorial:Quasi-connectivity">quasi-connectivity</a> but is not identical.
+            </p>
+            <ol>
+                <li>A Block Reader is placed facing a <a href="https://minecraft.wiki/w/Conductivity">Comparator-Conducting Block</a>.</li>
+                <li>A readable block (such as an <a href="https://minecraft.wiki/w/Item_Frame">Item Frame</a>) is placed in line behind that block.</li>
+            </ol>
+            <p>
+                You might expect it to behave like the vanilla <a href="https://minecraft.wiki/w/Comparator">Redstone Comparator</a> and update immediately after step 2,  
+                but the Block Reader <strong>does not activate instantly</strong>.  
+                Initially, the Block Reader is <em>asleep</em> - it doesn't detect a valid block to read yet.
+            </p>
+            <p>
+                The Block Reader must receive a <strong>neighbor update</strong> to perform a data check.  
+                Once triggered, it detects the readable block behind the <a href="https://minecraft.wiki/w/Conductivity">Comparator-Conducting Block</a> and begins updating automatically every <strong>2 ticks</strong>.  
+                This continues as long as the readable block remains in place.
+            </p>
+            <p>
+                This mechanic is intentional.  
+                Implementing full <a href="https://minecraft.wiki/w/Comparator">Redstone Comparator</a> behavior accurately is non-trivial, and this update cycle prevents unnecessary performance cost.  
+                For best performance, avoid using intermediate <a href="https://minecraft.wiki/w/Conductivity">Comparator-Conducting Block</a> when possible.
+            </p>
+            <div class="image800">
+                <img alt="Block Reader sees no Barrel (bottom) vs Barrel Detected (top)" src="/Redstone-CG-Documentation/media/images/BlockReaderSeeNoBarrel.png"/>
+            </div>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                <a href="../Pin_Marks.html">Pin Mark A</a> shows where the Block Reader will output a Redstone Signal.
+                Right-click to change.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="../RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="https://minecraft.wiki/w/Comparator">Redstone Comparator</a></td>
+                        <td rowspan="1" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.2.3</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        const gate = "components/hybrid/block_reader";
+        const rccr1array = [
+            { slot: 0, img: "https://minecraft.wiki/images/Invicon_Redstone_Comparator.png?71749" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/block_reader.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/block_reader.png", amount: 2 }
+        ];
+
+        populateRedCuCrafter("Normal-Making", { category: 0, tipe: 1 }, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", { category: 0, tipe: 1 }, rccr1array);
+        });
+
+        const buttonArray = [
+            { buttonId: 'bt-btn-1', pinMark: ["l"] },
+            { buttonId: 'bt-btn-2', pinMark: ["b"] },
+            { buttonId: 'bt-btn-3', pinMark: ["l", "b"] },
+            { buttonId: 'bt-btn-4', pinMark: ["r"] },
+            { buttonId: 'bt-btn-5', pinMark: ["l", "r"] },
+            { buttonId: 'bt-btn-6', pinMark: ["b", "r"] },
+            { buttonId: 'bt-btn-7', pinMark: ["l", "b", "r"] },
+        ];
+
+        const stateButtonArray = [
+            { buttonId: "bt-output-low", output: "off" },
+            { buttonId: "bt-output-high", output: "on" },
+        ]
+
+        let output = "off"
+        let activepinmarks = 0;
+        document.addEventListener("DOMContentLoaded", function () {
+            setupButtonDivSwitcher(buttonArray.map(({buttonId, pinMark}, index) => ({
+                buttonId,
+                functionCall: () => {
+                    activepinmarks = index;
+                    renderComponent("rnd", `${gate}/${output}.png`, pinMark, []);
+                    blitzComponent("btz", `${gate}/${output}.png`, pinMark, []);
+                }
+            })), "bt-rnd", "bt-btz", "bt-dsp");
+            stateButtonArray.forEach((entry, index) => {
+                const elm = document.getElementById(entry.buttonId);
+                if("output" in entry){
+                    elm.onclick = function() {
+                        output = entry.output;
+                        renderComponent("rnd", `${gate}/${output}.png`, buttonArray[activepinmarks].pinMark, []);
+                        blitzComponent("btz", `${gate}/${output}.png`, buttonArray[activepinmarks].pinMark, []);
+                        stateButtonArray.forEach((oentry, oindex) => {if("output" in oentry){document.getElementById(oentry.buttonId).classList.remove("active");}});
+                        elm.classList.add("active");
+                    };
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
