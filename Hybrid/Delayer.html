@@ -107,7 +107,7 @@
     </main>
     <div class="block_table">
         <table>
-            <th>Parallel Analog Memory</th>
+            <th>Parallel Delayer</th>
             <tr><td><div id="bt-prl-dsp" class="block_table-dsp">
                 <div id="bt-prl-rnd"><div id="prl-rnd"></div></div>
                 <div id="bt-prl-btz" style="display: none;"><div id="prl-btz"></div></div>
@@ -210,11 +210,11 @@
             { slot: 3, img: `/Redstone-CG-Documentation/media/items/parallel_delayer.png` },
             { slot: 4, img: `/Redstone-CG-Documentation/media/items/parallel_delayer.png`, amount: 2 },
         ];
-        populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
-        populateRedCuCrafter("Parallel-Making", {category: 3, tipe: 1}, rccr2array);
+        populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+        populateRedCuCrafter("Parallel-Making", {category: 2, tipe: 1}, rccr2array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("Normal-Making", {category: 3, tipe: 0}, rccr1array);
-            populateRedCuCrafter("Parallel-Making", {category: 3, tipe: 1}, rccr2array);
+            populateRedCuCrafter("Normal-Making", {category: 2, tipe: 0}, rccr1array);
+            populateRedCuCrafter("Parallel-Making", {category: 2, tipe: 1}, rccr2array);
         });
         const stateButtonArray = [
             { buttonId: 'bt-nrm-btn-1', delay: "1" },
