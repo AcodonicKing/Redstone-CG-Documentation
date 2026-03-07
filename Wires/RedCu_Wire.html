@@ -69,6 +69,17 @@
                     <tr><td>1 RedCu Wire</td></tr>
                 </table>
             </div>
+            <h3><a href="Hanging_RedCu_Wire_Connector.html">Hanging RedCu Wire Connector</a></h3>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></th>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Hanging-RedCu-Wire-Connector-Making"></div></td>
+                    </tr>
+                    <tr><td>2 RedCu Wire</td></tr>
+                </table>
+            </div>
         </section>
         <section id="shaping-and-placement">
             <h2>Shaping and Placement</h2>
@@ -179,13 +190,22 @@
             { slot: 3, img: "/Redstone-CG-Documentation/media/items/redstone_to_red_cu_converter.png" },
             { slot: 4, img: "/Redstone-CG-Documentation/media/items/redstone_to_red_cu_converter.png" },
         ];
-        populateRedCuCrafter("RedCu-Wire-Making", {category: 0, tipe: 64}, rccr1array);
-        populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 64}, rccr2array);
-        populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 64}, rccr3array);
+        const rccr4array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 2, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/hanging_redcu_wire_connector.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/hanging_redcu_wire_connector.png" },
+        ];
+        populateRedCuCrafter("RedCu-Wire-Making", {category: 0, tipe: 0}, rccr1array);
+        populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 0}, rccr2array);
+        populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 0}, rccr3array);
+        populateRedCuCrafter("Hanging-RedCu-Wire-Connector-Making", {category: 0, tipe: 0}, rccr4array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("RedCu-Wire-Making", {category: 0, tipe: 64}, rccr1array);
-            populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 64}, rccr2array);
-            populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 64}, rccr3array);
+            populateRedCuCrafter("RedCu-Wire-Making", {category: 0, tipe: 0}, rccr1array);
+            populateRedCuCrafter("RedCu-Wire-Intersection-Making", {category: 0, tipe: 0}, rccr2array);
+            populateRedCuCrafter("Redstone-RedCu-Converter-Making", {category: 0, tipe: 0}, rccr3array);
+            populateRedCuCrafter("Hanging-RedCu-Wire-Connector-Making", {category: 0, tipe: 0}, rccr4array);
         });
         document.addEventListener("DOMContentLoaded", function () {
             setupImageSwitcher("bt-rnd", [

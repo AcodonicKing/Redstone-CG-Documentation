@@ -27,6 +27,9 @@
                 <button id="bt-btn-7" class="bt-button">7</button>
             </div></td></tr>
             <tr><td><div>
+                <button id="bt-base-read" class="bt-button">Read signal from base</button>
+            </div></td></tr>
+            <tr><td><div>
                 <button id="bt-output-low" class="bt-button active">Output Low</button>
                 <button id="bt-output-high" class="bt-button">Output High</button>
             </div></td></tr>
@@ -106,6 +109,9 @@
                 <a href="../Pin_Marks.html">Pin Mark A</a> shows where the Block Reader will output a Redstone Signal.
                 Right-click to change.
             </p>
+            <p>
+                Right-click Block Reader with Block Reader item to toggle block to read block data in the direction of Block Reader base.
+            </p>
         </section>
         <section id="obtaining">
             <h2>Crafting</h2>
@@ -125,6 +131,7 @@
                 <table>
                     <tr><td>Version</td><td>Description</td></tr>
                     <tr><td>0.2.3</td><td>Introduced.</td></tr>
+                    <tr><td>0.3.0</td><td>Added ability to toggle between reading block data in forward direction and block base direction by right-clicking Block Reader with Block Reader item.</td></tr>
                 </table>
             </div>
         </section>
@@ -146,35 +153,38 @@
             { slot: 4, img: "/Redstone-CG-Documentation/media/items/block_reader.png", amount: 2 }
         ];
 
-        populateRedCuCrafter("Normal-Making", { category: 0, tipe: 1 }, rccr1array);
+        populateRedCuCrafter("Normal-Making", { category: 2, tipe: 0 }, rccr1array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("Normal-Making", { category: 0, tipe: 1 }, rccr1array);
+            populateRedCuCrafter("Normal-Making", { category: 2, tipe: 0 }, rccr1array);
         });
 
         const buttonArray = [
-            { buttonId: 'bt-btn-1', pinMark: ["l"] },
+            { buttonId: 'bt-btn-1', pinMark: ["r"] },
             { buttonId: 'bt-btn-2', pinMark: ["b"] },
-            { buttonId: 'bt-btn-3', pinMark: ["l", "b"] },
-            { buttonId: 'bt-btn-4', pinMark: ["r"] },
-            { buttonId: 'bt-btn-5', pinMark: ["l", "r"] },
-            { buttonId: 'bt-btn-6', pinMark: ["b", "r"] },
-            { buttonId: 'bt-btn-7', pinMark: ["l", "b", "r"] },
+            { buttonId: 'bt-btn-3', pinMark: ["r", "b"] },
+            { buttonId: 'bt-btn-4', pinMark: ["l"] },
+            { buttonId: 'bt-btn-5', pinMark: ["r", "l"] },
+            { buttonId: 'bt-btn-6', pinMark: ["b", "l"] },
+            { buttonId: 'bt-btn-7', pinMark: ["r", "b", "l"] },
         ];
 
         const stateButtonArray = [
             { buttonId: "bt-output-low", output: "off" },
             { buttonId: "bt-output-high", output: "on" },
-        ]
+        ];
 
-        let output = "off"
+        let output = "off";
         let activepinmarks = 0;
+        let base_read = false;
         document.addEventListener("DOMContentLoaded", function () {
             setupButtonDivSwitcher(buttonArray.map(({buttonId, pinMark}, index) => ({
                 buttonId,
                 functionCall: () => {
                     activepinmarks = index;
-                    renderComponent("rnd", `${gate}/${output}.png`, pinMark, []);
-                    blitzComponent("btz", `${gate}/${output}.png`, pinMark, []);
+                    pinmark = [...pinMark];
+                    if(base_read){ pinmark.push("base_alt") }
+                    renderComponent("rnd", `${gate}/${output}_base.png`, pinmark, [`${gate}/${output}_torch.png`]);
+                    blitzComponent("btz", `${gate}/${output}.png`, pinmark, []);
                 }
             })), "bt-rnd", "bt-btz", "bt-dsp");
             stateButtonArray.forEach((entry, index) => {
@@ -182,13 +192,25 @@
                 if("output" in entry){
                     elm.onclick = function() {
                         output = entry.output;
-                        renderComponent("rnd", `${gate}/${output}.png`, buttonArray[activepinmarks].pinMark, []);
-                        blitzComponent("btz", `${gate}/${output}.png`, buttonArray[activepinmarks].pinMark, []);
+                        pinmark = [...buttonArray[activepinmarks].pinMark];
+                        if(base_read){ pinmark.push("base_alt") }
+                        renderComponent("rnd", `${gate}/${output}_base.png`, pinmark, [`${gate}/${output}_torch.png`]);
+                        blitzComponent("btz", `${gate}/${output}.png`, pinmark, []);
                         stateButtonArray.forEach((oentry, oindex) => {if("output" in oentry){document.getElementById(oentry.buttonId).classList.remove("active");}});
                         elm.classList.add("active");
                     };
                 }
             });
+            const elm = document.getElementById("bt-base-read");
+            elm.onclick = function() {
+                base_read = !base_read;
+                pinmark = [...buttonArray[activepinmarks].pinMark];
+                if(base_read){ pinmark.push("base_alt") }
+                renderComponent("rnd", `${gate}/${output}_base.png`, pinmark, [`${gate}/${output}_torch.png`]);
+                blitzComponent("btz", `${gate}/${output}.png`, pinmark, []);
+                if(base_read){elm.classList.add("active");}
+                else{elm.classList.remove("active");}
+            }
         });
 
     </script>

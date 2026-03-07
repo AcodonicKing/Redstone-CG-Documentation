@@ -11,6 +11,61 @@
         <h1>Version Log</h1>
     </header>
     <main>
+        <section id="0.3.0">
+            <h2>0.3.0 - Indicator Update</h2>
+            <p>
+                The main focus of the <strong>0.3.x</strong> update series is decorative and visual components,
+                starting with a set of new indicator blocks:
+            </p>
+            <ul>
+                <li><a href="Indicators/Flat_Lamp_Indicator.html">Flat Lamp Indicator</a></li>
+                <li><a href="Indicators/Colored_Flat_Lamp.html">Colored Flat Lamp Indicator</a></li>
+                <li><a href="Indicators/Colorful_Flat_Lamp.html">Colorful Flat Lamp Indicator</a></li>
+                <li><a href="Indicators/Bar_Indicator.html">Bar Indicator</a></li>
+                <li><a href="Indicators/Arrow_Indicator.html">Arrow Indicator</a></li>
+                <li><a href="Indicators/Colored_Lamp.html">Colored Lamp</a></li>
+                <li><a href="Indicators/Colorful_Lamp.html">Colorful Lamp</a></li>
+            </ul>
+            <p>
+                Every indicator (except <a href="Indicators/Colored_Lamp.html">Colored Lamp</a> and <a href="Indicators/Colorful_Lamp.html">Colorful Lamp</a>)
+                can now read signals from the <strong>base face</strong> (the block below).
+                This behavior can be toggled either by performing every <strong>16th right-click</strong>
+                on the block or by right-clicking the block with an <strong>Indicator item</strong>
+                (except for <a href="Indicators/Arrow_Indicator.html">Arrow Indicator</a>).
+            </p>
+            <p>
+                This feature is also implemented to <a href="Hybrid/Block_Reader.html">Block Reader</a>. Now it can be configured to read block data in the base direction.
+            </p>
+            <p>
+                It has been noticed that in some cases placing <a href="Wires/RedCu_Wire.html">RedCu Wires</a> and
+                <a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transitions</a> just to reach the other end of a circuit
+                or other difficult locations proved to be inefficient. To address this,
+                a new block has been introduced:
+            </p>
+            <p>
+                <a href="Wires/Hanging_RedCu_Wire_Connector.html">Hanging RedCu Wire Connector</a>
+            </p>
+            <p>
+                This block allows players to connect components directly without long wire paths.
+                In addition to simplifying circuit construction, more direct connections may also
+                improve performance. However, it is not recommended to use this block on moving
+                contraptions.
+            </p>
+            <h3>Compatibility Notice</h3>
+            <p>
+                This update will <strong>not be ported to NeoForge 1.20.6</strong>.
+            </p>
+            <p>
+                In Minecraft 1.20.6 Mojang significantly changed the way internal data is managed.
+                The usual “minimal universal working solution” used for compatibility across
+                versions failed to function properly and appeared unsafe.
+            </p>
+            <p>
+                As a result, <strong>NeoForge 1.20.6 will be skipped</strong> and may be reconsidered
+                after the <strong>0.3.x</strong> update series.
+            </p>
+            <p>The "updating to this from versions before 0.2.0" warning will no longer be repeated, but it still applies to every new version.</p>
+        </section>
         <section id="0.2.3">
             <h2>0.2.3 - Timed and Read</h2>
             <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Indicator</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bar Indicator</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Bar Indicator</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn1" class="bt-button active">1</button>
+                    <button id="bt-btn2" class="bt-button">2</button>
+                    <button id="bt-btn3" class="bt-button">3</button>
+                    <button id="bt-btn4" class="bt-button">4</button>
+                    <button id="bt-btn5" class="bt-button">5</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn6" class="bt-button">6</button>
+                    <button id="bt-btn7" class="bt-button">7</button>
+                    <button id="bt-btn8" class="bt-button">8</button>
+                    <button id="bt-btn9" class="bt-button">9</button>
+                    <button id="bt-btn10" class="bt-button">10</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn11" class="bt-button">11</button>
+                    <button id="bt-btn12" class="bt-button">12</button>
+                    <button id="bt-btn13" class="bt-button">13</button>
+                    <button id="bt-btn14" class="bt-button">14</button>
+                    <button id="bt-btn15" class="bt-button">15</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn16" class="bt-button">16</button>
+                </div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: row; position: relative;">
+                <span id="redst-signal" style="font-size: 24px; padding: 5px;">0</span>
+                <input id="redst-slider" type="range" min="0" max="15" value="0" style="position: absolute; top:15px; left: 35px; width: 85%">
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Light">Luminous</a></div><div>Yes(5) when powered</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                <strong>Bar Indicator</strong> is an indicator block whose top surface fills as the
+                incoming redstone signal strength increases.
+            </p>
+            <p>
+                The block is designed for builds that might require indicators larger than a single block.
+                Its display surface covers the full area of a block face, while <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a>
+                is hidden beneath the displaying face to maintain a clean visual appearance.
+                This let's the player tile the block. Note that each block needs its own Redstone signal supply.
+            </p>
+            <p>
+                The top surface intentionally uses a <strong>15 x 15 pixel texture</strong> instead of
+                the standard 16 x 16. This allows the indicator to appear completely off when the
+                signal level is <strong>0</strong>, while signals from <strong>1 to 15</strong> gradually
+                fill the bar.
+            </p>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                The inputs (<a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a>) can be configured to face any side by right-clicking. When multiple inputs are connected, the Indicator displays the greatest Redstone signal from its inputs.
+            </p>
+            <p>
+                Every 16th right-click or a right-click with Bar Indicator item toggles base reading state, where the indicator reads Redstone signal from its base, shown by the pinmarks in the corners.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>2 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.0</td><td>Introduced</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        let gate = "components/indicators/bar_indicator/ui0.png";
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 2, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/items/bar_indicator.png` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/items/bar_indicator.png` },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 3, tipe: 64}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 3, tipe: 64}, rccr1array);
+        });
+        const ptrn1 = [
+            ["1", ["f"], ["b"]],
+            ["2", ["r"], ["l"]],
+            ["3", ["r","f"], ["l","b"]],
+            ["4", ["b"], ["f"]],
+            ["5", ["b","f"], ["f","b"]],
+            ["6", ["b","r"], ["f","l"]],
+            ["7", ["b","r","f"], ["f","l","b"]],
+            ["8", ["l"], ["r"]],
+            ["9", ["l","f"], ["r","b"]],
+            ["10", ["l","r"], ["r","l"]],
+            ["11", ["l","r","f"], ["r","l","b"]],
+            ["12", ["l","b"], ["r","f"]],
+            ["13", ["l","b","f"], ["r","f","b"]],
+            ["14", ["l","b","r"], ["r","f","l"]],
+            ["15", ["l","b","r","f"], ["r","f","l","b"]],
+            ["16", [], []]
+        ];
+        let actvind = 0;
+        let redst_value = 0;
+        let base_read = false
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn${entry[0]}`,
+                    functionCall: function () {
+                        if(entry[0] == "16") base_read = !base_read;
+                        pinmarkR = [...entry[1]];
+                        pinmarkB = [...entry[2]];
+                        if(base_read){
+                            pinmarkR.push("base")
+                            pinmarkB.push("base")
+                        }
+                        renderComponent("rnd", "components/indicators/base.png", pinmarkR, [gate]);
+                        blitzComponent("btz", "components/indicators/base.png", pinmarkB, [gate]);
+                        actvind = index;
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            document.getElementById("redst-slider").addEventListener("input", function () {
+                redst_value = parseInt(this.value, 10);
+                document.getElementById("redst-signal").textContent = redst_value;
+                gate = `components/indicators/bar_indicator/ui${redst_value}.png`;
+                pinmarkR = [...ptrn1[actvind][1]];
+                pinmarkB = [...ptrn1[actvind][2]];
+                if(base_read){
+                    pinmarkR.push("base")
+                    pinmarkB.push("base")
+                }
+                renderComponent("rnd", "components/indicators/base.png", pinmarkR, [gate]);
+                blitzComponent("btz", "components/indicators/base.png", pinmarkB, [gate]);
+            });
+        });
+    </script>
+</body>
+</html>

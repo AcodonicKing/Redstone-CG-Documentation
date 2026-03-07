@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Lamp</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Colored Lamp</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Colored Lamp</th>
+            <tr><td><div class="block_table-dsp"><div class="component-render-container"><img id="lampRender" alt="Colored Lamp Indicator"></div></div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: row; position: relative;">
+                <span id="redst-signal" style="font-size: 24px; padding: 5px;">0</span>
+                <input id="redst-slider" type="range" min="0" max="15" value="0" style="position: absolute; top:15px; left: 35px; width: 85%">
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Light">Luminous</a></div><div>Yes, based on signal</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                <strong>Colored Lamp</strong> is an indicator block that increases its brightness
+                based on the incoming Redstone signal strength.
+            </p>
+
+            <p>
+                The lamp can be recolored using <a href="https://minecraft.wiki/w/Stained_Glass_Pane">Stained Glass Panes</a>, allowing players to
+                customize the appearance of indicators for decorative builds or complex circuits.
+            </p>
+            <div class="image400">
+                <img alt="All Colored Lamp colors from all Stained Glass Panes and Redstone Signal" src="/Redstone-CG-Documentation/media/images/Stained_Colored_Lamp.png">
+            </div>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                By default, the Colored Lamp uses the color <strong>#F2BD74</strong>, which closely
+                resembles the color of a standard <a href="https://minecraft.wiki/w/Redstone_Lamp">Redstone Lamp</a>.
+            </p>
+
+            <p>
+                Right-clicking the block with any <a href="https://minecraft.wiki/w/Stained_Glass_Pane">Stained Glass Pane</a> consumes the
+                pane and applies its color to the lamp.
+            </p>
+
+            <ul>
+                <li>
+                Applying a new pane replaces the previous one and drops the previously used pane.
+                </li>
+                <li>
+                Breaking the Colored Lamp will also drop the currently applied pane.
+                </li>
+            </ul>
+
+            <p>The resulting color depends on the pane used:</p>
+
+            <div class="logic-table"><table>
+                <thead>
+                <tr><th>Stained Glass Pane</th><th>Color Code</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>White Stained Glass Pane</td><td>#FFFFFF</td></tr>
+                <tr><td>Orange Stained Glass Pane</td><td>#FF681F</td></tr>
+                <tr><td>Magenta Stained Glass Pane</td><td>#FF00FF</td></tr>
+                <tr><td>Light Blue Stained Glass Pane</td><td>#9AC0CD</td></tr>
+                <tr><td>Yellow Stained Glass Pane</td><td>#FFFF00</td></tr>
+                <tr><td>Lime Stained Glass Pane</td><td>#BFFF00</td></tr>
+                <tr><td>Pink Stained Glass Pane</td><td>#FF69B4</td></tr>
+                <tr><td>Gray Stained Glass Pane</td><td>#808080</td></tr>
+                <tr><td>Light Gray Stained Glass Pane</td><td>#D3D3D3</td></tr>
+                <tr><td>Cyan Stained Glass Pane</td><td>#00FFFF</td></tr>
+                <tr><td>Purple Stained Glass Pane</td><td>#A020F0</td></tr>
+                <tr><td>Blue Stained Glass Pane</td><td>#0000FF</td></tr>
+                <tr><td>Brown Stained Glass Pane</td><td>#8B4513</td></tr>
+                <tr><td>Green Stained Glass Pane</td><td>#00FF00</td></tr>
+                <tr><td>Red Stained Glass Pane</td><td>#FF0000</td></tr>
+                <tr><td>Black Stained Glass Pane</td><td>#000000</td></tr>
+                </tbody>
+            </table></div>
+            <p>
+                Yes, applying a <strong>Black Stained Glass Pane</strong> will make the lamp appear
+                pitch black, and it will still emit light normally.
+            </p>
+            <p>
+                Internally, the lamp color is stored as a <strong>3-byte array</strong> in the block
+                entity (<code>color</code>). This value can be modified using commands to obtain
+                any RGB color, not just those available from stained glass panes.
+            </p>
+            <div class="equation"><strong>/data modify block &lt;x&gt; &lt;y&gt; &lt;z&gt; color set value [B;&lt;R&gt;B,&lt;G&gt;B,&lt;B&gt;B]</strong></div>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="https://minecraft.wiki/w/Crafting">Crafting</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="https://minecraft.wiki/w/Glass_Pane">Glass Pane</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Colored-Lamp-Crafting"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Lamp">Redstone Lamp</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Tinted_Glass">Tinted Glass</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.0</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        let gate = "/Redstone-CG-Documentation/media/renders/components/indicators/colored_lamp/ui0.png";
+        const crft2array = [
+            { slot: 3, img: "https://minecraft.wiki/images/Invicon_Glass_Pane.png" },
+            { slot: 4, img: "https://minecraft.wiki/images/Redstone_Lamp_JE3_BE2.png" },
+            { slot: 5, img: "https://minecraft.wiki/images/Tinted_Glass_JE2_BE1.png" },
+            { slot: 9, img: "/Redstone-CG-Documentation/media/items/colored_lamp_indicator.png", amount: "2" },
+        ];
+        populateTable("Colored-Lamp-Crafting", "crafting", crft2array);
+        window.addEventListener("resize", () => {
+            populateTable("Colored-Lamp-Crafting", "crafting", crft2array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("lampRender").src = gate;
+        });
+        document.getElementById("redst-slider").addEventListener("input", function () {
+            redst_value = parseInt(this.value, 10);
+            document.getElementById("redst-signal").textContent = redst_value;
+            gate = `/Redstone-CG-Documentation/media/renders/components/indicators/colored_lamp/ui${redst_value}.png`;
+            document.getElementById("lampRender").src = gate;
+        });
+    </script>
+</body>
+</html>

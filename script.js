@@ -205,6 +205,31 @@ function renderComponent(containerId, baseImage, marks, modifiers) {
         container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${modifier}`));
     });
 }
+function renderComponentRedCuPinmarks(containerId, baseImage, marks, redcu_marks, modifiers) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = "";
+    container.classList.add("component-render-container");
+
+    function createImageElement(src) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.classList.add("layer-component");
+        return img;
+    }
+
+    container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${baseImage}`));
+    marks.forEach(mark => {
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/pinmarks/${mark}.png`));
+    });
+    redcu_marks.forEach(redcu_mark => {
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/redcu_pinmarks/${redcu_mark}.png`));
+    });
+    modifiers.forEach(modifier => {
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/renders/${modifier}`));
+    });
+}
 /**
  * Applies layered images inside a specified div container.
  * @param {string} containerId - The ID of the target div element.
@@ -259,6 +284,32 @@ function blitzComponent(containerId, baseImage, marks, modifiers) {
     container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/${baseImage}`));
     marks.forEach(mark => {
         container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/pinmarks/${mark}.png`));
+    });
+    modifiers.forEach(modifier => {
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/${modifier}`));
+    });
+}
+function blitzComponentRedCuPinmarks(containerId, baseImage, marks, redcu_marks, modifiers) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = "";
+    container.classList.add("component-blitz-container");
+
+    function createImageElement(src) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.classList.add("layer-component");
+        img.classList.add("pixelated");
+        return img;
+    }
+
+    container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/${baseImage}`));
+    marks.forEach(mark => {
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/pinmarks/${mark}.png`));
+    });
+    redcu_marks.forEach(redcu_mark => {
+        container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/redcu_pinmarks/${redcu_mark}.png`));
     });
     modifiers.forEach(modifier => {
         container.appendChild(createImageElement(`/Redstone-CG-Documentation/media/textures/${modifier}`));
@@ -376,6 +427,35 @@ function setupButtonDivSwitcher(buttons, hoverElementId, targetElementId, inside
     indiderElement.addEventListener("mouseleave", () => {
         targetElement.style.display = "none";
         hoverElement.style.display = "block";
+    });
+
+    setActiveButton(0);
+}
+
+function setupButtonSwitcher(buttons) {
+
+    let activeIndex = 0;
+
+    function setActiveButton(index) {
+        buttons.forEach(({ buttonId }) => {
+            const button = document.getElementById(buttonId);
+            button.classList.remove("active");
+        });
+
+        const button = document.getElementById(buttons[index].buttonId);
+        button.classList.add("active");
+        activeIndex = index;
+
+        if (typeof buttons[index].functionCall === "function") {
+            buttons[index].functionCall();
+        }
+    }
+
+    buttons.forEach((btn, i) => {
+        const button = document.getElementById(btn.buttonId);
+        button.addEventListener("click", () => {
+            setActiveButton(i);
+        });
     });
 
     setActiveButton(0);

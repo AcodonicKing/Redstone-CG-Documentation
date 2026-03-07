@@ -39,6 +39,9 @@
                     <button id="bt-btn14" class="bt-button">14</button>
                     <button id="bt-btn15" class="bt-button">15</button>
                 </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn16" class="bt-button">16</button>
+                </div>
             </div></td></tr>
             <tr><td><div style="display: flex; flex-direction: row; position: relative;">
                 <span id="redst-signal" style="font-size: 24px; padding: 5px;">0</span>
@@ -61,6 +64,9 @@
             <h2>Configuration</h2>
             <p>
                 The inputs (<a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a>) can be configured to face any side by right-clicking. When multiple inputs are connected, the Universal Indicator displays the greatest Redstone signal from its inputs.
+            </p>
+            <p>
+                Every 16th right-click or a right-click with Universal Indicator item toggles base reading state, where the indicator reads Redstone signal from its base, shown by the pinmarks in the corners.
             </p>
         </section>
         <section id="obtaining">
@@ -87,6 +93,7 @@
                     <tr><td>0.1.1</td><td>Changed registry name from <code>universal_indicator</code> to <code>floor_universal_indicator</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
                     <tr><td>0.2.0</td><td>Changed registry name from <code>floor_universal_indicator</code> to <code>universal_indicator</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Orientation data and reading data now is stored on Block Entity. Block is drawn by Block Entity Renderer. Lost `rotate` and `mirror` block methods..</td></tr>
                     <tr><td>0.2.1</td><td>Reimplemented `mirror` block method.</td></tr>
+                    <tr><td>0.3.0</td><td>Added `base read` feature.</td></tr>
                 </table>
             </div>
         </section>
@@ -109,9 +116,9 @@
             { slot: 3, img: `/Redstone-CG-Documentation/media/textures/components/indicators/universal/ui15.png` },
             { slot: 4, img: `/Redstone-CG-Documentation/media/textures/components/indicators/universal/ui15.png` },
         ];
-        populateRedCuCrafter("Normal-Making", {category: 3, tipe: 64}, rccr1array);
+        populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
         window.addEventListener("resize", () => {
-            populateRedCuCrafter("Normal-Making", {category: 3, tipe: 64}, rccr1array);
+            populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
         });
         const ptrn1 = [
             ["1", ["f"], ["b"]],
@@ -129,17 +136,28 @@
             ["13", ["l","b","f"], ["r","f","b"]],
             ["14", ["l","b","r"], ["r","f","l"]],
             ["15", ["l","b","r","f"], ["r","f","l","b"]],
+            ["16", [], []]
         ];
         let actvind = 0;
         let redst_value = 0;
+        let base_read = false
         document.addEventListener("DOMContentLoaded", function () {
             const buttonsArray1 = ptrn1.map((entry, index) => {
                 return{
                     buttonId: `bt-btn${entry[0]}`,
                     functionCall: function () {
-                        if(redst_value == 0){renderComponent("rnd", gate, entry[1], ["components/indicators/universallamp.png"]);}
-                        else{renderComponent("rnd", gate, entry[1], ["components/indicators/universallampon.png"]);}
-                        blitzComponent("btz", gate, entry[2], []);
+                        if(entry[0] == "16"){
+                            base_read = !base_read;
+                        }
+                        pinmarkR = [...entry[1]];
+                        pinmarkB = [...entry[2]];
+                        if(base_read){
+                            pinmarkR.push("base")
+                            pinmarkB.push("base")
+                        }
+                        if(redst_value == 0){renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallamp.png"]);}
+                        else{renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallampon.png"]);}
+                        blitzComponent("btz", gate, pinmarkB, []);
                         actvind = index;
                     }
                 }
@@ -150,9 +168,15 @@
             redst_value = parseInt(this.value, 10);
             document.getElementById("redst-signal").textContent = redst_value;
             gate = `components/indicators/universal/ui${redst_value}.png`;
-            if(redst_value == 0){renderComponent("rnd", gate, ptrn1[actvind][1], ["components/indicators/universallamp.png"]);}
-            else{renderComponent("rnd", gate, ptrn1[actvind][1], ["components/indicators/universallampon.png"]);}
-            blitzComponent("btz", gate, ptrn1[actvind][2], []);
+            pinmarkR = [...ptrn1[actvind][1]];
+            pinmarkB = [...ptrn1[actvind][2]];
+            if(base_read){
+                pinmarkR.push("base")
+                pinmarkB.push("base")
+            }
+            if(redst_value == 0){renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallamp.png"]);}
+            else{renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallampon.png"]);}
+            blitzComponent("btz", gate, pinmarkB, []);
         });
     </script>
 </body>

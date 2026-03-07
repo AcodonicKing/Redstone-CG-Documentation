@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Indicator</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Arrow Indicator</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Arrow Indicator</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn1" class="bt-button active">1</button>
+                    <button id="bt-btn2" class="bt-button">2</button>
+                    <button id="bt-btn3" class="bt-button">3</button>
+                    <button id="bt-btn4" class="bt-button">4</button>
+                    <button id="bt-btn5" class="bt-button">5</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn6" class="bt-button">6</button>
+                    <button id="bt-btn7" class="bt-button">7</button>
+                    <button id="bt-btn8" class="bt-button">8</button>
+                    <button id="bt-btn9" class="bt-button">9</button>
+                    <button id="bt-btn10" class="bt-button">10</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn11" class="bt-button">11</button>
+                    <button id="bt-btn12" class="bt-button">12</button>
+                    <button id="bt-btn13" class="bt-button">13</button>
+                    <button id="bt-btn14" class="bt-button">14</button>
+                    <button id="bt-btn15" class="bt-button">15</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn16" class="bt-button">16</button>
+                    <button id="bt-btn-base" class="bt-button">Base Read</button>
+                </div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: row;">
+                <button id="bt-btn-A" class="bt-button active">3/4</button>
+                <button id="bt-btn-B" class="bt-button">Full</button>
+                <button id="bt-btn-C" class="bt-button">1/4</button>
+                <button id="bt-btn-glass" class="bt-button">Glass</button>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: row; position: relative;">
+                <span id="redst-signal" style="font-size: 24px; padding: 5px;">0</span>
+                <input id="redst-slider" type="range" min="0" max="15" value="0" style="position: absolute; top:15px; left: 35px; width: 85%">
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Light">Luminous</a></div><div>No</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                <strong>Arrow Indicator</strong> is a visual indicator that displays the strength of a redstone signal
+                using a rotating arrow. The arrow changes its angle depending on the supplied signal level,
+                allowing players to quickly observe signal changes in a circuit.
+            </p>
+            <p>
+                The block can read both <strong>Redstone</strong> signals and <strong>RedCu Wire</strong> signals.
+            </p>
+        </section>
+        <section id="interface">
+            <h2>Arrow Indicator Interface</h2>
+            <p>
+                After placement, right-clicking the block with an <strong>empty hand</strong> or with any item except
+                <strong>Arrow Indicator</strong> or <a href="/Redstone-CG-Documentation/Rotation_Bracket.html">Rotation Bracket</a> opens the configuration interface.
+            </p>
+            <div class="image800"><img alt="Arrow Indicator GUI" src="/Redstone-CG-Documentation/media/gui/ArrowIndicatorGUI.png"/></div>
+            <p>The interface allows the player to configure several aspects of the indicator:</p>
+            <ul>
+                <li>
+                <strong>Pin configuration</strong> - The <strong>Change</strong> button allows the player to cycle through
+                available input <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> configurations.
+                </li>
+
+                <li>
+                <strong>Decorative glass cover</strong> - A toggle located in the bottom-right corner enables
+                or disables a glass cover over the indicator.
+                </li>
+
+                <li>
+                <strong>Base input</strong> - A button located above the glass toggle enables or disables
+                signal input from the base of the block.
+                </li>
+
+                <li>
+                <strong>Indicator background style</strong> - Three buttons in the top-right corner allow the
+                player to choose the visual style of the indicator background:
+                <ul>
+                    <li>3/4 circle</li>
+                    <li>Full circle</li>
+                    <li>1/4 circle</li>
+                </ul>
+                </li>
+
+                <li>
+                <strong>Signal range configuration</strong> - Two text boxes to the left of the style buttons
+                allow the player to define the signal range used for the indicator.
+                <ul>
+                    <li>The <strong>top box</strong> sets the maximum signal value.</li>
+                    <li>The <strong>bottom box</strong> sets the minimum signal value.</li>
+                    <li>The current signal level is displayed between them.</li>
+                </ul>
+                </li>
+            </ul>
+
+            <p>
+                The input boxes accept <strong>floating-point values</strong>, including negative numbers.
+                If the minimum value is greater than the maximum value, the arrow will rotate
+                <strong>counterclockwise</strong> instead of clockwise.
+            </p>
+        </section>
+        <section id="configuration-inherence">
+            <h2>Configuration Inherence</h2>
+
+            <p>
+                By default, the Arrow Indicator reads signals in the range
+                <strong>from 0 to 16</strong> and uses the <strong>3/4 circle</strong> background style
+                without a glass cover.
+            </p>
+
+            <p>
+                After configuring an Arrow Indicator block, the player can transfer its configuration
+                to an <strong>Arrow Indicator item</strong>. This is done by right-clicking the configured
+                block while holding an Arrow Indicator item.
+            </p>
+
+            <p>
+                When the configuration is copied:
+            </p>
+
+            <ul>
+                <li>The item receives an <strong>enchantment glow effect</strong>.</li>
+                <li>The item description displays the inherited configuration.</li>
+            </ul>
+
+            <p>
+                Placing the item as a block will apply the stored configuration to the newly placed
+                Arrow Indicator.
+            </p>
+
+            <p>
+                To clear the stored configuration, simply <strong>right-click the item in the air</strong>.
+            </p>
+
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Flint">Flint</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.0</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        let gate = "components/indicators/arrow_indicator";
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png" },
+            { slot: 2, img: "https://minecraft.wiki/images/Flint_JE3_BE3.png" },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/items/arrow_indicator.png` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/items/arrow_indicator.png` },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
+        });
+        let actvind = 0;
+        let redst_value = 0;
+        let base_read = false;
+        let base_shape = `${gate}/3_4`;
+        let arrow_type = `${gate}/half_arrow/3_4/`;
+        let glass = false;
+        function updateAndRenderComponents(baseShape, arrowType, pinmarkR, redstoneValue, glass, gate) {
+            if (base_read) pinmarkR.push("base");
+            const postObj = [`${arrowType}ui${redstoneValue}.png`];
+            if (glass) postObj.push(`${gate}/glass.png`);
+            renderComponent("rnd", `${baseShape}.png`, pinmarkR, postObj);
+            blitzComponent("btz", `${baseShape}.png`, pinmarkR, postObj);
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const ptrn1 = [
+                ["1", ["f"]],
+                ["2", ["r"]],
+                ["3", ["r","f"]],
+                ["4", ["b"]],
+                ["5", ["b","f"]],
+                ["6", ["b","r"]],
+                ["7", ["b","r","f"]],
+                ["8", ["l"]],
+                ["9", ["l","f"]],
+                ["10", ["l","r"]],
+                ["11", ["l","r","f"]],
+                ["12", ["l","b"], ["r","f"]],
+                ["13", ["l","b","f"]],
+                ["14", ["l","b","r"]],
+                ["15", ["l","b","r","f"]],
+                ["16", []]
+            ];
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn${entry[0]}`,
+                    functionCall: function () {
+                        const pinmarkR = [...entry[1]];
+                        updateAndRenderComponents(base_shape, arrow_type, pinmarkR, redst_value, glass, gate);
+                        actvind = index;
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            const ptrn2 = [
+                ["A", "3_4", "half_arrow"],
+                ["B", "Full", "half_arrow"],
+                ["C", "1_4", "full_arrow"],
+            ];
+            const buttonsArray2 = ptrn2.map((entry) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        base_shape = `${gate}/${entry[1]}`;
+                        arrow_type = `${gate}/${entry[2]}/${entry[1]}/`;
+                        const pinmarkR = [...ptrn1[actvind][1]];
+                        updateAndRenderComponents(base_shape, arrow_type, pinmarkR, redst_value, glass, gate);
+                    }
+                }
+            });
+            setupButtonSwitcher(buttonsArray2);
+
+            document.getElementById("redst-slider").addEventListener("input", function () {
+                redst_value = parseInt(this.value, 10);
+                document.getElementById("redst-signal").textContent = redst_value;
+                const pinmarkR = [...ptrn1[actvind][1]];
+                updateAndRenderComponents(base_shape, arrow_type, pinmarkR, redst_value, glass, gate);
+            });
+
+            document.getElementById("bt-btn-base").onclick = function () {
+                base_read = !base_read;
+                const pinmarkR = [...ptrn1[actvind][1]];
+                updateAndRenderComponents(base_shape, arrow_type, pinmarkR, redst_value, glass, gate);
+                this.classList.toggle("active", base_read);
+            };
+
+            document.getElementById("bt-btn-glass").onclick = function () {
+                glass = !glass;
+                const pinmarkR = [...ptrn1[actvind][1]];
+                updateAndRenderComponents(base_shape, arrow_type, pinmarkR, redst_value, glass, gate);
+                this.classList.toggle("active", glass);
+            };
+        });
+    </script>
+</body>
+</html>

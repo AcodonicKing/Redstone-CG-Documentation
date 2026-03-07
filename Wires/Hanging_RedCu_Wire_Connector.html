@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanging RedCu Wire Connector</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body id="redcu-wire">
+    <header>
+        <h1>Hanging RedCu Wire Connector</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Hanging RedCu Wire Connector</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn1" class="bt-button active">1</button>
+                    <button id="bt-btn2" class="bt-button">2</button>
+                    <button id="bt-btn3" class="bt-button">3</button>
+                    <button id="bt-btn4" class="bt-button">4</button>
+                    <button id="bt-btn5" class="bt-button">5</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn6" class="bt-button">6</button>
+                    <button id="bt-btn7" class="bt-button">7</button>
+                    <button id="bt-btn8" class="bt-button">8</button>
+                    <button id="bt-btn9" class="bt-button">9</button>
+                    <button id="bt-btn10" class="bt-button">10</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn11" class="bt-button">11</button>
+                    <button id="bt-btn12" class="bt-button">12</button>
+                    <button id="bt-btn13" class="bt-button">13</button>
+                    <button id="bt-btn14" class="bt-button">14</button>
+                    <button id="bt-btn15" class="bt-button">15</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn16" class="bt-button">16</button>
+                    <!--<button id="bt-btn-base" class="bt-button">Base Connect</button>-->
+                </div>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Hanging RedCu Wire Connector</strong> is a special RedCu component designed to connect two distant redstone-compatible components using a suspended <a href="RedCu_Wire.html">RedCu Wire</a>.
+                It allows signal transmission through air without requiring intermediate support blocks.
+            </p>
+            <p>
+                Unlike most RedstoneCG blocks such as gates, wires, and indicators, the Hanging RedCu Wire Connector can <strong>float in mid-air</strong>.
+                It also provides a <strong>solid mounting surface at its base</strong>, enabling decorative or structural redstone builds where components must hang from ceilings or remain suspended.
+            </p>
+            <div class="image400">
+                <img alt="Hanging RedCu Wire Connector example" src="/Redstone-CG-Documentation/media/images/Hanging_RedCu_Connector_Example.png">
+            </div>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></th>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Hanging-RedCu-Wire-Connector-Making"></div></td>
+                    </tr>
+                    <tr><td>2 <a href="RedCu_Wire.html">RedCu Wire</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="functionality">
+            <h2>Functionality</h2>
+            <p>
+                To connect two components using Hanging RedCu Wire Connectors:
+            </p>
+
+            <ol>
+                <li>
+                Place a <strong>Hanging RedCu Wire Connector block</strong> so it connects to a redstone-compatible component.
+                </li>
+                <li>
+                Right-click the placed block using a <strong>Hanging RedCu Wire Connector item</strong>.
+                The item will store the position of the clicked block.
+                </li>
+            </ol>
+
+            <p>
+                When the position is stored:
+            </p>
+            <ul>
+                <li>The item gains an <strong>enchantment glow effect</strong>.</li>
+                <li>The item description displays the stored coordinates.</li>
+                <li>The stored position can be cleared by <strong>right-clicking in air</strong></li>
+            </ul>
+            <p>
+                After storing a position, place another Hanging RedCu Wire Connector block using the same item at the desired location.
+            </p>
+            <ul>
+                <li>If the distance between the two blocks is <strong>less than or equal to 16 blocks</strong>, they will automatically connect with a Hanging RedCu Wire.</li>
+                <li>The amount of <a href="RedCu_Wire.html">RedCu Wire</a> items consumed equals the calculated distance.</li>
+                <li>If the player does not have enough <a href="RedCu_Wire.html">RedCu Wire</a> in inventory, the connection will not be established.</li>
+            </ul>
+            <p>
+                The maximum connection length can be modified using command:
+                <p class="equation"><strong>/redstonecg_gameplay maxHangingRedCuWireLength &lt;value&gt;</strong></p>
+            </p>
+            <p>
+                The distance between the two connectors is calculated as the real spatial distance between them and then rounded down using a mathematical <em>floor</em> operation. So if the actual distance is 13.56, the used distance is 13.
+            </p>
+            <p>
+                Signal propagation through the Hanging RedCu Wire behaves identically to a standard <a href="RedCu_Wire.html">RedCu Wire</a>.
+            </p>
+        </section>
+        <section id="configuration">
+            <h2>Connection</h2>
+            <p>
+                Unlike most gates, the Hanging RedCu Wire Connector uses a <strong>RedCu Pin Mark</strong>.
+                This indicates that the block behaves as a RedCu Wire connection rather than a standard redstone block.
+            </p>
+            <p>
+                Right-clicking the block with any item or an empty hand except Hanging RedCu Wire Connector item will cycle through available pin configurations.
+            </p>
+            <p>
+                Every <strong>16th click</strong> toggles the base connection state, shown by the RecCu Pinmarks in the corners.
+                When enabled, the block can both <strong>read and output signal from its base</strong>.
+            </p>
+        </section>
+        <section id="moving">
+            <h2>Moving</h2>
+
+            <p>
+                Moving a <strong>Hanging RedCu Wire Connector</strong> is <strong>highly discouraged</strong>.
+                The block stores the world position of the connector it is linked to. If one of the
+                connected blocks is moved, that stored position becomes invalid and visual glitches may occur.
+            </p>
+
+            <p>
+                Despite this, the system contains a recovery mechanism that attempts to restore the connection
+                when possible.
+            </p>
+
+            <p>
+                Consider a setup where two connectors, <strong>A</strong> and <strong>B</strong>, are connected.
+                Connector <strong>A</strong> remains stationary while connector <strong>B</strong> is moved.
+            </p>
+
+            <ul>
+                <li>
+                If <strong>B</strong> is moved and neither block updates, a visual glitch may appear where
+                one end of the Hanging RedCu Wire connects to either A or B while the other end appears to
+                float in space.
+                </li>
+                <li>
+                When <strong>A</strong> receives a block update, it checks the stored position where B used
+                to be located.
+                <ul>
+                    <li>
+                    If another Hanging RedCu Wire Connector <strong>C</strong> is found at that position,
+                    A assumes nothing has changed and continues operating as if it were connected to C.
+                    </li>
+                    <li>
+                    If any other block is found, A removes the stored connection. The visual glitch may
+                    disappear because the connection between A and B is forgotten.
+                    </li>
+                </ul>
+                </li>
+                <li>
+                When <strong>B</strong> updates, it checks whether connector A still has a connection to it.
+                If not, B instructs A to create a connection to B's new position, restoring the link and
+                making the connection fully functional again.
+                </li>
+            </ul>
+
+            <p>
+                This recovery process only works reliably when <strong>one connector is moved at a time</strong>.
+                If both connectors are moved before either receives an update, the connection is permanently
+                lost and must be recreated manually.
+            </p>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.0</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        let gate = "components/wires/hanging_redcu_wire_connector";
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 2, img: "/Redstone-CG-Documentation/media/items/red_cu_wire.png" },
+            { slot: 3, img: "/Redstone-CG-Documentation/media/items/hanging_redcu_wire_connector.png" },
+            { slot: 4, img: "/Redstone-CG-Documentation/media/items/hanging_redcu_wire_connector.png" },
+        ];
+        populateRedCuCrafter("Hanging-RedCu-Wire-Connector-Making", {category: 0, tipe: 0}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Hanging-RedCu-Wire-Connector-Making", {category: 0, tipe: 0}, rccr1array);
+        });
+        const ptrn1 = [
+            ["1", ["f"], ["b"]],
+            ["2", ["r"], ["l"]],
+            ["3", ["r","f"], ["l","b"]],
+            ["4", ["b"], ["f"]],
+            ["5", ["b","f"], ["f","b"]],
+            ["6", ["b","r"], ["f","l"]],
+            ["7", ["b","r","f"], ["f","l","b"]],
+            ["8", ["l"], ["r"]],
+            ["9", ["l","f"], ["r","b"]],
+            ["10", ["l","r"], ["r","l"]],
+            ["11", ["l","r","f"], ["r","l","b"]],
+            ["12", ["l","b"], ["r","f"]],
+            ["13", ["l","b","f"], ["r","f","b"]],
+            ["14", ["l","b","r"], ["r","f","l"]],
+            ["15", ["l","b","r","f"], ["r","f","l","b"]],
+            ["16", [], []],
+        ];
+        let actvind = 0;
+        let base_read = false;
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn${entry[0]}`,
+                    functionCall: function () {
+                        if(entry[0] == "16"){
+                            base_read = !base_read;
+                        }
+                        pinmarkR = [...entry[1]];
+                        pinmarkB = [...entry[2]];
+                        if(base_read){
+                            pinmarkR.push("base")
+                            pinmarkB.push("base")
+                        }
+                        renderComponentRedCuPinmarks("rnd", `${gate}_base.png`, [], pinmarkR, [`${gate}_pole.png`]);
+                        blitzComponentRedCuPinmarks("btz", `${gate}.png`, [], pinmarkB, []);
+                        actvind = index;
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            /*const elm = document.getElementById("bt-btn-base");
+            elm.onclick = function() {
+                base_read = !base_read;
+                pinmarkR = [...ptrn1[actvind][1]];
+                pinmarkB = [...ptrn1[actvind][2]];
+                if(base_read){
+                    pinmarkR.push("base")
+                    pinmarkB.push("base")
+                }
+                renderComponentRedCuPinmarks("rnd", `${gate}_base.png`, [], pinmarkR, [`${gate}_pole.png`]);
+                blitzComponentRedCuPinmarks("btz", `${gate}.png`, [], pinmarkB, []);
+                if(base_read){elm.classList.add("active");}
+                else{elm.classList.remove("active");}
+            }*/
+        });
+    </script>
+</body>
+</html>
