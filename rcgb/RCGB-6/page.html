@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot To Stack</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Forgot To Stack</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p><strong>Affected Versions:</strong> <span id="affected_versions"></span></p>
+            <p>
+                <strong>Description:</strong>
+                Most <strong>Redstone CG</strong> blocks are intended to stack in inventories.
+                Due to this bug, however, stacks were limited to <strong>1 item per stack</strong>.
+            </p>
+            <p>
+                <strong>Cause:</strong>
+                In a version prior to <strong>0.3.0</strong>, a shared abstraction was introduced
+                where all registered items used the same <code>Item.Properties</code> instance.
+                Because this instance was shared, a change to its stack size affected all items,
+                resulting in a global stack limit of <strong>1</strong>.
+            </p>
+            <p>
+                <strong>Consequences:</strong> All Redstone CG items were limited to a stack size of 1 and <a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> produced only a single item instead of the intended amount.
+            </p>
+            <p>
+                <strong>Resolved:</strong>
+                This issue was resolved in version <strong>0.3.1</strong>. Instead of reusing a
+                shared variable, a function is now used to generate a new
+                <code>Item.Properties</code> instance for each registered item, ensuring that
+                stack sizes are handled independently.
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-6"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    document.getElementById("affected_versions").textContent = page.affected_versions;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

@@ -11,6 +11,66 @@
         <h1>Version Log</h1>
     </header>
     <main>
+        <section id="version-0-3-1">
+            <h2>0.3.1 - Binary Coding and Triple Input</h2>
+            <p>
+                This update introduces the ability to carry up to <strong>4 digital signals</strong>
+                through a single <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Wire</a> or <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a>, along with support for a
+                <strong>third input</strong> on several gates.
+            </p>
+            <h3>Added</h3>
+            <ul>
+                <li>
+                    <a href="/Redstone-CG-Documentation/Hybrid/Binary_Encoder.html">Binary Encoder</a> - Encodes up to 4 digital signals into a single
+                    <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Wire</a> or <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a>
+                </li>
+                <li>
+                    <a href="/Redstone-CG-Documentation/Hybrid/Binary_Decoder.html">Binary Decoder</a> - Decodes the signal back into up to 4 separate
+                    digital signals
+                </li>
+                <li>
+                    <a href="/Redstone-CG-Documentation/Indicators/Hexadecimal_Indicator.html">Hexadecimal Indicator</a> - Displays active encoded channels
+                </li>
+            </ul>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>
+                    <a href="/Redstone-CG-Documentation/Digital/AND_Gate.html">AND Gate</a>, <a href="/Redstone-CG-Documentation/Digital/AND_Gate.html">OR Gate</a>,
+                    <a href="/Redstone-CG-Documentation/Digital/NAND_Gate.html">NAND Gate</a>, <a href="/Redstone-CG-Documentation/Digital/NOR_Gate.html">NOR Gate</a>,
+                    <a href="/Redstone-CG-Documentation/Analog/Analog_Bias.html">Analog Bias</a>, <a href="/Redstone-CG-Documentation/Analog/Analog_Gain.html">Analog Gain</a>,
+                    <a href="/Redstone-CG-Documentation/Analog/Analog_Pass.html">Analog Pass</a>,
+                    <a href="/Redstone-CG-Documentation/Analog/Analog_Maximum.html">Analog Maximum</a>, and <a href="/Redstone-CG-Documentation/Analog/Analog_Minimum.html">Analog Minimum</a>
+                    now support an optional <strong>third input</strong>, configurable by right-clicking the gate.
+                </li>
+                <li>
+                    <a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a> now features a <strong>physical knob</strong>
+                    for adjusting output signal by right-clicking it.
+                </li>
+                <li>
+                    Right-clicking an <a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a> block with an
+                    <a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a> item now behaves the same as using an empty hand.
+                </li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>
+                    <a href="/Redstone-CG-Documentation/rcgb/RCGB-6/page.html">RCGB-6 - "Forgot to Stack"</a><br>
+                    <em>
+                        A critical issue where items were limited to a stack size of 1.
+                        This issue persisted longer than intended.
+                    </em>
+                </li>
+                <li>
+                    <a href="/Redstone-CG-Documentation/rcgb/RCGB-7/page.html">RCGB-7 - "Forgot to Update"</a><br>
+                    <em>
+                        A minor but noticeable issue where blocks did not update after
+                        configuration or rotation changes.
+                    </em>
+                </li>
+            </ul>
+        </section>
         <section id="0.3.0">
             <h2>0.3.0 - Indicator Update</h2>
             <p>
@@ -18,32 +78,32 @@
                 starting with a set of new indicator blocks:
             </p>
             <ul>
-                <li><a href="Indicators/Flat_Lamp_Indicator.html">Flat Lamp Indicator</a></li>
-                <li><a href="Indicators/Colored_Flat_Lamp.html">Colored Flat Lamp Indicator</a></li>
-                <li><a href="Indicators/Colorful_Flat_Lamp.html">Colorful Flat Lamp Indicator</a></li>
-                <li><a href="Indicators/Bar_Indicator.html">Bar Indicator</a></li>
-                <li><a href="Indicators/Arrow_Indicator.html">Arrow Indicator</a></li>
-                <li><a href="Indicators/Colored_Lamp.html">Colored Lamp</a></li>
-                <li><a href="Indicators/Colorful_Lamp.html">Colorful Lamp</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Flat_Lamp_Indicator.html">Flat Lamp Indicator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Colored_Flat_Lamp.html">Colored Flat Lamp Indicator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Colorful_Flat_Lamp.html">Colorful Flat Lamp Indicator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Bar_Indicator.html">Bar Indicator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Arrow_Indicator.html">Arrow Indicator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Colored_Lamp.html">Colored Lamp</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Colorful_Lamp.html">Colorful Lamp</a></li>
             </ul>
             <p>
-                Every indicator (except <a href="Indicators/Colored_Lamp.html">Colored Lamp</a> and <a href="Indicators/Colorful_Lamp.html">Colorful Lamp</a>)
+                Every indicator (except <a href="/Redstone-CG-Documentation/Indicators/Colored_Lamp.html">Colored Lamp</a> and <a href="/Redstone-CG-Documentation/Indicators/Colorful_Lamp.html">Colorful Lamp</a>)
                 can now read signals from the <strong>base face</strong> (the block below).
                 This behavior can be toggled either by performing every <strong>16th right-click</strong>
                 on the block or by right-clicking the block with an <strong>Indicator item</strong>
-                (except for <a href="Indicators/Arrow_Indicator.html">Arrow Indicator</a>).
+                (except for <a href="/Redstone-CG-Documentation/Indicators/Arrow_Indicator.html">Arrow Indicator</a>).
             </p>
             <p>
-                This feature is also implemented to <a href="Hybrid/Block_Reader.html">Block Reader</a>. Now it can be configured to read block data in the base direction.
+                This feature is also implemented to <a href="/Redstone-CG-Documentation/Hybrid/Block_Reader.html">Block Reader</a>. Now it can be configured to read block data in the base direction.
             </p>
             <p>
-                It has been noticed that in some cases placing <a href="Wires/RedCu_Wire.html">RedCu Wires</a> and
-                <a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transitions</a> just to reach the other end of a circuit
+                It has been noticed that in some cases placing <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wires</a> and
+                <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Transition.html">RedCu Wire Transitions</a> just to reach the other end of a circuit
                 or other difficult locations proved to be inefficient. To address this,
                 a new block has been introduced:
             </p>
             <p>
-                <a href="Wires/Hanging_RedCu_Wire_Connector.html">Hanging RedCu Wire Connector</a>
+                <a href="/Redstone-CG-Documentation/Wires/Hanging_RedCu_Wire_Connector.html">Hanging RedCu Wire Connector</a>
             </p>
             <p>
                 This block allows players to connect components directly without long wire paths.
@@ -68,24 +128,24 @@
         </section>
         <section id="0.2.3">
             <h2>0.2.3 - Timed and Read</h2>
-            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
+            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="/Redstone-CG-Documentation/Oh0You2Beta0.html">transition guide</a>.</p>
             <h3>Changes</h3>
             <ul>
                 <li><p>New Blocks:</p>
                     <ul>
                         <li>
-                            <strong><a href="Hybrid/Delayer.html">Delayer</a></strong> —  
+                            <strong><a href="/Redstone-CG-Documentation/Hybrid/Delayer.html">Delayer</a></strong> —  
                             Functions similarly to the Redstone Repeater, but uses a <em>signal queue</em> instead of fixed delays.  
                             Allows signal delays from 1 to 8 game ticks and does not boost signal strength.
                         </li>
 
                         <li>
-                            <strong><a href="Hybrid/Parallel_Delayer.html">Parallel Delayer</a></strong> —  
-                            A Delayer designed for <a href="Parallel_Gates.html">Parallel Gate</a> setups.  
+                            <strong><a href="/Redstone-CG-Documentation/Hybrid/Parallel_Delayer.html">Parallel Delayer</a></strong> —  
+                            A Delayer designed for <a href="/Redstone-CG-Documentation/Parallel_Gates.html">Parallel Gate</a> setups.  
                         </li>
 
                         <li>
-                            <strong><a href="Hybrid/Block_Reader.html">Block Reader</a></strong> —  
+                            <strong><a href="/Redstone-CG-Documentation/Hybrid/Block_Reader.html">Block Reader</a></strong> —  
                             A block equivalent to the “reading” part of the Redstone Comparator,  
                             capable of reading block data such as Containers, Lecterns, Item Frames,  
                             or blocks behind Comparator-Conducting Blocks.
@@ -95,10 +155,10 @@
                 <li><p>Improvements</p>
                     <ul>
                         <li>Small internal corrections to prevent potential crashes.</li>
-                        <li>Solved <strong><a href="rcgb/RCGB-5/page.html">RCGB-5</a></strong> (Wrong Turn Ceiling RedCu).</li>
+                        <li>Solved <strong><a href="/Redstone-CG-Documentation/rcgb/RCGB-5/page.html">RCGB-5</a></strong> (Wrong Turn Ceiling RedCu).</li>
                         <li>
-                            Most <a href="List_of_Elements.html">RedstoneCG blocks</a>  
-                            outputs can now be read by <a href="../Block_Reader.html">Block Reader</a> or Minecraft's Redstone Comparator  
+                            Most <a href="/Redstone-CG-Documentation/List_of_Elements.html">RedstoneCG blocks</a>  
+                            outputs can now be read by <a href="/Redstone-CG-Documentation/Hybrid/Block_Reader.html">Block Reader</a> or Minecraft's Redstone Comparator  
                             from <strong>any side</strong>, allowing for smaller, more compact circuits.
                         </li>
                         <li>
@@ -119,51 +179,51 @@
         </section>
         <section id="0.2.2">
             <h2>0.2.2 - NeoForged</h2>
-            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
+            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="/Redstone-CG-Documentation/Oh0You2Beta0.html">transition guide</a>.</p>
             <h3>Changes</h3>
             <ul>
                 <li>Now Supports <a href="https://neoforged.net/">NeoForge</a> for Minecraft versions 1.20.2, 1.20.4 and 1.20.6.</li>
                 <li>Added <a href="https://www.curseforge.com/minecraft/mc-mods/jei">Just Enough Items</a> compatibility (except NeoForge 1.20.2)</li>
                 <li>Added recipe for <a href="RedCu_Mixture.html">RedCu Mixture</a> that uses <a href="https://create.fandom.com/wiki/Copper_Nugget">Create Copper Nuggets</a>.</li>
-                <li>Fixed Minecraft crashing when a block from another mod (Such as <a href="https://tweaked.cc/peripheral/modem.html">Networking Cable from CC: Tweaked</a>) interacts with <a href="Analog/Analog_Source.html">Analog Source</a> or <a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a>.</li>
-                <li>Fixed incorrectly displayed item names of <a href="RedCu_Meter.html">RedCu Meter</a>, <a href="RedCu_Mixture.html">RedCu Mixture</a> and <a href="RedCu_Ingot.html">RedCu Ingot</a>.</li>
+                <li>Fixed Minecraft crashing when a block from another mod (Such as <a href="https://tweaked.cc/peripheral/modem.html">Networking Cable from CC: Tweaked</a>) interacts with <a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a> or <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a>.</li>
+                <li>Fixed incorrectly displayed item names of <a href="/Redstone-CG-Documentation/RedCu_Meter.html">RedCu Meter</a>, <a href="/Redstone-CG-Documentation/RedCu_Mixture.html">RedCu Mixture</a> and <a href="/Redstone-CG-Documentation/RedCu_Ingot.html">RedCu Ingot</a>.</li>
             </ul>
         </section>
         <section id="0.2.1">
             <h2>0.2.1 - Adventure Time</h2>
-            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="Oh0You2Beta0.html">transition guide</a>.</p>
+            <p>Updating to this version from versions before 0.2.0 still requires following the <a href="/Redstone-CG-Documentation/Oh0You2Beta0.html">transition guide</a>.</p>
             <p>Updating from version 0.2.0 to 0.2.1 requires going trough every <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> and executing <code>/redstonecg_repair old &lt;position of the block&gt;</code> without executing this command twice on the same block.</p>
             <h3>Changes</h3>
             <ul>
                 <li>Blocks can be configured for the Adventure Mode and even Survival mode using <a href="/Redstone-CG-Documentation/RedstoneCG_Adventure_Command.html"><code>/redstonecg_adventure</code></a> command. This let's the host lock some features from players in mentioned modes.</li>
-                <li><a href="Analog/Analog_Source.html">Analog Source</a> GUI was redesigned.</li>
-                <li>Changed <a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> pin configurations from 12 to 13. <code>/redstonecg_repair old</code> can be used to convert to an equivalent from earlier version.</li>
-                <li><a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> can now be covered with <a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a>.</li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a> GUI was redesigned.</li>
+                <li>Changed <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> pin configurations from 12 to 13. <code>/redstonecg_repair old</code> can be used to convert to an equivalent from earlier version.</li>
+                <li><a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> can now be covered with <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a>.</li>
                 <li>Slightly changed gate model to extend downwards by 0.0625 of a pixel (0.00390625 of a block). This is to prevent texture overlapping on RedCu Wire Transition.</li>
-                <li>Reclassified some of the blocks as Hybrid Gates. Added as a section to <a href="RedCu_Crafter.html">RedCu Crafter</a>. This includes:
+                <li>Reclassified some of the blocks as Hybrid Gates. Added as a section to <a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a>. This includes:
                     <ul>
-                        <li><a href="Hybrid/Comparator.html">Comparator</a></li>
-                        <li><a href="Hybrid/Forward_Path_Selector.html">Forward Path Selector</a></li>
-                        <li><a href="Hybrid/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
-                        <li><a href="Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></li>
-                        <li><a href="Hybrid/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
-                        <li><a href="Hybrid/Comparator.html">Parallel Comparator</a></li>
-                        <li><a href="Hybrid/Parallel_One_Way_Path_Selector.html">Parallel One Way Path Selector</a></li>
-                        <li><a href="Hybrid/One_Way_Through_Gate.html">Parallel One Way Through Gate</a></li>
-                        <li><a href="Hybrid/One_Way_Through_Not_Gate.html">Parallel One Way Through Not Gate</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/Comparator.html">Comparator</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/Forward_Path_Selector.html">Forward Path Selector</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/Comparator.html">Parallel Comparator</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/Parallel_One_Way_Path_Selector.html">Parallel One Way Path Selector</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Gate.html">Parallel One Way Through Gate</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Not_Gate.html">Parallel One Way Through Not Gate</a></li>
                     </ul>
                 </li>
                 <li>Fixed <code><a href="/Redstone-CG-Documentation/RedstoneCG_Repair_Command.html">/redstonecg_repair</a> xxxxx position</code> not executing.</li>
                 <li>Adding partial support for `rotate` and `mirror` block methods.
                     <p>What this means is that some mods (like <a href="https://www.curseforge.com/minecraft/mc-mods/create">Create</a>) can rotate or mirror RedstoneCG Blocks.</p>
-                    <p>This capability was broken in 0.2.0 and is now partialy fixed. <a href="Rotation_Bracket.html">Rotation Bracket</a> works because it has it's own API.</p>
+                    <p>This capability was broken in 0.2.0 and is now partialy fixed. <a href="/Redstone-CG-Documentation/Rotation_Bracket.html">Rotation Bracket</a> works because it has it's own API.</p>
                     <ul>
                         <li>It is recommended to rotate blocks around Y axis only and mirror along X or Z axis.</li>
                         <li>Indicators can only be mirrored.</li>
                         <li>Wires can be both mirrored and rotated.</li>
                         <li>Other blocks can only be rotated.</li>
-                        <li><a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> cannot be rotated or mirrored.</li>
-                        <li><a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> can only be rotated.</li>
+                        <li><a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> cannot be rotated or mirrored.</li>
+                        <li><a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> can only be rotated.</li>
                     </ul>
 		        </li>
                 <li>Changed item registry names (should be the last registry name change):
@@ -177,7 +237,7 @@
         </section>
         <section id="0.2.0">
             <h2>0.2.0 - On the Wall and Ceiling</h2>
-            <p>Before updating to <strong>version 0.2.0</strong>, make sure to <strong>backup your world</strong> and carefully follow the <a href="Oh0You2Beta0.html">transition guide</a> to avoid potential issues.</p>
+            <p>Before updating to <strong>version 0.2.0</strong>, make sure to <strong>backup your world</strong> and carefully follow the <a href="/Redstone-CG-Documentation/Oh0You2Beta0.html">transition guide</a> to avoid potential issues.</p>
             <p>
                 The original plan for this update was to add wall variants as <strong>separate blocks</strong> alongside floor-only gates.
                 That's why previous registry names included the keyword <code>floor</code>.
@@ -192,7 +252,7 @@
             </p>
             <p> 
                 The new directional update mechanic should also reduce <strong>CPU usage</strong> by minimizing unnecessary neighbor updates.
-                While more efficient in the long run, this architectural shift made backward compatibility difficult – hence the need for a <a href="Oh0You2Beta0.html">manual transition</a>.
+                While more efficient in the long run, this architectural shift made backward compatibility difficult – hence the need for a <a href="/Redstone-CG-Documentation/Oh0You2Beta0.html">manual transition</a>.
             </p>
             <h3>Major Features</h3>
             <ul>
@@ -207,23 +267,23 @@
                     </ul>
                 </li>
                 <li><strong>Rotated labels</strong> on the following gates: <em>SR Latch</em>, <em>D Latch</em>, <em>T Trigger</em>, <em>JK Trigger</em>, <em>Parallel SR Latch</em>, and <em>Parallel D Latch</em>. </li>
-                <li>Added new tool: <a href="Rotation_Bracket.html">Rotation Bracket</a> for rotating placed gates and wires.</li>
-                <li><a href="Wires/RedCu_Wire.html">RedCu Wire</a> now bends differently when right-clicked – using <strong>fewer block states</strong>.</li>
-                <li><strong>Gate and Wire updates</strong> now propagate in <em>output directions</em> only – reducing <strong>unnecessary block updates</strong> and improving performance.</li>
-                <li><a href="Wires/Parallel_Line_Output.html">Parallel Line Output</a> now connects differently than before.</li>
-                <li><a href="RedCu_Meter.html">RedCu Meter</a> enhancements:
+                <li>Added new tool: <a href="/Redstone-CG-Documentation/Rotation_Bracket.html">Rotation Bracket</a> for rotating placed gates and wires.</li>
+                <li><a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a> now bends differently when right-clicked - using <strong>fewer block states</strong>.</li>
+                <li><strong>Gate and Wire updates</strong> now propagate in <em>output directions</em> only - reducing <strong>unnecessary block updates</strong> and improving performance.</li>
+                <li><a href="/Redstone-CG-Documentation/Wires/Parallel_Line_Output.html">Parallel Line Output</a> now connects differently than before.</li>
+                <li><a href="/Redstone-CG-Documentation/RedCu_Meter.html">RedCu Meter</a> enhancements:
                     <ul> 
                         <li>Now also measures <em>Redstone Torch</em>.</li>
-                        <li>When measuring <a href="Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a> or <a href="Hybrid/Forward_Path_Selector.html">Forward Path Selector</a>, it will display <strong>two signal values</strong>.</li>
+                        <li>When measuring <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a> or <a href="/Redstone-CG-Documentation/Hybrid/Forward_Path_Selector.html">Forward Path Selector</a>, it will display <strong>two signal values</strong>.</li>
                     </ul>
                 </li>
-                <li>Introduced new block: <a href="Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> – allows signal transition between floor, wall, and ceiling.</li>
+                <li>Introduced new block: <a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Transition.html">RedCu Wire Transition</a> - allows signal transition between floor, wall, and ceiling.</li>
             </ul>
             <h3>Technical Changes</h3>
             <ul>
                 <li>The <strong>core mechanics</strong> of: <em>block updates</em>, and <em>redstone signal reading</em> have been <strong>entirely rewritten</strong>.</li>
-                <li>Bugs <a href="rcgb/RCGB-2/page.html">RCGB-2</a> and <a href="rcgb/RCGB-3/page.html">RCGB-3</a> are now confirmed <strong>inactive</strong>.</li>
-                <li>New known bug: <a href="rcgb/RCGB-4/page.html">RCGB-4</a>.</li>
+                <li>Bugs <a href="/Redstone-CG-Documentation/rcgb/RCGB-2/page.html">RCGB-2</a> and <a href="/Redstone-CG-Documentation/rcgb/RCGB-3/page.html">RCGB-3</a> are now confirmed <strong>inactive</strong>.</li>
+                <li>New known bug: <a href="/Redstone-CG-Documentation/rcgb/RCGB-4/page.html">RCGB-4</a>.</li>
                 <li>Registry names have been changed again to match the new placement system:
                     <ul>
                         <li>"floor_and" -&gt; "normal_and"</li>
@@ -289,17 +349,17 @@
         </section>
         <section id="0.1.1">
             <h2>0.1.1 - Farewell MCreator!</h2>
-            <p>Since the very beginning of Redstone CG, MCreator has been the primary development tool. Without it, starting the project and implementing its early features would have been extremely difficult. MCreator is a great platform for starting mod development and learning how to create Minecraft mods. But that’s also where its limitations begin.</p>
+            <p>Since the very beginning of Redstone CG, MCreator has been the primary development tool. Without it, starting the project and implementing its early features would have been extremely difficult. MCreator is a great platform for starting mod development and learning how to create Minecraft mods. But that's also where its limitations begin.</p>
             <p>As of now, MCreator is restricted in its capabilities and the range of functions it supports. To implement the features that Redstone CG offers today, most of the code had to be locked and manually adjusted — and managing new features this way was becoming increasingly tedious. MCreator also tends to enforce its own mod structure and, in one instance, even deleted a file in an attempt to "fix" something. Things got even more complicated when trying to port the mod to other Minecraft versions — almost every file contained code that only worked with version 1.19.2.</p>
             <p>This is where Redstone CG parts ways with MCreator.</p>
-            <p>While version 0.1.1 doesn’t add many new features, the codebase has undergone a massive overhaul — equivalent to rewriting the entire mod. The code has been updated to support all versions from 1.19 to 1.20.1. Many redundancies were removed, shrinking the mod’s size from 818 KB to 587 KB.</p>
+            <p>While version 0.1.1 doesn't add many new features, the codebase has undergone a massive overhaul — equivalent to rewriting the entire mod. The code has been updated to support all versions from 1.19 to 1.20.1. Many redundancies were removed, shrinking the mod's size from 818 KB to 587 KB.</p>
             <p>Registry names were updated to fix logical and grammatical issues and to lay the groundwork for future updates. A registry name re-mapper is included, so existing worlds should still load correctly.</p>
-            <p>Nevertheless, I’m deeply thankful to the developers of MCreator for providing a platform that made mod development approachable and accessible.</p>
+            <p>Nevertheless, I'm deeply thankful to the developers of MCreator for providing a platform that made mod development approachable and accessible.</p>
             <p>Changed:</p>
             <ul>
-                <li>Removed <a href="Depricated/Test_Block.html">"Test" Block</a> and <a href="Depricated/Test_Block.html">"Test On" Block</a> Block.</li>
+                <li>Removed <a href="/Redstone-CG-Documentation/Depricated/Test_Block.html">"Test" Block</a> and <a href="/Redstone-CG-Documentation/Depricated/Test_Block.html">"Test On" Block</a> Block.</li>
                 <li>Fixed Gate bottom textures.</li>
-                <li>Added Shift+LeftClick to <a href="RedCu_Crafter.html">RedCu Crafter</a>.</li>
+                <li>Added Shift+LeftClick to <a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a>.</li>
                 <li>RedCu Wire auto-connection is now false by default.</li>
                 <li>Codebase overhaul - support for Minecraft Forge 1.19, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.20, 1.20.1</li>
                 <li>Registry name change.</li>
@@ -368,24 +428,24 @@
             <h2>0.1.0 - Flow Control Update</h2>
             <p>Introduced Gates:</p>
             <ul>
-                <li><a href="Analog/Analog_Minimum.html">Analog Minimum</a></li>
-                <li><a href="Analog/Analog_Maximum.html">Analog Maximum</a></li>
-                <li><a href="Wires/Parallel_Line_Output.html">Parallel Line Output</a></li>
-                <li><a href="Hybrid/Forward_Path_Selector.html">Forward Path Selector</a></li>
-                <li><a href="Hybrid/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
-                <li><a href="Hybrid/Parallel_One_Way_Path_Selector.html">Parallel Path Selector</a></li>
-                <li><a href="Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></li>
-                <li><a href="Hybrid/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Minimum.html">Analog Minimum</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Maximum.html">Analog Maximum</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Wires/Parallel_Line_Output.html">Parallel Line Output</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Forward_Path_Selector.html">Forward Path Selector</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Reversed_Path_Selector.html">Reversed Path Selector</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Parallel_One_Way_Path_Selector.html">Parallel Path Selector</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Not_Gate.html">One Way Through Not Gate</a></li>
             </ul>
             <p>Updated:</p>
             <ul>
                 <li>Increased the amount of pin configurations up to 15 for blocks:
                     <ul>
-                        <li><a href="Analog/Analog_Source.html">Analog Source</a></li>
-                        <li><a href="Indicators/Universal_Indicator.html">Universal Indicator</a></li>
-                        <li><a href="Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a></li>
-                        <li><a href="Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a></li>
-                        <li><a href="Indicators/Orb_Indicator.html">Orb Indicator</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Indicators/Universal_Indicator.html">Universal Indicator</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a></li>
+                        <li><a href="/Redstone-CG-Documentation/Indicators/Orb_Indicator.html">Orb Indicator</a></li>
                     </ul>
                 </li>
             </ul>
@@ -394,76 +454,76 @@
         <section id="0.0.1">
             <h2>0.0.1 - Bugfix + Extra</h2>
             <p>Changed the way how gates update their states by making the gate read the blockstate of the neighboring gate instead of reading the Redstone signal, making <a href="rcgb/RCGB-0/page.html">Brakeless Gate Loop (RCGB-0)</a> inactive.</p>
-            <p>Reduced the amount of pin configurations for <a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> from 15 down to 12, by removing configurations 6, 9 and 12.</p>
+            <p>Reduced the amount of pin configurations for <a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> from 15 down to 12, by removing configurations 6, 9 and 12.</p>
             <p>Remade Documentation.</p>
         </section>
         <section id="0.0.0">
             <h2>0.0.0 - Welcome!</h2>
             <p>Introduced the Redstone CG, with blocks:</p>
             <ul>
-                <li><a href="RedCu_Crafter.html">RedCu Crafter</a> (Updated)</li>
-                <li><a href="Smooth_Stone_Plate.html">Smooth Stone Plate</a></li>
-                <li><a href="Wires/RedCu_Wire.html">RedCu Wire</a> (Updated)</li>
-                <li><a href="Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a></li>
-                <li><a href="Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> (Updated)</li>
-                <li><a href="Digital/AND_Gate.html">AND Gate</a></li>
-                <li><a href="Digital/OR_Gate.html">OR Gate</a></li>
-                <li><a href="Digital/XOR_Gate.html">XOR Gate</a></li>
-                <li><a href="Digital/Buffer_Gate.html">Buffer Gate</a></li>
-                <li><a href="Digital/NAND_Gate.html">NAND Gate</a></li>
-                <li><a href="Digital/NOR_Gate.html">NOR Gate</a></li>
-                <li><a href="Digital/NXOR_Gate.html">NXOR Gate</a></li>
-                <li><a href="Digital/NOT_Gate.html">NOT Gate</a></li>
-                <li><a href="Digital/SR_Latch.html">SR Latch</a></li>
-                <li><a href="Digital/D_Latch.html">D Latch</a></li>
-                <li><a href="Digital/T_Trigger.html">T Trigger</a></li>
-                <li><a href="Digital/JK_Trigger.html">JK Trigger</a></li>
-                <li><a href="Analog/Analog_Source.html">Analog Source</a> (Updated)</li>
-                <li><a href="Analog/Analog_Bias.html">Analog Bias</a></li>
-                <li><a href="Analog/Analog_Gain.html">Analog Gain</a></li>
-                <li><a href="Analog/Analog_Pass.html">Analog Pass</a></li>
-                <li><a href="Analog/Analog_Memory.html">Analog Memory</a></li>
-                <li><a href="Analog/Analog_Subtractor.html">Analog Subtractor</a></li>
-                <li><a href="Analog/Analog_Differential.html">Analog Differential</a></li>
-                <li><a href="Hybrid/Comparator.html">Comparator</a></li>
-                <li><a href="Hybrid/Comparator.html">Inverted Comparator</a></li>
-                <li><a href="Digital/AND_Gate.html">Parallel AND Gate</a></li>
-                <li><a href="Digital/OR_Gate.html">Parallel OR Gate</a></li>
-                <li><a href="Digital/XOR_Gate.html">Parallel XOR Gate</a></li>
-                <li><a href="Digital/NAND_Gate.html">Parallel NAND Gate</a></li>
-                <li><a href="Digital/NOR_Gate.html">Parallel NOR Gate</a></li>
-                <li><a href="Digital/NXOR_Gate.html">Parallel NXOR Gate</a></li>
-                <li><a href="Digital/SR_Latch.html">Parallel SR Latch</a></li>
-                <li><a href="Digital/D_Latch.html">Parallel D Latch</a></li>
-                <li><a href="Analog/Analog_Bias.html">Parallel Analog Bias</a></li>
-                <li><a href="Analog/Analog_Gain.html">Parallel Analog Gain</a></li>
-                <li><a href="Analog/Analog_Pass.html">Parallel Analog Pass</a></li>
-                <li><a href="Analog/Analog_Memory.html">Parallel Analog Memory</a></li>
-                <li><a href="Analog/Analog_Subtractor.html">Parallel Analog Subtractor</a></li>
-                <li><a href="Analog/Analog_Differential.html">Parallel Analog Differential</a></li>
-                <li><a href="Hybrid/Comparator.html">Parallel Comparator</a></li>
-                <li><a href="Hybrid/Comparator.html">Parallel Inverted Comparator</a></li>
-                <li><a href="Indicators/Universal_Indicator.html">Universal Indicator</a> (Updated)</li>
-                <li><a href="Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a> (Updated)</li>
-                <li><a href="Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a> (Updated)</li>
-                <li><a href="Indicators/Orb_Indicator.html">Orb Indicator</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Wires/RedCu_Wire.html">RedCu Wire</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Wires/RedCu_Wire_Intersection.html">RedCu Wire Intersection</a></li>
+                <li><a href="/Redstone-CG-Documentation/Wires/Redstone_to_RedCu_Converter.html">Redstone to RedCu Converter</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Digital/AND_Gate.html">AND Gate</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Digital/OR_Gate.html">OR Gate</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Digital/XOR_Gate.html">XOR Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/Buffer_Gate.html">Buffer Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NAND_Gate.html">NAND Gate</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NOR_Gate.html">NOR Gate</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NXOR_Gate.html">NXOR Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NOT_Gate.html">NOT Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/SR_Latch.html">SR Latch</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/D_Latch.html">D Latch</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/T_Trigger.html">T Trigger</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/JK_Trigger.html">JK Trigger</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Source.html">Analog Source</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Bias.html">Analog Bias</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Gain.html">Analog Gain</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Pass.html">Analog Pass</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Memory.html">Analog Memory</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Subtractor.html">Analog Subtractor</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Differential.html">Analog Differential</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Comparator.html">Comparator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Comparator.html">Inverted Comparator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/AND_Gate.html">Parallel AND Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/OR_Gate.html">Parallel OR Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/XOR_Gate.html">Parallel XOR Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NAND_Gate.html">Parallel NAND Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NOR_Gate.html">Parallel NOR Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/NXOR_Gate.html">Parallel NXOR Gate</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/SR_Latch.html">Parallel SR Latch</a></li>
+                <li><a href="/Redstone-CG-Documentation/Digital/D_Latch.html">Parallel D Latch</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Bias.html">Parallel Analog Bias</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Gain.html">Parallel Analog Gain</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Pass.html">Parallel Analog Pass</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Memory.html">Parallel Analog Memory</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Subtractor.html">Parallel Analog Subtractor</a></li>
+                <li><a href="/Redstone-CG-Documentation/Analog/Analog_Differential.html">Parallel Analog Differential</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Comparator.html">Parallel Comparator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Hybrid/Comparator.html">Parallel Inverted Comparator</a></li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Universal_Indicator.html">Universal Indicator</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Seven_Segment_Indicator.html">Seven Segment Indicator</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Clock_Filling_Indicator.html">Clock Filling Indicator</a> (Updated)</li>
+                <li><a href="/Redstone-CG-Documentation/Indicators/Orb_Indicator.html">Orb Indicator</a> (Updated)</li>
             </ul>
             <p>and items:</p>
             <ul>
-                <li><a href="RedCu_Meter.html">RedCu Meter</a></li>
-                <li><a href="RedCu_Mixture.html">RedCu Mixture</a></li>
-                <li><a href="RedCu_Ingot.html">RedCu Ingot</a></li>
+                <li><a href="/Redstone-CG-Documentation/RedCu_Meter.html">RedCu Meter</a></li>
+                <li><a href="/Redstone-CG-Documentation/RedCu_Mixture.html">RedCu Mixture</a></li>
+                <li><a href="/Redstone-CG-Documentation/RedCu_Ingot.html">RedCu Ingot</a></li>
             </ul>
             <p>Only for Minecraft Forge 1.19.2.</p>
         </section>
     </main>
     <footer class="nav-links">
-        <a href="index.html">Welcome Page</a>
-        <a href="Getting_Started.html">Getting Started</a>
-        <a href="List_of_Elements.html">List of Elements</a>
-        <a href="Pin_Marks.html">Pin Marks</a>
-        <a href="Known_Bugs.html">Known Bugs</a>
-        <a href="Other_Links.html">Other</a>
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
     </footer>
 </body>
 </html>

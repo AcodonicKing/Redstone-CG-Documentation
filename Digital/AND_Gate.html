@@ -21,6 +21,7 @@
                 <button id="bt-btn-lr" class="bt-button active">LR</button>
                 <button id="bt-btn-bl" class="bt-button">BL</button>
                 <button id="bt-btn-br" class="bt-button">BR</button>
+                <button id="bt-btn-lbr" class="bt-button">LBR</button>
             </div></td></tr>
             <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
             <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
@@ -31,7 +32,7 @@
         <section id="overview">
             <h2>Overview</h2>
             <p>
-                The <strong>AND Gate</strong> is a <a href="/Redstone-CG-Documentation/Digital_Gates.html">Digital Gate</a> that outputs a Redstone signal of <strong>15</strong> if both input pins receive a Redstone signal <strong>greater than 0</strong>. Otherwise, it outputs <strong>0</strong>. This makes the AND Gate one of the simplest and most widely used gates in digital logic.
+                The <strong>AND Gate</strong> is a <a href="/Redstone-CG-Documentation/Digital_Gates.html">Digital Gate</a> that outputs a Redstone signal of <strong>15</strong> if all input pins receive a Redstone signal <strong>greater than 0</strong>. Otherwise, it outputs <strong>0</strong>. This makes the AND Gate one of the simplest and most widely used gates in digital logic.
             </p>
             <!-- Image Placeholder: Diagram of a standard AND Gate // Maybe in future -->
         </section>
@@ -48,6 +49,24 @@
                     <tr><td>1</td><td>0</td><td>0</td></tr>
                     <tr><td>0</td><td>1</td><td>0</td></tr>
                     <tr><td>1</td><td>1</td><td>1</td></tr>
+                </tbody>
+            </table></div>
+            <p>
+                When configured with a third input (<strong>Input C</strong>):
+            </p>
+            <div class="logic-table"><table>
+                <thead>
+                    <tr><th>Input A</th><th>Input B</th><th>Input C</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                    <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                    <tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
                 </tbody>
             </table></div>
         </section>
@@ -128,6 +147,7 @@
                     <tr><td>0.1.1</td><td>Changed registry name from <code>and</code> to <code>floor_and</code> and <code>paralel_and</code> to <code>floor_parallel_and</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
                     <tr><td>0.2.0</td><td>Changed registry name from <code>floor_and</code> to <code>normal_and</code> and <code>floor_parallel_and</code> to <code>parallel_and</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
                     <tr><td>0.2.1</td><td>Reimplemented `rotate` block method.</td></tr>
+                    <tr><td>0.3.1</td><td>Added optional third input.</td></tr>
                 </table>
             </div>
         </section>
@@ -162,33 +182,22 @@
             populateRedCuCrafter("Parallel-Making", {category: 1, tipe: 1}, rccr2array);
         });
         document.addEventListener("DOMContentLoaded", function () {
-            const buttonsArray = [
-                {
-                    buttonId: `bt-btn-lr`,
-                    functionCall: function () {
-                        const pinmarks = ["l","r"];
-                        renderComponent("rnd", gate, pinmarks, []);
-                        blitzComponent("btz", gate, pinmarks, []);
-                    }
-                },
-                {
-                    buttonId: `bt-btn-bl`,
-                    functionCall: function () {
-                        const pinmarks = ["b","l"];
-                        renderComponent("rnd", gate, pinmarks, []);
-                        blitzComponent("btz", gate, pinmarks, []);
-                    }
-                },
-                {
-                    buttonId: `bt-btn-br`,
-                    functionCall: function () {
-                        const pinmarks = ["b","r"];
-                        renderComponent("rnd", gate, pinmarks, []);
-                        blitzComponent("btz", gate, pinmarks, []);
-                    }
-                },
+            const ptrn1 = [
+                ["lr", ["l","r"]],
+                ["bl", ["b","l"]],
+                ["br", ["b","r"]],
+                ["lbr", ["l","b","r"]],
             ];
-            setupButtonDivSwitcher(buttonsArray, "bt-rnd", "bt-btz", "bt-dsp");
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        renderComponent("rnd", gate, entry[1], []);
+                        blitzComponent("btz", gate, entry[1], []);
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
             renderComponent("prl-rnd", gate, ["l","b","r"], ["components/parallel.png"]);
             blitzComponent("prl-btz", gate, ["l","b","r"], ["components/parallel.png"]);
             toggleDivHover("bt-prl-dsp", function() {

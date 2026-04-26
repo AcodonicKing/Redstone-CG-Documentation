@@ -21,6 +21,7 @@
                 <button id="bt-btn-lr" class="bt-button active">LR</button>
                 <button id="bt-btn-bl" class="bt-button">BL</button>
                 <button id="bt-btn-br" class="bt-button">BR</button>
+                <button id="bt-btn-lbr" class="bt-button">LBR</button>
             </div></td></tr>
             <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
             <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
@@ -34,6 +35,10 @@
                 The <strong>Analog Bias</strong> is an <a href="/Redstone-CG-Documentation/Analog_Gates.html">Analog Gate</a> that sums up the input Redstone signals and outputs the result. The equation for the output Redstone signal (<strong>O</strong>) based on two input Redstone signals (<strong>IA</strong> and <strong>IB</strong>) is:
             </p>
             <p class="equation"><strong>O = IA + IB</strong></p>
+            <p>
+                When configured with a third input (<strong>IC</strong>), the equation becomes:
+            </p>
+            <p class="equation"><strong>O = IA + IB + IC</strong></p>
             <p>
                 Since Redstone operates on signal levels from 0 to 15, the output signal is capped at <strong>15</strong>.
             </p>
@@ -110,6 +115,7 @@
                         Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours.
                         Output data is stored on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
                     <tr><td>0.2.1</td><td>Reimplemented `rotate` block method.</td></tr>
+                    <tr><td>0.3.1</td><td>Added optional third input.</td></tr>
                 </table>
             </div>
         </section>
@@ -150,6 +156,7 @@
                 ["lr", ["l","r"]],
                 ["bl", ["b","l"]],
                 ["br", ["b","r"]],
+                ["lbr", ["l","b","r"]],
             ];
             const buttonsArray1 = ptrn1.map((entry, index) => {
                 return{

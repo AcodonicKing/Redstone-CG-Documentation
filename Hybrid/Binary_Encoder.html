@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Encoder</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Binary Encoder</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Binary Encoder</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div>
+                <button id="bt-btn-blr" class="bt-button active">BLR</button>
+                <button id="bt-btn-brl" class="bt-button">BRL</button>
+                <button id="bt-btn-lrb" class="bt-button">LRB</button>
+                <button id="bt-btn-lbr" class="bt-button">LBR</button>
+                <button id="bt-btn-rbl" class="bt-button">RBL</button>
+                <button id="bt-btn-rlb" class="bt-button">RLB</button>
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+
+            <p>
+                The <strong>Binary Encoder</strong> allows multiple digital signals to be transmitted
+                through a single <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Wire</a> or <a href="RedCu_Wire.html">RedCu Wire</a> by utilizing
+                binary representation of signal strength.
+            </p>
+
+            <p>
+                Redstone signal values range from <strong>0 to 15</strong>, which corresponds to
+                <strong>4 bits</strong> in binary. The Binary Encoder enables the player to control
+                these bits individually, effectively turning a single wire into a
+                <strong>4-channel digital bus</strong>.
+            </p>
+
+            <p>
+                Each bit represents a separate channel, allowing up to four independent signals
+                to be transmitted simultaneously. The encoded signal can later be converted back
+                into separate outputs using a <a href="Binary_Decoder.html">Binary Decoder</a>.
+            </p>
+        </section>
+
+        <section id="operation">
+            <h2>Operation</h2>
+
+            <p>
+                The Binary Encoder reads:
+            </p>
+            <ul>
+                <li><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> - Bus input signal</li>
+                <li><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a> - Binary filter signal</li>
+                <li><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a> - Control signal</li>
+            </ul>
+
+            <p>
+                All inputs are standard Redstone signals (values from 0 to 15).
+            </p>
+
+            <p>
+                The mark lights up when a signal at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a> is greater than 0.
+            </p>
+
+            <p>
+                The output depends on the signal at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a>:
+            </p>
+
+            <ul>
+                <li>
+                    If <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a> = 0, the signal from <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a>
+                    is passed directly to the output.
+                </li>
+                <li>
+                    If <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a> &gt; 0, a <strong>binary OR</strong> operation is
+                    performed between <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a> and <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a>.
+                </li>
+            </ul>
+
+            <p>
+                Binary OR essentially passes each A and B bit pair through an <a href="/Redstone-CG-Documentation/Digital/OR_Gate.html">OR Gate</a>. For example:
+            </p>
+
+            <p class="equation">
+                A 0110 ( 6)<br>
+                B 1010 (10)<br>
+                O 1110 (14)
+            </p>
+
+            <p>
+                The resulting value is then output as a Redstone signal.
+            </p>
+        </section>
+
+        <section id="example">
+            <h2>Example</h2>
+
+            <div class="image400">
+                <img alt="Binary Encoder Example" src="../media/images/Binary_Encoder_Example.png"/>
+            </div>
+
+            <p>
+                Consider encoding two independent signals into a single bus.
+                Each channel corresponds to a specific binary value:
+            </p>
+
+            <ul>
+                <li>1 (0001)</li>
+                <li>2 (0010)</li>
+                <li>4 (0100)</li>
+                <li>8 (1000)</li>
+            </ul>
+
+            <p>
+                These values act as <strong>binary filters</strong> used to encode signals. A <a href="/Redstone-CG-Documentation/Indicators/Hexadecimal_Indicator.html">Hexadecimal Indicator</a> is useful for seeing active channels.
+            </p>
+
+            <p>
+                In this example, the filter values are provided from Analog Source:
+            </p>
+
+            <ul>
+                <li>Left encoder uses filter <strong>1</strong></li>
+                <li>Right encoder uses filter <strong>2</strong></li>
+            </ul>
+
+            <p>
+                The left encoder receives no input on the bus and a &gt; 0 signal from <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a>:
+            </p>
+
+            <p class="equation">
+                A 0000 (0)<br>
+                B 0001 (1)<br>
+                O 0001 (1)
+            </p>
+
+            <p>
+                The right encoder receives the bus signal from the left encoder,
+                but because it receives 0 at <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a>,
+                the signal is not modified and it passes through.
+            </p>
+
+            <p>
+                This produces a combined signal that can be decoded later using a
+                <a href="Binary_Decoder.html">Binary Decoder</a> (see example there).
+            </p>
+
+            <p>
+                Multiple channels can be activated at once by combining filter values.
+                For example, enabling channels <strong>4</strong> and <strong>2</strong> can be done with a single binary filter with value:
+            </p>
+
+            <p class="equation">
+                4 (0100) + 2 (0010) = 6 (0110)
+            </p>
+
+            <p>
+                Applying this filter, when <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a> receives a &gt; 0 signal:
+            </p>
+
+            <p class="equation">
+                A 0001 (1)<br>
+                B 0110 (6)<br>
+                O 0111 (7)
+            </p>
+
+            <p>
+                This activates channels 4 and 2 while preserving existing signals.
+            </p>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                The pins can be configured to face any side by right-clicking the block.
+            </p>
+            <table>
+                <tbody>
+                    <tr><td><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a></td><td>Bus Input</td></tr>
+                    <tr><td><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark B</a></td><td>Binary Filter</td></tr>
+                    <tr><td><a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark C</a></td><td>Control</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Digital/Buffer_Gate.html">Buffer Gate</a></td>
+                        <td rowspan="3" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="/Redstone-CG-Documentation/Hybrid/One_Way_Through_Gate.html">One Way Through Gate</a></td></tr>
+                    <tr><td>1 <a href="/Redstone-CG-Documentation/Digital/OR_Gate.html">OR Gate</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.1</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        const gate = "components/hybrid/binary_encoder.png";
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/textures/components/digital/buffer.png" },
+            { slot: 1, img: "/Redstone-CG-Documentation/media/textures/components/hybrid/one_way_through_gate.png" },
+            { slot: 2, img: "/Redstone-CG-Documentation/media/textures/components/digital/or.png" },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/${gate}` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/${gate}`, amount: 2 },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 1, tipe: 0}, rccr1array);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const ptrn1 = [
+                ["blr", ["b","l_alt","r_altalt"]],
+                ["brl", ["b","r_alt","l_altalt"]],
+                ["lrb", ["l","r_alt","b_altalt"]],
+                ["lbr", ["l","b_alt","r_altalt"]],
+                ["rbl", ["r","b_alt","l_altalt"]],
+                ["rlb", ["r","l_alt","b_altalt"]],
+            ];
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn-${entry[0]}`,
+                    functionCall: function () {
+                        renderComponent("rnd", gate, entry[1], []);
+                        blitzComponent("btz", gate, entry[1], []);
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+        });
+    </script>
+</body>
+</html>

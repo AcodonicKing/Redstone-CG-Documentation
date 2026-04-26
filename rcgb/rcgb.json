@@ -1,8 +1,10 @@
 [
     {"title": "Brakeless Gate Loop", "severity": "High", "status": "Inactive", "code": "RCGB-0", "affected_versions": "0.0.0"},
-    {"title": "Inverted Logic Lag Circuits", "severity": "Medium", "status": "Active", "code": "RCGB-1", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.2, 0.2.3"},
+    {"title": "Inverted Logic Lag Circuits", "severity": "Medium", "status": "Active", "code": "RCGB-1", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.2, 0.2.3, 0.3.0, 0.3.1"},
     {"title": "Row Ghosting", "severity": "Low", "status": "Inactive", "code": "RCGB-2", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1"},
     {"title": "Schrödinger's Redstone", "severity": "Low", "status": "Inactive", "code": "RCGB-3", "affected_versions": "0.0.0, 0.0.1, 0.1.0, 0.1.1"},
     {"title": "RedCu Wire Transition Walk-Through Blockage", "severity": "Low", "status": "Active", "code": "RCGB-4", "affected_versions": "0.2.0, 0.2.1, 0.2.2, 0.2.3"},
-    {"title": "Wrong Turn Ceiling RedCu", "severity": "Medium", "status": "Inactive", "code": "RCGB-5", "affected_versions": "0.2.0, 0.2.1, 0.2.2"}
+    {"title": "Wrong Turn Ceiling RedCu", "severity": "Medium", "status": "Inactive", "code": "RCGB-5", "affected_versions": "0.2.0, 0.2.1, 0.2.2"},
+    {"title": "Forgot To Stack", "severity": "Medium", "status": "Inactive", "code": "RCGB-6", "affected_versions": "0.3.0 and earlier (to be determined)"},
+    {"title": "Forgot To Update", "severity": "Low", "status": "Inactive", "code": "RCGB-7", "affected_versions": "0.3.0 and earlier (to be determined)"}
 ]

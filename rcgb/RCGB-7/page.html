@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot To Update</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Forgot To Update</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p><strong>Affected Versions:</strong> <span id="affected_versions"></span></p>
+            <p>
+                <strong>Description:</strong>
+               After changing a block's pin configuration or rotating it, the block did not
+                immediately refresh its state. The correct behavior only occurred after a
+                manual block update, leaving circuits temporarily in an incorrect state.
+            </p>
+            <p>
+                <strong>Cause:</strong>
+                The block logic was not notified when configuration or rotation changes
+                occurred, preventing it from recalculating its state.
+            </p>
+            <p>
+                <strong>Consequences:</strong> Circuits could enter an incorrect or outdated state.
+            </p>
+            <p>
+                <strong>Safe Configurations:</strong>
+                After changing configuration or rotation, trigger a block update by placing
+                or removing a nearby block, or otherwise updating the affected circuit.
+            </p>
+            <p>
+                <strong>Resolved:</strong>
+                Fixed in version <strong>0.3.1</strong>. A block update is now automatically
+                scheduled on the next tick after any configuration or rotation change,
+                ensuring the circuit state updates correctly.
+            </p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-7"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    document.getElementById("affected_versions").textContent = page.affected_versions;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>

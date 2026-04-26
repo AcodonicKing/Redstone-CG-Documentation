@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexadecimal Indicator</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hexadecimal Indicator</h1>
+    </header>
+    <div class="block_table">
+        <table>
+            <th>Hexadecimal Indicator</th>
+            <tr><td><div id="bt-dsp" class="block_table-dsp">
+                <div id="bt-rnd"><div id="rnd"></div></div>
+                <div id="bt-btz" style="display: none;"><div id="btz"></div></div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn1" class="bt-button active">1</button>
+                    <button id="bt-btn2" class="bt-button">2</button>
+                    <button id="bt-btn3" class="bt-button">3</button>
+                    <button id="bt-btn4" class="bt-button">4</button>
+                    <button id="bt-btn5" class="bt-button">5</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn6" class="bt-button">6</button>
+                    <button id="bt-btn7" class="bt-button">7</button>
+                    <button id="bt-btn8" class="bt-button">8</button>
+                    <button id="bt-btn9" class="bt-button">9</button>
+                    <button id="bt-btn10" class="bt-button">10</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn11" class="bt-button">11</button>
+                    <button id="bt-btn12" class="bt-button">12</button>
+                    <button id="bt-btn13" class="bt-button">13</button>
+                    <button id="bt-btn14" class="bt-button">14</button>
+                    <button id="bt-btn15" class="bt-button">15</button>
+                </div>
+                <div style="display: flex; flex-direction: row; flex: 1;">
+                    <button id="bt-btn16" class="bt-button">16</button>
+                </div>
+            </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: row; position: relative;">
+                <span id="redst-signal" style="font-size: 24px; padding: 5px;">0</span>
+                <input id="redst-slider" type="range" min="0" max="15" value="0" style="position: absolute; top:15px; left: 35px; width: 85%">
+            </div></td></tr>
+            <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
+            <tr><td><div><div><a href="https://minecraft.wiki/w/Light">Luminous</a></div><div>Yes(5) when powered</div></div></td></tr>
+        </table>
+    </div>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <strong>Hexadecimal Indicator</strong> is an Indicator block that visually
+                represents a Redstone signal as <strong>four binary bits</strong>.
+            </p>
+            <p>
+                Since Redstone signals range from <strong>0 to 15</strong>, every signal can be
+                expressed using <strong>4-bit binary</strong> (0000 to 1111). The Hexadecimal Indicator
+                splits this value into its individual bits and displays them as four separate lights.
+            </p>
+            <p>
+                Each light corresponds to one binary value:
+            </p>
+            <ul>
+                <li><strong>1</strong> (I) (0001)</li>
+                <li><strong>2</strong> (II) (0010)</li>
+                <li><strong>4</strong> (::) (0100)</li>
+                <li><strong>8</strong> (O) (1000)</li>
+            </ul>
+
+            <p>
+                A light turns on when its corresponding bit is active in the incoming signal.
+                For example, a signal of <strong>10</strong> is <strong>1010</strong> in binary,
+                so the lights for <strong>8</strong> (O) and <strong>2</strong> (II) will be active.
+            </p>
+
+            <p>
+                This makes the Hexadecimal Indicator especially useful when working with
+                <a href="/Redstone-CG-Documentation/Hybrid/Binary_Encoder.html">Binary Encoder</a> and <a href="/Redstone-CG-Documentation/Hybrid/Binary_Decoder.html">Binary Decoder</a>, as it allows
+                players to quickly see which channels are active on a digital bus.
+            </p>
+        </section>
+        <section id="configuration">
+            <h2>Configuration</h2>
+            <p>
+                The inputs (<a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Mark A</a>) can be configured to face any side by right-clicking. When multiple inputs are connected, the Indicator displays the greatest Redstone signal from its inputs.
+            </p>
+            <p>
+                Every 16th right-click or a right-click with Hexadecimal Indicator item toggles base reading state, where the indicator reads Redstone signal from its base, shown by the pinmarks in the corners.
+            </p>
+        </section>
+        <section id="obtaining">
+            <h2>Crafting</h2>
+            <div class="recipe_table">
+                <table>
+                    <tr><td><b>Ingredients</b></td><td><b><a href="/Redstone-CG-Documentation/RedCu_Crafter.html">RedCu Crafter</a> Recipe</b></td></tr>
+                    <tr>
+                        <td>1 <a href="/Redstone-CG-Documentation/Smooth_Stone_Plate.html">Smooth Stone Plate</a></td>
+                        <td rowspan="2" width="400px"><div class="table-place" id="Normal-Making"></div></td>
+                    </tr>
+                    <tr><td>1 <a href="https://minecraft.wiki/w/Redstone_Dust">Redstone Dust</a></td></tr>
+                </table>
+            </div>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.1</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script src="/Redstone-CG-Documentation/script.js"></script>
+    <script>
+        let gate = "components/indicators/hexadecimal/ui0.png";
+        const rccr1array = [
+            { slot: 0, img: "/Redstone-CG-Documentation/media/items/smooth_stone_plate.png" },
+            { slot: 1, img: "https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17" },
+            { slot: 3, img: `/Redstone-CG-Documentation/media/textures/components/indicators/hexadecimal.png` },
+            { slot: 4, img: `/Redstone-CG-Documentation/media/textures/components/indicators/hexadecimal.png` },
+        ];
+        populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
+        window.addEventListener("resize", () => {
+            populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
+        });
+        const ptrn1 = [
+            ["1", ["f"], ["b"]],
+            ["2", ["r"], ["l"]],
+            ["3", ["r","f"], ["l","b"]],
+            ["4", ["b"], ["f"]],
+            ["5", ["b","f"], ["f","b"]],
+            ["6", ["b","r"], ["f","l"]],
+            ["7", ["b","r","f"], ["f","l","b"]],
+            ["8", ["l"], ["r"]],
+            ["9", ["l","f"], ["r","b"]],
+            ["10", ["l","r"], ["r","l"]],
+            ["11", ["l","r","f"], ["r","l","b"]],
+            ["12", ["l","b"], ["r","f"]],
+            ["13", ["l","b","f"], ["r","f","b"]],
+            ["14", ["l","b","r"], ["r","f","l"]],
+            ["15", ["l","b","r","f"], ["r","f","l","b"]],
+            ["16", [], []]
+        ];
+        let actvind = 0;
+        let redst_value = 0;
+        let base_read = false
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttonsArray1 = ptrn1.map((entry, index) => {
+                return{
+                    buttonId: `bt-btn${entry[0]}`,
+                    functionCall: function () {
+                        if(entry[0] == "16"){
+                            base_read = !base_read;
+                        }
+                        pinmarkR = [...entry[1]];
+                        pinmarkB = [...entry[2]];
+                        if(base_read){
+                            pinmarkR.push("base")
+                            pinmarkB.push("base")
+                        }
+                        renderComponent("rnd", gate, pinmarkR, []);
+                        blitzComponent("btz", gate, pinmarkB, []);
+                        actvind = index;
+                    }
+                }
+            });
+            setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+        });
+        document.getElementById("redst-slider").addEventListener("input", function () {
+            redst_value = parseInt(this.value, 10);
+            document.getElementById("redst-signal").textContent = redst_value;
+            gate = `components/indicators/hexadecimal/ui${redst_value}.png`;
+            pinmarkR = [...ptrn1[actvind][1]];
+            pinmarkB = [...ptrn1[actvind][2]];
+            if(base_read){
+                pinmarkR.push("base")
+                pinmarkB.push("base")
+            }
+            renderComponent("rnd", gate, pinmarkR, []);
+            blitzComponent("btz", gate, pinmarkB, []);
+        });
+    </script>
+</body>
+</html>

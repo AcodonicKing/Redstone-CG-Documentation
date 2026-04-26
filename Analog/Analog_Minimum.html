@@ -22,6 +22,7 @@
                 <button id="bt-btn-lr" class="bt-button active">LR</button>
                 <button id="bt-btn-bl" class="bt-button">BL</button>
                 <button id="bt-btn-br" class="bt-button">BR</button>
+                <button id="bt-btn-lbr" class="bt-button">LBR</button>
             </div></td></tr>
             <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
             <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
@@ -37,8 +38,10 @@
             </p>
             <p class="equation"><strong>O = min(A, B)</strong></p>
             <p>
-                The output signal is capped at <strong>15</strong> since Redstone operates on signal levels ranging from 0 to 15.
+                When configured with a third input (<strong>C</strong>), the equation becomes:
             </p>
+            <p class="equation"><strong>O = min(A, B, C)</strong></p>
+            <p>
         </section>
 
         <section id="configuration">
@@ -111,6 +114,7 @@
                     <tr><td>0.1.1</td><td>Changed registry name from <code>analog_min</code> to <code>floor_analog_min</code> and <code>paralel_analog_min</code> to <code>floor_parallel_analog_min</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
                     <tr><td>0.2.0</td><td>Changed registry name from <code>floor_analog_min</code> to <code>normal_analog_min</code> and <code>floor_parallel_analog_min</code> to <code>parallel_analog_min</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
                     <tr><td>0.2.1</td><td>Reimplemented `rotate` block method.</td></tr>
+                    <tr><td>0.3.1</td><td>Added optional third input.</td></tr>
                 </table>
             </div>
         </section>
@@ -152,6 +156,7 @@
                 ["lr", ["l","r"]],
                 ["bl", ["b","l"]],
                 ["br", ["b","r"]],
+                ["lbr", ["l","b","r"]],
             ];
             const buttonsArray1 = ptrn1.map((entry, index) => {
                 return{

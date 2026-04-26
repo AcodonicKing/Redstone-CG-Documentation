@@ -40,6 +40,10 @@
                     <button id="bt-btn15" class="bt-button">15</button>
                 </div>
             </div></td></tr>
+            <tr><td><div style="display: flex; flex-direction: row; position: relative;">
+                <span id="redst-signal" style="font-size: 24px; padding: 5px;">0</span>
+                <input id="redst-slider" type="range" min="0" max="15" value="0" style="position: absolute; top:15px; left: 35px; width: 85%">
+            </div></td></tr>
             <tr><td><div><div>Stackable</div><div>Yes(64)</div></div></td></tr>
             <tr><td><div><div><a href="https://minecraft.wiki/w/Explosion#Blast_resistance">Blast Resistance</a></div><div>10</div></div></td></tr>
             <tr><td><div><div><a href="https://minecraft.wiki/w/Breaking#Blocks_by_hardness">Hardness</a></div><div>1</div></div></td></tr>
@@ -48,7 +52,21 @@
     <main>
         <section id="overview">
             <h2>Overview</h2>
-            <p>The <strong>Analog Source</strong> outputs a configurable Redstone signal at its output pins. Both the Redstone signal value and the output configuration can be set via its <strong>GUI Menu</strong>, which opens by right-clicking the block.</p>
+            <p>
+            The <strong>Analog Source</strong> outputs a configurable Redstone signal at its output pins.
+            The signal value and output configuration can be adjusted through both direct interaction
+            and the <strong>GUI Menu</strong>, which opens by right-clicking the block.
+            </p>
+
+            <p>
+            The output signal can be increased by <strong>right-clicking the knob</strong> and decreased
+            by <strong>crouching and right-clicking the knob</strong>.
+            </p>
+
+            <p>
+            Right-clicking any other part of the block opens the <strong>GUI Menu</strong>, while
+            <strong>crouching and right-clicking</strong> any other part changes the output pin layout.
+            </p>
         </section>
         <section id="obtaining">
             <h2>Crafting</h2>
@@ -104,6 +122,7 @@
                     <tr><td>0.1.1</td><td>Changed registry name from <code>analog_source</code> to <code>floor_analog_source</code>. Replaced bottom texture from being that on the top to <a href="https://minecraft.wiki/w/Smooth_Stone">Smooth Stone Block</a>.</td></tr>
                     <tr><td>0.2.0</td><td>Changed registry name from <code>floor_analog_source</code> to <code>normal_analog_source</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Output data is stored directly on Block Entity. Lost `rotate` and `mirror` block methods..</td></tr>
                     <tr><td>0.2.1</td><td>Redesigned GUI. Reimplemented `rotate` block method. <a href="/Redstone-CG-Documentation/RedstoneCG_Adventure_Command.html"><code>/redstonecg_adventure</code></a> affects GUI.</td></tr>
+                    <tr><td>0.3.1</td><td>Added physical knob and removed output signal configuration by right-clicking Analog Source with Analog Source item.</td></tr>
                 </table>
             </div>
         </section>
@@ -148,18 +167,25 @@
                 ["14", ["l","b","r"]],
                 ["15", ["l","b","r","f"]],
             ];
+            let redst_value = 0;
+            let pinmarks = ["f"];
             const buttonsArray1 = ptrn1.map((entry, index) => {
                 return{
                     buttonId: `bt-btn${entry[0]}`,
                     functionCall: function () {
-                        renderComponent("rnd", gate, entry[1], []);
-                        blitzComponent("btz", gate, entry[1], []);
-                        //blitzComponent("btz-gui", gate, entry[1], []);
-                        //document.getElementById("btz-gui").classList.remove("component-blitz-container");
+                        pinmarks = entry[1]
+                        renderComponent("rnd", gate, pinmarks, [`components/analog/source_knob/${redst_value}.png`]);
+                        blitzComponent("btz", gate, pinmarks, [`components/analog/source_knob/${redst_value}.png`]);
                     }
                 }
             });
             setupButtonDivSwitcher(buttonsArray1, "bt-rnd", "bt-btz", "bt-dsp");
+            document.getElementById("redst-slider").addEventListener("input", function () {
+                redst_value = parseInt(this.value, 10);
+                document.getElementById("redst-signal").textContent = redst_value;
+                renderComponent("rnd", gate, pinmarks, [`components/analog/source_knob/${redst_value}.png`]);
+                blitzComponent("btz", gate, pinmarks, [`components/analog/source_knob/${redst_value}.png`]);
+            });
         });
     </script>
 </body>
