@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Start Crash</title>
+    <link rel="stylesheet" href="/Redstone-CG-Documentation/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Server Start Crash</h1>
+    </header>
+    <main>
+        <section>
+            <p><strong>Severity:</strong> <span id="severity"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Code:</strong> <span id="code"></span></p>
+            <p><strong>Affected Versions:</strong> <span id="affected_versions"></span></p>
+            <p>
+                <strong>Description:</strong>
+                Creating or starting a server with <strong>Redstone CG</strong> caused an immediate crash before the world could be created.
+            </p>
+            <p>
+                <strong>Cause:</strong>
+                Client-side logic attempted to access a <code>Level</code> instance in a server-side environment within
+                <code>MessengerBlockEntityPigeon.handleData</code>.
+            </p>
+            <p>
+                <strong>Consequences:</strong> Server crashes during startup and world creation fails.
+            </p>
+            <p>
+                <strong>Resolved:</strong>
+                Fixed in <strong>version 0.3.1p1</strong> (0.3.1 Patch 1). Client-side logic
+                is now properly separated and executed only on the client, preventing
+                server-side crashes.
+            </p>
+            <p>The report of this issue has been provided by Mysticpasta1</p>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+    <script>
+        fetch('https://acodonicking.github.io/Redstone-CG-Documentation/rcgb/rcgb.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(page => {
+                if(page.code == "RCGB-8"){
+                    document.getElementById("severity").textContent = page.severity;
+                    document.getElementById("status").textContent = page.status;
+                    document.getElementById("code").textContent = page.code;
+                    document.getElementById("affected_versions").textContent = page.affected_versions;
+                    return;
+                }
+            });
+        })
+        .catch(error => console.error("Error loading:", error));
+    </script>
+</body>
+</html>
