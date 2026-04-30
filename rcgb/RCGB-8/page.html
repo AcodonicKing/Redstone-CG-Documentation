@@ -18,7 +18,9 @@
             <p><strong>Affected Versions:</strong> <span id="affected_versions"></span></p>
             <p>
                 <strong>Description:</strong>
-                Creating or starting a server with <strong>Redstone CG</strong> caused an immediate crash before the world could be created.
+                Creating or starting a server with <strong>Redstone CG</strong> caused an immediate crash before the world could be created, with logs showing: <br>
+                <code>Redstone CG (redstonecg) encountered an error during the common_setup event phase<br>
+                java.lang.BootstrapMethodError: java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER</code>
             </p>
             <p>
                 <strong>Cause:</strong>
