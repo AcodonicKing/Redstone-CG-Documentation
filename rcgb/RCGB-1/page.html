@@ -44,6 +44,9 @@
             <p>
                 <strong>Safe Configurations:</strong> Use <a href="https://minecraft.wiki/w/Redstone_Repeater">Redstone Repeaters</a>, or <a href="/Redstone-CG-Documentation/Hybrid/Delayer.html">Delayers</a> to delay input updates and prevent the rapid feedback loop.
             </p>
+            <p>
+                <strong>Partially Resolved:</strong> IVersion 0.3.2 introduces an update chain limit, configurable with commands: <code>/redstonecg_gameplay gateChainLimit</code> and <code>/redstonecg_gameplay wireChainLimit</code>. Both control how many gates and wires can update in a chain from an update event. When the limit is reached, the gates and wires to be updated are scheduled in the next tick. The lag is still present when regular Redstone Dust is used.
+            </p>
             <div class="image800">
                 <img alt="setups of Inverted Logic Lag Circuits" src="img.png"/>
             </div>

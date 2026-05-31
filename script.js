@@ -95,7 +95,7 @@ function populateRedCuCrafter(containerId, toggles, objectList) {
         slotSize: 180,
         itemSize: 160,
         categorories: [
-            { x: 70, y: 70 }, { x: 270, y: 70 }, { x: 270, y: 250 }, { x: 270, y: 430 }, { x: 70, y: 430 }
+            { x: 70, y: 70 }, { x: 270, y: 70 }, { x: 270, y: 250 }, { x: 270, y: 430 }, { x: 70, y: 430 }, { x: 70, y: 250 }
         ],
         tipes: [
             { x: 1400, y: 70 }, { x: 1400, y: 250 },

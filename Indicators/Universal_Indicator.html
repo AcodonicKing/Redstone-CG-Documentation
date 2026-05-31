@@ -94,6 +94,7 @@
                     <tr><td>0.2.0</td><td>Changed registry name from <code>floor_universal_indicator</code> to <code>universal_indicator</code>. Can be placed on walls and ceiling. Updates the block on the output when output changes instead of updating all neighbours. Orientation data and reading data now is stored on Block Entity. Block is drawn by Block Entity Renderer. Lost `rotate` and `mirror` block methods..</td></tr>
                     <tr><td>0.2.1</td><td>Reimplemented `mirror` block method.</td></tr>
                     <tr><td>0.3.0</td><td>Added `base read` feature.</td></tr>
+                    <tr><td>0.3.2</td><td>Redesign.</td></tr>
                 </table>
             </div>
         </section>
@@ -121,10 +122,10 @@
             populateRedCuCrafter("Normal-Making", {category: 4, tipe: 0}, rccr1array);
         });
         const ptrn1 = [
-            ["1", ["f"], ["b"]],
+            ["1", ["f"], ["f"]],
             ["2", ["r"], ["l"]],
-            ["3", ["r","f"], ["l","b"]],
-            ["4", ["b"], ["f"]],
+            ["3", ["r","f"], ["l","f"]],
+            ["4", ["b"], ["b"]],
             ["5", ["b","f"], ["f","b"]],
             ["6", ["b","r"], ["f","l"]],
             ["7", ["b","r","f"], ["f","l","b"]],
@@ -150,13 +151,12 @@
                             base_read = !base_read;
                         }
                         pinmarkR = [...entry[1]];
-                        pinmarkB = [...entry[2]];
+                        pinmarkB = [...entry[1]];
                         if(base_read){
                             pinmarkR.push("base")
                             pinmarkB.push("base")
                         }
-                        if(redst_value == 0){renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallamp.png"]);}
-                        else{renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallampon.png"]);}
+                        renderComponent("rnd", "components/indicators/base.png", pinmarkR, [gate]);
                         blitzComponent("btz", gate, pinmarkB, []);
                         actvind = index;
                     }
@@ -169,13 +169,12 @@
             document.getElementById("redst-signal").textContent = redst_value;
             gate = `components/indicators/universal/ui${redst_value}.png`;
             pinmarkR = [...ptrn1[actvind][1]];
-            pinmarkB = [...ptrn1[actvind][2]];
+            pinmarkB = [...ptrn1[actvind][1]];
             if(base_read){
                 pinmarkR.push("base")
                 pinmarkB.push("base")
             }
-            if(redst_value == 0){renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallamp.png"]);}
-            else{renderComponent("rnd", gate, pinmarkR, ["components/indicators/universallampon.png"]);}
+            renderComponent("rnd", "components/indicators/base.png", pinmarkR, [gate]);
             blitzComponent("btz", gate, pinmarkB, []);
         });
     </script>

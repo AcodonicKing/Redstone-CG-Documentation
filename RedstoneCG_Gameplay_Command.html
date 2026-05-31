@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redstonecg_gameplay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1><code>/redstonecg_gameplay</code></h1></header>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+
+            <p>
+                The <code>/redstonecg_gameplay</code> command controls various gameplay and
+                performance-related aspects of <strong>Redstone CG</strong>.
+            </p>
+
+            <p>
+                This command requires <strong>permission level 2</strong>, meaning it requires <strong>gamemaster access</strong>—typically the same level needed to change a player's game mode.
+            </p>
+            <code>/redstonecg_gameplay</code>
+            <ul>
+                <li>
+                    <code>maxHangingRedCuWireLength &lt;integer&gt;</code>
+                </li>
+                <li>
+                    <code>gateChainLimit &lt;integer&gt;</code>
+                </li>
+                <li>
+                    <code>wireChainLimit &lt;integer&gt;</code>
+                </li>
+            </ul>
+        </section>
+        <section id="maxHangingRedCuWireLength">
+            <h2><code>/redstonecg_gameplay maxHangingRedCuWireLength &lt;integer&gt;</code></h2>
+            <p>
+                Sets the maximum allowed length of a
+                <a href="Wires/Hanging_RedCu_Wire_Connector.html">Hanging RedCu Wire</a>
+                connection between two
+                <a href="Wires/Hanging_RedCu_Wire_Connector.html">Hanging RedCu Wire Connectors</a>.
+            </p>
+            <p>
+                If a newly placed connector is farther away than the configured limit from
+                its target connector, the connection will not be established. Existing
+                connections are preserved and remain functional.
+            </p>
+            <p>
+                Executing the command without an <code>&lt;integer&gt;</code> value returns the
+                currently configured limit.
+            </p>
+            <p>
+                <strong>Default value:</strong> 16
+            </p>
+        </section>
+        <section id="gateChainLimit">
+            <h2><code>/redstonecg_gameplay gateChainLimit &lt;integer&gt;</code></h2>
+            <p>
+                Limits how many gates can be updated from a single update source during the
+                same tick.
+            </p>
+            <p>
+                If a gate update would exceed the configured limit, the update is postponed
+                and scheduled for the next tick instead.
+            </p>
+            <p>
+                This setting primarily exists to reduce excessive update chains and improve
+                performance stability in very large circuits.
+            </p>
+            <p>
+                The limit can technically be set to <code>0</code> or <code>1</code>, but
+                vanilla Minecraft Redstone components may not function correctly together
+                with Redstone CG components at such low values. Values below
+                <code>2</code> are therefore not recommended.
+            </p>
+            <p>
+                Executing the command without an <code>&lt;integer&gt;</code> value returns the
+                currently configured limit.
+            </p>
+            <p>
+                <strong>Default value:</strong> 1024
+            </p>
+        </section>
+        <section id="wireChainLimit">
+            <h2><code>/redstonecg_gameplay wireChainLimit &lt;integer&gt;</code></h2>
+            <p>
+                Limits how many wires can be updated from a single update source during the
+                same tick.
+            </p>
+            <p>
+                If a wire update would exceed the configured limit, the update is postponed
+                and scheduled for the next tick instead.
+            </p>
+            <p>
+                This setting helps reduce extremely large wire update chains and can improve
+                server and client performance in complex circuits.
+            </p>
+            <p>
+                The limit can technically be set to <code>0</code> or <code>1</code>, but
+                vanilla Minecraft Redstone components may not function correctly together
+                with Redstone CG components at such low values. Values below
+                <code>2</code> are therefore not recommended.
+            </p>
+            <p>
+                Executing the command without an <code>&lt;integer&gt;</code> value returns the
+                currently configured limit.
+            </p>
+            <p>
+                <strong>Default value:</strong> 1024
+            </p>
+        </section>
+        <section id="version_log">
+            <h2><a href="/Redstone-CG-Documentation/Version_Log.html">Version Log</a></h2>
+            <div class="version_table">
+                <table>
+                    <tr><td>Version</td><td>Description</td></tr>
+                    <tr><td>0.3.2</td><td>Introduced.</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="nav-links">
+        <a href="/Redstone-CG-Documentation/index.html">Welcome Page</a>
+        <a href="/Redstone-CG-Documentation/Getting_Started.html">Getting Started</a>
+        <a href="/Redstone-CG-Documentation/List_of_Elements.html">List of Elements</a>
+        <a href="/Redstone-CG-Documentation/Pin_Marks.html">Pin Marks</a>
+        <a href="/Redstone-CG-Documentation/Known_Bugs.html">Known Bugs</a>
+        <a href="/Redstone-CG-Documentation/Other_Links.html">Other</a>
+    </footer>
+</body>
+</html>
